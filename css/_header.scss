@@ -1,0 +1,213 @@
+@import './variable';
+@import './mixin';
+header {
+    height: 8vh;
+    z-index: 20;
+    @include gridCenter;
+    top: 0;
+    background-color: $cardBgColor;
+    border-radius: 0 0 20px 20px;
+    width: 100%;
+    >img {
+        height: 6vh;
+        position: absolute;
+        top: 3vw;
+        left: 5vw;
+    }
+    #tel {
+        position: absolute;
+        top: 4vw;
+        font-size: 1rem;
+        text-decoration: none;
+        @include headerFont;
+        color: $primaryColor;
+        height: 4vh;
+        right: 5vw;
+        &:active {
+            font-size: 0.9rem;
+            transition: all 0.2s ease-in;
+        }
+    }
+    div a {
+        @include headerFont;
+        padding: 1vh 0;
+        color: $primaryColor;
+        font-size: 0.8rem;
+        display: block;
+        text-decoration: none;
+        text-transform: uppercase;
+        width: 100%;
+        line-height: 2vh;
+        img {
+            height: 5vh;
+        }
+        &:hover {
+            background-color: $primaryColor;
+            color: $cardBgColor;
+        }
+    }
+    .nav-menu {
+        @include gridCenter;
+        align-items: flex-end;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        position: fixed;
+        bottom: 0;
+        height: 9vh;
+        background-color: $cardBgColor;
+        text-align: center;
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+        overflow: hidden;
+        .home {
+            background-color: $primaryColor;
+            color: $cardBgColor;
+            @include gridCenter;
+            .homeIcon {
+                width: 50%;
+                height: 6vh;
+                background-image: url(../images/Iconhome.png);
+                background-repeat: no-repeat;
+                background-size: 200%;
+                background-position-x: 100%;
+            }
+            &:active {
+                background-color: $cardBgColor;
+                color: $primaryColor;
+            }
+            &:active div {
+                background-position-x: 0%;
+            }
+        }
+        >a,
+        div>a {
+            @include gridCenter;
+            @include headerFont;
+            padding: 1vh 0;
+            color: $primaryColor;
+            font-size: 0.8rem;
+            display: block;
+            text-decoration: none;
+            text-transform: uppercase;
+            width: 100%;
+            line-height: 2vh;
+            @include gridCenter;
+            div {
+                width: 50%;
+                height: 6vh;
+                background-repeat: no-repeat;
+                background-size: 200%;
+                background-position-x: 0;
+            }
+            &:hover {
+                background-color: $primaryColor;
+                color: $cardBgColor;
+                ;
+            }
+            &:hover div {
+                background-position-x: 100%;
+            }
+        }
+        .menuIcon {
+            background-image: url(../images/Iconmenu.png);
+        }
+        .special {
+            background-image: url(../images/Iconsale.png);
+        }
+        .about {
+            background-image: url(../images/Iconpizza.png);
+        }
+        .location {
+            background-image: url(../images/Iconlocation.png);
+        }
+    }
+    .nav-menu-dropdown {
+        @include gridCenter;
+        width: 100%;
+        bottom: 0;
+        .nav-menu-dropdown-container {
+            width: 100%;
+            display: none;
+            background-color: rgba($color: gray, $alpha: 0.1);
+        }
+    }
+}
+
+@media only screen and (min-width:600px) {
+    .mobile-header {
+        display: none;
+    }
+    header {
+        z-index: 10;
+        position: sticky;
+        background: none;
+        grid-template-columns: 3fr 10fr 5fr;
+        margin: 2vh 0;
+        &:fixed {
+            background-color: $cardBgColor;
+        }
+        >img {
+            height: 5vw;
+            width: auto;
+            position: static;
+        }
+        #tel {
+            position: static;
+            background-color: $cardBgColor;
+            color: $desktopFontColor;
+            padding: 5px 15px;
+            height: auto;
+            border-radius: 15px;
+            border: 2px solid $primaryColor;
+            &:hover {
+                font-size: 1.2rem;
+                transition: all 0.2s ease-in;
+            }
+        }
+        .nav-menu {
+            @include gridCenter;
+            position: static;
+            height: 7vw;
+            background: none;
+            overflow: visible;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            a {
+                padding-top: 0;
+                color: $desktopFontColor;
+                line-height: 7vw;
+                text-shadow: 1px 1px 0 white;
+                &:hover {
+                    background: none;
+                    color: $desktopFontColor;
+                    @include textShadow(2px);
+                }
+            }
+            .nav-menu-dropdown {
+                label {
+                    display: none;
+                }
+                position: relative;
+                .nav-menu-dropdown-container {
+                    position: absolute;
+                    top: 6vw;
+                    min-width: 150px;
+                    background: none;
+                    a {
+                        line-height: 30px;
+                    }
+                }
+                &:hover .nav-menu-dropdown-container {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:1280px) {
+    header {
+        grid-template-columns: 1fr 3fr 10fr 5fr 1fr;
+        div a {
+            font-size: 1.2rem;
+        }
+    }
+}

@@ -1,0 +1,30 @@
+@mixin headerFont {
+    font-family: 'Kanit', sans-serif;
+}
+
+@mixin articleFont {
+    font-family: 'Rokkitt', serif;
+}
+
+@mixin otherFont {
+    font-family: 'Amiri', serif;
+}
+
+@mixin gridCenter {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+@mixin bodyDefault {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin pageShadow($blur) {
+    box-shadow: 1px 1px $blur 0 rgb(56, 56, 56);
+}
+
+@mixin textShadow($Fblur) {
+    text-shadow: 1px 1px $Fblur rgb(56, 56, 56);
+}

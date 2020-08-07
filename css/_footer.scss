@@ -1,0 +1,42 @@
+footer {
+    z-index: -1;
+    @include gridCenter;
+    background-color: $cardBgColor;
+    border-radius: 20px 20px 0 0;
+    position: sticky;
+    top: 90vh;
+    #footer-top {
+        @include gridCenter;
+        grid-template-columns: 1fr 1fr;
+        padding: 2vh 0 2px 0;
+        div {
+            text-align: center;
+            p,
+            a {
+                text-decoration: none;
+                @include otherFont;
+                color: black;
+                font-size: 13px;
+                line-height: 15px;
+            }
+        }
+    }
+    #footer-bottom {
+        text-decoration: none;
+        @include otherFont;
+        color: black;
+        font-size: 13px;
+        line-height: 22px;
+    }
+}
+
+@media only screen and (min-width:600px) {
+    footer {
+        #footer-top {
+            width: 100%;
+            div {
+                width: 50%;
+            }
+        }
+    }
+}
