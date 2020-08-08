@@ -1,7 +1,8 @@
 @import './variable';
 @import './mixin';
 header {
-    height: 8vh;
+    position: fixed;
+    height: 9vh;
     z-index: 20;
     @include gridCenter;
     top: 0;
@@ -9,13 +10,15 @@ header {
     border-radius: 0 0 20px 20px;
     width: 100%;
     >img {
+        z-index: 20;
         height: 6vh;
-        position: absolute;
+        position: fixed;
         top: 3vw;
         left: 5vw;
     }
     #tel {
-        position: absolute;
+        z-index: 20;
+        position: fixed;
         top: 4vw;
         font-size: 1rem;
         text-decoration: none;
