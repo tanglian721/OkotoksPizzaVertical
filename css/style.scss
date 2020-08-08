@@ -1,5 +1,6 @@
 @import './variable';
 @import './mixin';
+@import './animation';
 body {
     @include bodyDefault;
     background: linear-gradient(317.45deg, rgba(255, 160, 13, 0.52) -78.63%, #FFFFFF 106.21%);
@@ -38,19 +39,85 @@ body {
 .homepagePhoto {
     @include gridCenter;
     width: 100%;
-    .mobilePhotoFrame {
+    .PhotoFrame {
         margin-top: 5vw;
         width: 70vw;
-        height: 84vw;
+        height: 60vh;
         overflow: hidden;
-        object-fit: cover;
         border-radius: 20px;
-        border: 1px solid white;
-        img {
+        position: relative;
+        .photo {
+            background-position: center;
+            background-size: cover;
+            position: absolute;
+            top: 0;
+        }
+        .frame {
             position: relative;
-            height: 84vw;
-            left: 0;
-            animation: mobilephoto 8s cubic-bezier(1, 0, 0.1, 0) infinite;
+            width: 100%;
+            height: 90%;
+            transform: skewY(10deg);
+            transform-origin: -15%;
+            overflow: hidden;
+            &-mid {
+                z-index: 5;
+                height: 85%;
+                @include pageShadow(5px);
+                .photos {
+                    width: 100%;
+                    height: 100%;
+                    animation: photoFix 15s linear infinite;
+                    .photo {
+                        width: 100%;
+                        height: 100%;
+                    }
+                    .photo1 {
+                        background-image: url(../images/pizzaHomepage1.jpg);
+                        animation: photo1 15s ease-in-out infinite;
+                    }
+                    .photo2 {
+                        background-image: url(../images/pizzaHomepage2.jpg);
+                        animation: photo2 15s ease-in-out infinite;
+                    }
+                    .photo3 {
+                        background-image: url(../images/pizzaHomepage3.jpg);
+                        animation: photo3 15s ease-in-out infinite;
+                    }
+                }
+            }
+            &-back {
+                z-index: 3;
+                transform: none;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 50%;
+                filter: blur(3px);
+                &-after {
+                    background-color: blue;
+                    transform: translateY(100%);
+                }
+                .photos {
+                    width: 100%;
+                    height: 100%;
+                    .photo {
+                        width: 100%;
+                        height: 100%;
+                    }
+                    .photo1 {
+                        background-image: linear-gradient(317.45deg, rgba(255, 160, 13, 0.22) -78.63%, rgba(255, 255, 255, 0.2) 106.21%), url(../images/pizzaHomepage1.jpg);
+                        animation: photo1 15s ease-in-out infinite;
+                    }
+                    .photo2 {
+                        background-image: linear-gradient(317.45deg, rgba(255, 160, 13, 0.52) -78.63%, #FFFFFF 106.21%), url(../images/pizzaHomepage2.jpg);
+                        animation: photo2 15s ease-in-out infinite;
+                    }
+                    .photo3 {
+                        background-image: linear-gradient(317.45deg, rgba(255, 160, 13, 0.52) -78.63%, #FFFFFF 106.21%), url(../images/pizzaHomepage3.jpg);
+                        animation: photo3 15s ease-in-out infinite;
+                    }
+                }
+            }
         }
     }
 }
@@ -74,6 +141,7 @@ body {
 /*mobile-homeMenu-start*/
 
 #homeMenu {
+    z-index: -1;
     @include gridCenter;
     row-gap: 5vh;
     h1 {
@@ -85,10 +153,12 @@ body {
         margin-bottom: -5vh;
     }
     .menu-section {
+        z-index: 1;
         @include gridCenter;
         width: 80%;
         row-gap: 8vh;
         .foodCard {
+            z-index: 1;
             width: 80vw;
             @include gridCenter;
             position: relative;
@@ -103,7 +173,7 @@ body {
                 left: 0;
                 border: none;
                 border-radius: 20px 0 0 20px;
-                transition: all 0.5s ease-in-out;
+                transition: all 0.6s ease-in;
             }
             &:hover div {
                 box-sizing: border-box;
@@ -113,7 +183,7 @@ body {
                 height: 30vw;
                 width: 50vw;
                 left: 0vw;
-                transition: all 0.5s ease-in-out;
+                transition: all 0.6s ease-in;
                 background-color: rgba(255, 255, 255, 0.7);
                 h2,
                 h3 {
@@ -211,7 +281,7 @@ body {
 }
 
 #contact-text {
-    z-index: 1;
+    z-index: -1;
     position: relative;
     top: 12px;
     background: rgba(196, 196, 196, 0.2);
@@ -221,6 +291,7 @@ body {
     @include gridCenter;
     grid-template-columns: 1fr 1.2fr;
     h2 {
+        z-index: 1;
         @include otherFont;
         color: black;
         text-transform: uppercase;
@@ -228,6 +299,7 @@ body {
         margin-left: 9vw;
     }
     p {
+        z-index: 1;
         display: grid;
         grid-template-columns: 1fr 3fr;
         justify-self: left;
@@ -246,3 +318,5 @@ body {
         }
     }
 }
+
+@import './footer';

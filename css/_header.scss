@@ -47,12 +47,13 @@ header {
         }
     }
     .nav-menu {
+        z-index: 20;
         @include gridCenter;
         align-items: flex-end;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         position: fixed;
         bottom: 0;
-        height: 9vh;
+        height: 8vh;
         background-color: $cardBgColor;
         text-align: center;
         width: 100%;
@@ -63,8 +64,8 @@ header {
             color: $cardBgColor;
             @include gridCenter;
             .homeIcon {
-                width: 50%;
-                height: 6vh;
+                width: 40%;
+                height: 5vh;
                 background-image: url(../images/Iconhome.png);
                 background-repeat: no-repeat;
                 background-size: 200%;
@@ -92,8 +93,8 @@ header {
             line-height: 2vh;
             @include gridCenter;
             div {
-                width: 50%;
-                height: 6vh;
+                width: 40%;
+                height: 5vh;
                 background-repeat: no-repeat;
                 background-size: 200%;
                 background-position-x: 0;
