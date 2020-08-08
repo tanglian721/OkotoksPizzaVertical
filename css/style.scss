@@ -57,8 +57,8 @@ body {
             position: relative;
             width: 100%;
             height: 90%;
-            transform: skewY(10deg);
-            transform-origin: -15%;
+            top: 9%;
+            transform: skewY(-8deg);
             overflow: hidden;
             &-mid {
                 z-index: 5;
@@ -110,11 +110,11 @@ body {
                         animation: photo1 15s ease-in-out infinite;
                     }
                     .photo2 {
-                        background-image: linear-gradient(317.45deg, rgba(255, 160, 13, 0.52) -78.63%, #FFFFFF 106.21%), url(../images/pizzaHomepage2.jpg);
+                        background-image: linear-gradient(317.45deg, rgba(255, 160, 13, 0.22) -78.63%, #FFFFFF 106.21%), url(../images/pizzaHomepage2.jpg);
                         animation: photo2 15s ease-in-out infinite;
                     }
                     .photo3 {
-                        background-image: linear-gradient(317.45deg, rgba(255, 160, 13, 0.52) -78.63%, #FFFFFF 106.21%), url(../images/pizzaHomepage3.jpg);
+                        background-image: linear-gradient(317.45deg, rgba(255, 160, 13, 0.22) -78.63%, #FFFFFF 106.21%), url(../images/pizzaHomepage3.jpg);
                         animation: photo3 15s ease-in-out infinite;
                     }
                 }
@@ -155,7 +155,7 @@ body {
             }
             &:hover img {
                 width: 30vw;
-                height: 30vw;
+                height: 40vw;
                 left: 0;
                 border: none;
                 border-radius: 20px 0 0 20px;
@@ -165,12 +165,13 @@ body {
                 box-sizing: border-box;
                 border-radius: 0 20px 20px 0;
                 @include pageShadow(2px);
+                grid-template-rows: 1fr 1fr 3fr;
                 padding: 5px;
-                height: 30vw;
+                height: 40vw;
                 width: 50vw;
                 left: 0vw;
                 transition: all 0.6s ease-in;
-                background-color: rgba(255, 255, 255, 0.7);
+                background-color: rgba(255, 255, 255, 0.8);
                 h2,
                 h3 {
                     position: static;
@@ -183,8 +184,9 @@ body {
                 }
             }
             img {
+                filter: brightness(110%);
                 width: 50vw;
-                height: 50vw;
+                height: 40vw;
                 border: 1vw solid white;
                 border-radius: 50%;
                 object-fit: cover;
@@ -198,14 +200,14 @@ body {
                 left: -36vw;
                 overflow: hidden;
                 width: 50vw;
-                height: 50vw;
+                height: 40vw;
                 border-radius: 50%;
                 h2 {
                     position: absolute;
-                    bottom: 12vw;
+                    bottom: 10vw;
                     padding: 2px 5px 2px 3vw;
                     border-radius: 0 6px 6px 0;
-                    background-color: rgba(255, 255, 255, 0.7);
+                    background-color: rgba(255, 255, 255, 0.9);
                     @include articleFont;
                     font-size: 3.5vw;
                     text-transform: uppercase;
@@ -215,10 +217,10 @@ body {
                 }
                 h3 {
                     position: absolute;
-                    bottom: 6vw;
+                    bottom: 5vw;
                     padding: 2px 8vw 2px 5px;
                     border-radius: 6px 0 0 6px;
-                    background-color: rgba(255, 255, 255, 0.7);
+                    background-color: rgba(255, 255, 255, 0.9);
                     @include articleFont;
                     font-size: 3.5vw;
                     text-transform: uppercase;
@@ -229,7 +231,7 @@ body {
                 }
                 p {
                     @include articleFont;
-                    font-size: 3vw;
+                    font-size: 4vw;
                     opacity: 0;
                 }
             }
@@ -301,6 +303,93 @@ body {
         .contact-title {
             justify-self: right;
             margin-right: 1vw;
+        }
+    }
+}
+
+@media only screen and (min-width:600px) {
+    .tablet-body {
+        display: block;
+    }
+    .mobile-header {
+        display: none;
+    }
+    header {
+        height: auto;
+        background: none;
+        position: fixed;
+        top: 0;
+        grid-template-columns: 1fr 4fr 2fr;
+        >img {
+            position: relative;
+            width: 10vw;
+            height: auto;
+            background: none;
+            top: 2vw;
+            left: 2vw;
+        }
+        #tel {
+            font-size: 1.5rem;
+            height: auto;
+            padding: 0.5vw 1vw;
+            border-radius: 1vw;
+            left: 15vw;
+            top: 6vw;
+            right: auto;
+            width: auto;
+            background-color: cornsilk;
+        }
+        .nav-menu {
+            background: none;
+            position: relative;
+            top: -10%;
+            align-items: center;
+            overflow: visible;
+            >a,
+            div>a,
+            .home {
+                background: none;
+                color: $desktopFontColor;
+                font-size: 1.1rem;
+                font-weight: 600;
+                text-shadow: 1px 1px 2px rgb(236, 233, 233);
+                &:hover {
+                    background: none;
+                    color: $desktopFontColor;
+                    font-size: 1.4rem;
+                    transition: all 0.2s ease-in-out;
+                }
+                &:active {
+                    font-size: 1rem;
+                    transition: all 0.1s ease-in-out;
+                }
+            }
+            .nav-menu-dropdown {
+                &:hover .nav-menu-dropdown-container {
+                    display: block;
+                }
+            }
+        }
+    }
+    .homepagePhoto {
+        margin-top: 0;
+        width: 100%;
+        height: 50vw;
+        .PhotoFrame {
+            width: 100%;
+            height: 100%;
+            margin-top: 0;
+            border-radius: 0;
+            .photo {
+                width: 100%;
+                height: 100%;
+            }
+            .frame {
+                top: 15%;
+                &-back {
+                    top: 0;
+                }
+            }
         }
     }
 }

@@ -129,89 +129,90 @@ header {
         width: 100%;
         bottom: 0;
         .nav-menu-dropdown-container {
+            position: absolute;
+            padding-top: 2vw;
+            top: 2vw;
             width: 100%;
             display: none;
-            background-color: rgba($color: gray, $alpha: 0.1);
         }
     }
 }
 
-@media only screen and (min-width:600px) {
-    .mobile-header {
-        display: none;
-    }
-    header {
-        z-index: 10;
-        position: sticky;
-        background: none;
-        grid-template-columns: 3fr 10fr 5fr;
-        margin: 2vh 0;
-        &:fixed {
-            background-color: $cardBgColor;
-        }
-        >img {
-            height: 5vw;
-            width: auto;
-            position: static;
-        }
-        #tel {
-            position: static;
-            background-color: $cardBgColor;
-            color: $desktopFontColor;
-            padding: 5px 15px;
-            height: auto;
-            border-radius: 15px;
-            border: 2px solid $primaryColor;
-            &:hover {
-                font-size: 1.2rem;
-                transition: all 0.2s ease-in;
-            }
-        }
-        .nav-menu {
-            @include gridCenter;
-            position: static;
-            height: 7vw;
-            background: none;
-            overflow: visible;
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-            a {
-                padding-top: 0;
-                color: $desktopFontColor;
-                line-height: 7vw;
-                text-shadow: 1px 1px 0 white;
-                &:hover {
-                    background: none;
-                    color: $desktopFontColor;
-                    @include textShadow(2px);
-                }
-            }
-            .nav-menu-dropdown {
-                label {
-                    display: none;
-                }
-                position: relative;
-                .nav-menu-dropdown-container {
-                    position: absolute;
-                    top: 6vw;
-                    min-width: 150px;
-                    background: none;
-                    a {
-                        line-height: 30px;
-                    }
-                }
-                &:hover .nav-menu-dropdown-container {
-                    display: block;
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (min-width:1280px) {
-    header {
-        grid-template-columns: 1fr 3fr 10fr 5fr 1fr;
-        div a {
-            font-size: 1.2rem;
-        }
-    }
-}
+// @media only screen and (min-width:600px) {
+//     .mobile-header {
+//         display: none;
+//     }
+//     header {
+//         z-index: 10;
+//         position: sticky;
+//         background: none;
+//         grid-template-columns: 3fr 10fr 5fr;
+//         margin: 2vh 0;
+//         &:fixed {
+//             background-color: $cardBgColor;
+//         }
+//         >img {
+//             height: 5vw;
+//             width: auto;
+//             position: static;
+//         }
+//         #tel {
+//             position: static;
+//             background-color: $cardBgColor;
+//             color: $desktopFontColor;
+//             padding: 5px 15px;
+//             height: auto;
+//             border-radius: 15px;
+//             border: 2px solid $primaryColor;
+//             &:hover {
+//                 font-size: 1.2rem;
+//                 transition: all 0.2s ease-in;
+//             }
+//         }
+//         .nav-menu {
+//             @include gridCenter;
+//             position: static;
+//             height: 7vw;
+//             background: none;
+//             overflow: visible;
+//             grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+//             a {
+//                 padding-top: 0;
+//                 color: $desktopFontColor;
+//                 line-height: 7vw;
+//                 text-shadow: 1px 1px 0 white;
+//                 &:hover {
+//                     background: none;
+//                     color: $desktopFontColor;
+//                     @include textShadow(2px);
+//                 }
+//             }
+//             .nav-menu-dropdown {
+//                 label {
+//                     display: none;
+//                 }
+//                 position: relative;
+//                 .nav-menu-dropdown-container {
+//                     position: absolute;
+//                     top: 6vw;
+//                     min-width: 150px;
+//                     background: none;
+//                     a {
+//                         line-height: 30px;
+//                     }
+//                 }
+//                 &:hover .nav-menu-dropdown-container {
+//                     display: block;
+//                 }
+//             }
+//         }
+//     }
+// }
+// @media only screen and (min-width:1280px) {
+//     header {
+//         grid-template-columns: 1fr 3fr 10fr 5fr 1fr;
+//         div a {
+//             font-size: 1.2rem;
+//         }
+//     }
+// }
