@@ -442,9 +442,9 @@ header .nav-menu-dropdown {
 
 header .nav-menu-dropdown .nav-menu-dropdown-container {
   position: absolute;
-  padding-top: 2vw;
-  top: 2vw;
-  width: 100%;
+  padding-top: 4vw;
+  min-width: 30%;
+  top: 3vw;
   display: none;
 }
 
@@ -804,15 +804,19 @@ header .nav-menu-dropdown .nav-menu-dropdown-container {
     left: 2vw;
   }
   header #tel {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    color: black;
     height: auto;
     padding: 0.5vw 1vw;
     border-radius: 1vw;
-    left: 15vw;
-    top: 6vw;
+    left: 80%;
+    top: 2.5%;
     right: auto;
     width: auto;
-    background-color: cornsilk;
+    background: rgba(255, 255, 255, 0.8);
+    -webkit-box-shadow: 1px 1px 5px 0 #383838;
+            box-shadow: 1px 1px 5px 0 #383838;
   }
   header .nav-menu {
     background: none;
@@ -831,11 +835,13 @@ header .nav-menu-dropdown .nav-menu-dropdown-container {
     font-size: 1.1rem;
     font-weight: 600;
     text-shadow: 1px 1px 2px #ece9e9;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
   }
   header .nav-menu > a:hover,
   header .nav-menu div > a:hover,
   header .nav-menu .home:hover {
-    background: none;
+    background: rgba(255, 255, 255, 0.8);
     color: black;
     font-size: 1.4rem;
     -webkit-transition: all 0.2s ease-in-out;
@@ -946,8 +952,10 @@ header .nav-menu-dropdown .nav-menu-dropdown-container {
     font-size: 1.5rem;
   }
   #contact #contact-text {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     margin-top: 4vh;
-    padding: 4vh 200px;
+    padding: 4vh 20vw;
     border-radius: 20px 0;
     width: 100%;
   }
@@ -967,6 +975,40 @@ header .nav-menu-dropdown .nav-menu-dropdown-container {
   }
   #contact #contact-text p .space-2 {
     letter-spacing: 0.7rem;
+  }
+}
+
+@media only screen and (min-width: 1367px) {
+  header > img {
+    width: 6vw;
+  }
+  header #tel {
+    left: 80%;
+    top: 5%;
+  }
+  header .nav-menu > a,
+  header .nav-menu div > a,
+  header .nav-menu .home {
+    font-size: 1.5rem;
+  }
+  #homeMenu .menu-section {
+    width: 80%;
+    height: 16vw;
+    overflow-x: hidden;
+  }
+  #homeMenu .menu-section .scroll {
+    -webkit-column-gap: 5vw;
+            column-gap: 5vw;
+  }
+  #homeMenu .menu-section .scroll .foodCard {
+    width: 16vw;
+  }
+  #homeMenu .menu-section .scroll .foodCard div h2,
+  #homeMenu .menu-section .scroll .foodCard div h3 {
+    font-size: 1.5rem;
+  }
+  #homeMenu .menu-section .scroll .foodCard div p {
+    font-size: 1.2rem;
   }
 }
 

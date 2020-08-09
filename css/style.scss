@@ -287,15 +287,18 @@
                 left: 2vw;
             }
             #tel {
-                font-size: 1.5rem;
+                font-size: 1.2rem;
+                font-weight: bolder;
+                color: $desktopFontColor;
                 height: auto;
                 padding: 0.5vw 1vw;
                 border-radius: 1vw;
-                left: 15vw;
-                top: 6vw;
+                left: 80%;
+                top: 2.5%;
                 right: auto;
                 width: auto;
-                background-color: cornsilk;
+                background: rgba($color: #ffffff, $alpha: 0.8);
+                @include pageShadow(5px);
             }
             .nav-menu {
                 background: none;
@@ -311,8 +314,10 @@
                     font-size: 1.1rem;
                     font-weight: 600;
                     text-shadow: 1px 1px 2px rgb(236, 233, 233);
+                    border-radius: 20px;
+                    background-color: rgba($color: #ffffff, $alpha: 0.8);
                     &:hover {
-                        background: none;
+                        background: rgba($color: #ffffff, $alpha: 0.8);
                         color: $desktopFontColor;
                         font-size: 1.4rem;
                         transition: all 0.2s ease-in-out;
@@ -413,8 +418,9 @@
                 height: 40vw;
             }
             #contact-text {
+                box-sizing: border-box;
                 margin-top: 4vh;
-                padding: 4vh 200px;
+                padding: 4vh 20vw;
                 border-radius: 20px 0;
                 width: 100%;
                 h2 {
@@ -437,4 +443,46 @@
         }
     }
     
+    @media only screen and (min-width:1367px) {
+        header {
+            >img {
+                width: 6vw;
+            }
+            #tel {
+                left: 80%;
+                top: 5%
+            }
+            .nav-menu {
+                >a,
+                div>a,
+                .home {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+        #homeMenu {
+            .menu-section {
+                width: 80%;
+                height: 16vw;
+                overflow-x: hidden;
+                .scroll {
+                    column-gap: 5vw;
+                    .foodCard {
+                        width: 16vw;
+                        div {
+                            h2,
+                            h3 {
+                                font-size: 1.5rem;
+                            }
+                            p {
+                                font-size: 1.2rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    ;
     @import './footer';

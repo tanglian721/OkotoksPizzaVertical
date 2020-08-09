@@ -130,9 +130,9 @@ header {
         bottom: 0;
         .nav-menu-dropdown-container {
             position: absolute;
-            padding-top: 2vw;
-            top: 2vw;
-            width: 100%;
+            padding-top: 4vw;
+            min-width: 30%;
+            top: 3vw;
             display: none;
         }
     }
