@@ -1,4 +1,9 @@
 footer {
+    .splitter-line {
+        height: 1px;
+        width: 100%;
+        background-color: black;
+    }
     z-index: 99;
     @include gridCenter;
     background-color: $cardBgColor;

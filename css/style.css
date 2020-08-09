@@ -653,7 +653,8 @@ header .nav-menu-dropdown .nav-menu-dropdown-container {
   overflow: visible;
   position: absolute;
   border-radius: 0;
-  background: rgba(22, 22, 22, 0.7);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(1.19%, rgba(0, 0, 0, 0.75)), color-stop(48.02%, rgba(0, 0, 0, 0.68)), color-stop(68.61%, rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.01)));
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 1.19%, rgba(0, 0, 0, 0.68) 48.02%, rgba(0, 0, 0, 0.56) 68.61%, rgba(0, 0, 0, 0.01) 100%);
   padding: 5px 10px;
 }
 
@@ -732,8 +733,8 @@ header .nav-menu-dropdown .nav-menu-dropdown-container {
       -ms-flex-align: center;
           align-items: center;
   justify-items: center;
-  -ms-grid-columns: 1fr 1.2fr;
-      grid-template-columns: 1fr 1.2fr;
+  -ms-grid-columns: 1fr 1.4fr;
+      grid-template-columns: 1fr 1.4fr;
 }
 
 #contact-text h2 {
@@ -747,12 +748,12 @@ header .nav-menu-dropdown .nav-menu-dropdown-container {
 
 #contact-text p {
   z-index: 1;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 3fr;
-      grid-template-columns: 1fr 3fr;
   -ms-grid-column-align: left;
       justify-self: left;
+}
+
+#contact-text p a {
+  display: block;
 }
 
 #contact-text p a,
@@ -766,9 +767,17 @@ header .nav-menu-dropdown .nav-menu-dropdown-container {
 }
 
 #contact-text p .contact-title {
-  -ms-grid-column-align: right;
-      justify-self: right;
+  -ms-grid-column-align: center;
+      justify-self: center;
   margin-right: 1vw;
+}
+
+#contact-text p .space-1 {
+  letter-spacing: 0.15rem;
+}
+
+#contact-text p .space-2 {
+  letter-spacing: 0.6rem;
 }
 
 @media only screen and (min-width: 600px) {
@@ -875,7 +884,8 @@ header .nav-menu-dropdown .nav-menu-dropdown-container {
   }
   #homeMenu .menu-section {
     width: 84%;
-    height: 23vw;
+    height: 22vw;
+    overflow: hidden;
     overflow-x: scroll;
     overflow-y: hidden;
   }
@@ -900,7 +910,7 @@ header .nav-menu-dropdown .nav-menu-dropdown-container {
   }
   #homeMenu .menu-section .scroll .foodCard {
     display: block;
-    width: 23vw;
+    width: 22vw;
     height: 100%;
     background-color: darkkhaki;
     -ms-grid-columns: 1fr;
@@ -916,7 +926,7 @@ header .nav-menu-dropdown .nav-menu-dropdown-container {
     border: 0;
   }
   #homeMenu .menu-section .scroll .foodCard div {
-    top: 80%;
+    top: 78%;
     padding: 15px;
   }
   #homeMenu .menu-section .scroll .foodCard div h2 {
@@ -924,10 +934,39 @@ header .nav-menu-dropdown .nav-menu-dropdown-container {
   }
   #homeMenu .menu-section .scroll .foodCard div h3 {
     font-size: 1rem;
-    padding-top: 1.2vw;
+    margin-top: 2vw;
   }
   #homeMenu .menu-section .scroll .foodCard div p {
     font-size: 0.8rem;
+  }
+  #contact #map {
+    height: 40vw;
+  }
+  #contact #map h1 {
+    font-size: 1.5rem;
+  }
+  #contact #contact-text {
+    margin-top: 4vh;
+    padding: 4vh 200px;
+    border-radius: 20px 0;
+    width: 100%;
+  }
+  #contact #contact-text h2 {
+    margin-left: 0;
+    font-size: 1.5rem;
+  }
+  #contact #contact-text p {
+    -ms-grid-column-align: center;
+        justify-self: center;
+    width: 50%;
+  }
+  #contact #contact-text p a,
+  #contact #contact-text p span {
+    line-height: 1.3rem;
+    font-size: 1rem;
+  }
+  #contact #contact-text p .space-2 {
+    letter-spacing: 0.7rem;
   }
 }
 
@@ -944,6 +983,12 @@ footer {
   position: -webkit-sticky;
   position: sticky;
   top: 90vh;
+}
+
+footer .splitter-line {
+  height: 1px;
+  width: 100%;
+  background-color: black;
 }
 
 footer #footer-top {

@@ -162,7 +162,7 @@
                         overflow: visible;
                         position: absolute;
                         border-radius: 0;
-                        background: rgba(22, 22, 22, 0.7);
+                        background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 1.19%, rgba(0, 0, 0, 0.68) 48.02%, rgba(0, 0, 0, 0.56) 68.61%, rgba(0, 0, 0, 0.01) 100%);
                         padding: 5px 10px;
                         h2 {
                             width: 100%;
@@ -228,7 +228,7 @@
         width: 100%;
         height: auto;
         @include gridCenter;
-        grid-template-columns: 1fr 1.2fr;
+        grid-template-columns: 1fr 1.4fr;
         h2 {
             z-index: 1;
             @include otherFont;
@@ -239,9 +239,10 @@
         }
         p {
             z-index: 1;
-            display: grid;
-            grid-template-columns: 1fr 3fr;
             justify-self: left;
+            a {
+                display: block;
+            }
             a,
             span {
                 text-align: justify;
@@ -252,8 +253,14 @@
                 line-height: 5vw;
             }
             .contact-title {
-                justify-self: right;
+                justify-self: center;
                 margin-right: 1vw;
+            }
+            .space-1 {
+                letter-spacing: 0.15rem;
+            }
+            .space-2 {
+                letter-spacing: 0.6rem;
             }
         }
     }
@@ -353,7 +360,8 @@
             }
             .menu-section {
                 width: 84%;
-                height: 23vw;
+                height: 22vw;
+                overflow: hidden;
                 overflow-x: scroll;
                 overflow-y: hidden;
                 .scroll {
@@ -366,7 +374,7 @@
                     column-gap: 8vw;
                     .foodCard {
                         display: block;
-                        width: 23vw;
+                        width: 22vw;
                         height: 100%;
                         background-color: darkkhaki;
                         grid-template-columns: 1fr;
@@ -380,19 +388,49 @@
                             border: 0;
                         }
                         div {
-                            top: 80%;
+                            top: 78%;
                             padding: 15px;
                             h2 {
                                 font-size: 1.2rem;
                             }
                             h3 {
                                 font-size: 1rem;
-                                padding-top: 1.2vw;
+                                margin-top: 2vw;
                             }
                             p {
                                 font-size: 0.8rem;
                             }
                         }
+                    }
+                }
+            }
+        }
+        #contact {
+            #map {
+                h1 {
+                    font-size: 1.5rem;
+                }
+                height: 40vw;
+            }
+            #contact-text {
+                margin-top: 4vh;
+                padding: 4vh 200px;
+                border-radius: 20px 0;
+                width: 100%;
+                h2 {
+                    margin-left: 0;
+                    font-size: 1.5rem;
+                }
+                p {
+                    justify-self: center;
+                    width: 50%;
+                    a,
+                    span {
+                        line-height: 1.3rem;
+                        font-size: 1rem;
+                    }
+                    .space-2 {
+                        letter-spacing: 0.7rem;
                     }
                 }
             }
