@@ -1,397 +1,482 @@
-@import './variable';
-@import './mixin';
-@import './animation';
-body {
-    @include bodyDefault;
-    background: linear-gradient(317.45deg, rgba(255, 160, 13, 0.52) -78.63%, #FFFFFF 106.21%);
-    min-height: 100vh;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
-.splitter-blank {
-    height: 5vh;
-}
-
-.tablet-body {
-    display: none;
-}
-
-@import './header';
-@keyframes mobilephoto {
-    25% {
-        left: -70vw;
+    @import './variable';
+    @import './mixin';
+    @import './animation';
+    body {
+        @include bodyDefault;
+        background: linear-gradient(317.45deg, rgba(255, 160, 13, 0.52) -78.63%, #FFFFFF 106.21%);
+        min-height: 100vh;
     }
-    50% {
-        left: -140vw;
+    
+    * {
+        margin: 0;
+        padding: 0;
     }
-    75% {
-        left: -210vw;
+    
+    .splitter-blank {
+        height: 5vh;
     }
-    100% {
-        left: 0vw;
-    }
-}
-
-.homepagePhoto {
-    margin-top: 10vh;
-    @include gridCenter;
-    width: 100%;
-    .PhotoFrame {
-        margin-top: 5vw;
-        width: 70vw;
-        height: 60vh;
-        overflow: hidden;
-        border-radius: 20px;
-        position: relative;
-        .photo {
-            background-position: center;
-            background-size: cover;
-            position: absolute;
-            top: 0;
-        }
-        .frame {
-            position: relative;
-            width: 100%;
-            height: 90%;
-            top: 9%;
-            transform: skewY(-8deg);
-            overflow: hidden;
-            &-mid {
-                z-index: 5;
-                height: 85%;
-                @include pageShadow(5px);
-                .photos {
-                    width: 100%;
-                    height: 100%;
-                    animation: photoFix 15s linear infinite;
-                    .photo {
-                        width: 100%;
-                        height: 100%;
-                    }
-                    .photo1 {
-                        background-image: url(../images/pizzaHomepage1.jpg);
-                        animation: photo1 15s ease-in-out infinite;
-                    }
-                    .photo2 {
-                        background-image: url(../images/pizzaHomepage2.jpg);
-                        animation: photo2 15s ease-in-out infinite;
-                    }
-                    .photo3 {
-                        background-image: url(../images/pizzaHomepage3.jpg);
-                        animation: photo3 15s ease-in-out infinite;
-                    }
-                }
-            }
-            &-back {
-                z-index: 3;
-                transform: none;
-                position: absolute;
-                top: 0;
-                width: 100%;
-                height: 50%;
-                filter: blur(3px);
-                &-after {
-                    transform: translateY(100%);
-                }
-                .photos {
-                    width: 100%;
-                    height: 100%;
-                    animation: photoBackFix 15s linear infinite;
-                    .photo {
-                        width: 100%;
-                        height: 100%;
-                    }
-                    .photo1 {
-                        background-image: linear-gradient(317.45deg, rgba(255, 160, 13, 0.22) -78.63%, rgba(255, 255, 255, 0.2) 106.21%), url(../images/pizzaHomepage1.jpg);
-                        animation: photo1 15s ease-in-out infinite;
-                    }
-                    .photo2 {
-                        background-image: linear-gradient(317.45deg, rgba(255, 160, 13, 0.22) -78.63%, #FFFFFF 106.21%), url(../images/pizzaHomepage2.jpg);
-                        animation: photo2 15s ease-in-out infinite;
-                    }
-                    .photo3 {
-                        background-image: linear-gradient(317.45deg, rgba(255, 160, 13, 0.22) -78.63%, #FFFFFF 106.21%), url(../images/pizzaHomepage3.jpg);
-                        animation: photo3 15s ease-in-out infinite;
-                    }
-                }
-            }
-        }
-    }
-}
-
-
-/*mobile-homeMenu-start*/
-
-#homeMenu {
-    z-index: -1;
-    @include gridCenter;
-    row-gap: 5vh;
-    h1 {
-        @include articleFont;
-        text-transform: uppercase;
-        font-size: 1.5rem;
-        justify-self: left;
-        margin-left: 15vw;
-        margin-bottom: -5vh;
-    }
-    .menu-section {
-        z-index: 1;
-        @include gridCenter;
-        width: 80%;
-        row-gap: 8vh;
-        .foodCard {
-            z-index: 1;
-            width: 80vw;
-            @include gridCenter;
-            position: relative;
-            grid-template-columns: 3fr 5fr;
-            // overflow: hidden;
-            &:hover {
-                @include gridCenter;
-            }
-            &:hover img {
-                width: 30vw;
-                height: 40vw;
-                left: 0;
-                border: none;
-                border-radius: 20px 0 0 20px;
-                transition: all 0.6s ease-in;
-            }
-            &:hover div {
-                box-sizing: border-box;
-                border-radius: 0 20px 20px 0;
-                @include pageShadow(2px);
-                grid-template-rows: 1fr 1fr 3fr;
-                padding: 5px;
-                height: 40vw;
-                width: 50vw;
-                left: 0vw;
-                transition: all 0.6s ease-in;
-                background-color: rgba(255, 255, 255, 0.8);
-                h2,
-                h3 {
-                    position: static;
-                    margin: 0 5px;
-                    background-color: 0;
-                    padding: 1px 2px;
-                }
-                p {
-                    opacity: 1;
-                }
-            }
-            img {
-                filter: brightness(110%);
-                width: 50vw;
-                height: 40vw;
-                border: 1vw solid white;
-                border-radius: 50%;
-                object-fit: cover;
-                @include pageShadow(2px);
-                position: relative;
-                left: 15vw;
-            }
-            div {
-                @include gridCenter;
-                position: relative;
-                left: -36vw;
-                overflow: hidden;
-                width: 50vw;
-                height: 40vw;
-                border-radius: 50%;
-                h2 {
-                    position: absolute;
-                    bottom: 10vw;
-                    padding: 2px 5px 2px 3vw;
-                    border-radius: 0 6px 6px 0;
-                    background-color: rgba(255, 255, 255, 0.9);
-                    @include articleFont;
-                    font-size: 3.5vw;
-                    text-transform: uppercase;
-                    line-height: 12px;
-                    justify-self: left;
-                    margin: 0;
-                }
-                h3 {
-                    position: absolute;
-                    bottom: 5vw;
-                    padding: 2px 8vw 2px 5px;
-                    border-radius: 6px 0 0 6px;
-                    background-color: rgba(255, 255, 255, 0.9);
-                    @include articleFont;
-                    font-size: 3.5vw;
-                    text-transform: uppercase;
-                    line-height: 10px;
-                    justify-self: right;
-                    margin: 0;
-                    color: $priceColor;
-                }
-                p {
-                    @include articleFont;
-                    font-size: 4vw;
-                    opacity: 0;
-                }
-            }
-        }
-    }
-}
-
-
-/*mobile-homeMenu-start*/
-
-
-/*mobile-contact-start*/
-
-#contact {
-    z-index: 1;
-    @include gridCenter;
-    width: 100%;
-    row-gap: 5vh;
-    padding-top: 5vh;
-    #map {
-        width: 80%;
-        height: 70vw;
-        h1 {
-            @include otherFont;
-            text-transform: uppercase;
-            font-size: 1rem;
-        }
-        iframe {
-            border-radius: 20px;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    }
-}
-
-#contact-text {
-    z-index: -1;
-    position: relative;
-    top: 12px;
-    background: rgba(196, 196, 196, 0.2);
-    padding: 3vh 0;
-    width: 100%;
-    height: auto;
-    @include gridCenter;
-    grid-template-columns: 1fr 1.2fr;
-    h2 {
-        z-index: 1;
-        @include otherFont;
-        color: black;
-        text-transform: uppercase;
-        font-size: 4vw;
-        margin-left: 9vw;
-    }
-    p {
-        z-index: 1;
-        display: grid;
-        grid-template-columns: 1fr 3fr;
-        justify-self: left;
-        a,
-        span {
-            text-align: justify;
-            text-decoration: none;
-            @include otherFont;
-            color: black;
-            font-size: 3vw;
-            line-height: 5vw;
-        }
-        .contact-title {
-            justify-self: right;
-            margin-right: 1vw;
-        }
-    }
-}
-
-@media only screen and (min-width:600px) {
+    
     .tablet-body {
-        display: block;
-    }
-    .mobile-header {
         display: none;
     }
-    header {
-        height: auto;
-        background: none;
-        position: fixed;
-        top: 0;
-        grid-template-columns: 1fr 4fr 2fr;
-        >img {
-            position: relative;
-            width: 10vw;
-            height: auto;
-            background: none;
-            top: 2vw;
-            left: 2vw;
-        }
-        #tel {
-            font-size: 1.5rem;
-            height: auto;
-            padding: 0.5vw 1vw;
-            border-radius: 1vw;
-            left: 15vw;
-            top: 6vw;
-            right: auto;
-            width: auto;
-            background-color: cornsilk;
-        }
-        .nav-menu {
-            background: none;
-            position: relative;
-            top: -10%;
-            align-items: center;
-            overflow: visible;
-            >a,
-            div>a,
-            .home {
-                background: none;
-                color: $desktopFontColor;
-                font-size: 1.1rem;
-                font-weight: 600;
-                text-shadow: 1px 1px 2px rgb(236, 233, 233);
-                &:hover {
-                    background: none;
-                    color: $desktopFontColor;
-                    font-size: 1.4rem;
-                    transition: all 0.2s ease-in-out;
-                }
-                &:active {
-                    font-size: 1rem;
-                    transition: all 0.1s ease-in-out;
-                }
-            }
-            .nav-menu-dropdown {
-                &:hover .nav-menu-dropdown-container {
-                    display: block;
-                }
-            }
-        }
-    }
+    
+    @import './header';
     .homepagePhoto {
-        margin-top: 0;
+        margin-top: 10vh;
+        @include gridCenter;
         width: 100%;
-        height: 50vw;
         .PhotoFrame {
-            width: 100%;
-            height: 100%;
-            margin-top: 0;
-            border-radius: 0;
+            margin-top: 5vw;
+            width: 70vw;
+            height: 50vh;
+            overflow: hidden;
+            border-radius: 20px;
+            position: relative;
             .photo {
-                width: 100%;
-                height: 100%;
+                background-position: center;
+                background-size: cover;
+                position: absolute;
+                top: 0;
             }
             .frame {
-                top: 15%;
+                position: relative;
+                width: 100%;
+                height: 90%;
+                top: 9%;
+                transform: skewY(-8deg);
+                transform-origin: 13%;
+                overflow: hidden;
+                &-mid {
+                    z-index: 5;
+                    height: 85%;
+                    @include pageShadow(5px);
+                    .photos {
+                        width: 100%;
+                        height: 100%;
+                        animation: photoFix 15s linear infinite;
+                        .photo {
+                            width: 100%;
+                            height: 100%;
+                        }
+                        .photo1 {
+                            background-image: url(../images/pizzaHomepage1.jpg);
+                            animation: photo1 15s ease-in-out infinite;
+                        }
+                        .photo2 {
+                            background-image: url(../images/pizzaHomepage2.jpg);
+                            animation: photo2 15s ease-in-out infinite;
+                        }
+                        .photo3 {
+                            background-image: url(../images/pizzaHomepage3.jpg);
+                            animation: photo3 15s ease-in-out infinite;
+                        }
+                    }
+                }
                 &-back {
+                    z-index: 3;
+                    transform: none;
+                    position: absolute;
                     top: 0;
+                    width: 100%;
+                    height: 50%;
+                    filter: blur(3px);
+                    &-after {
+                        transform: translateY(100%);
+                    }
+                    .photos {
+                        width: 100%;
+                        height: 100%;
+                        animation: photoBackFix 15s linear infinite;
+                        .photo {
+                            width: 100%;
+                            height: 100%;
+                        }
+                        .photo1 {
+                            background-image: linear-gradient(317.45deg, rgba(255, 160, 13, 0.22) -78.63%, rgba(255, 255, 255, 0.2) 106.21%), url(../images/pizzaHomepage1.jpg);
+                            animation: photo1 15s ease-in-out infinite;
+                        }
+                        .photo2 {
+                            background-image: linear-gradient(317.45deg, rgba(255, 160, 13, 0.22) -78.63%, #FFFFFF 106.21%), url(../images/pizzaHomepage2.jpg);
+                            animation: photo2 15s ease-in-out infinite;
+                        }
+                        .photo3 {
+                            background-image: linear-gradient(317.45deg, rgba(255, 160, 13, 0.22) -78.63%, #FFFFFF 106.21%), url(../images/pizzaHomepage3.jpg);
+                            animation: photo3 15s ease-in-out infinite;
+                        }
+                    }
                 }
             }
         }
     }
-}
-
-@import './footer';
+    /*mobile-homeMenu-start*/
+    
+    #homeMenu {
+        z-index: -1;
+        @include gridCenter;
+        row-gap: 5vh;
+        h1 {
+            @include articleFont;
+            text-transform: uppercase;
+            justify-self: left;
+            margin-left: 15vw;
+            margin-bottom: -5vh;
+        }
+        .menu-section {
+            z-index: 1;
+            @include gridCenter;
+            width: 80%;
+            row-gap: 8vh;
+            .scroll {
+                @include gridCenter;
+                row-gap: 2vh;
+                .foodCard {
+                    z-index: 1;
+                    width: 80vw;
+                    @include gridCenter;
+                    position: relative;
+                    grid-template-columns: 3fr 5fr;
+                    img {
+                        filter: brightness(110%);
+                        width: 50vw;
+                        height: 40vw;
+                        border: 1vw solid white;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        @include pageShadow(2px);
+                        position: relative;
+                        left: 15vw;
+                    }
+                    div {
+                        @include gridCenter;
+                        position: relative;
+                        left: -36vw;
+                        overflow: hidden;
+                        width: 50vw;
+                        height: 40vw;
+                        border-radius: 50%;
+                        h2 {
+                            position: absolute;
+                            bottom: 10vw;
+                            padding: 2px 5px 2px 3vw;
+                            border-radius: 0 6px 6px 0;
+                            background-color: rgba(255, 255, 255, 0.9);
+                            @include articleFont;
+                            font-size: 3.5vw;
+                            text-transform: uppercase;
+                            line-height: 12px;
+                            justify-self: left;
+                            margin: 0;
+                        }
+                        h3 {
+                            position: absolute;
+                            bottom: 5vw;
+                            padding: 2px 8vw 2px 5px;
+                            border-radius: 6px 0 0 6px;
+                            background-color: rgba(255, 255, 255, 0.9);
+                            @include articleFont;
+                            font-size: 3.5vw;
+                            text-transform: uppercase;
+                            line-height: 10px;
+                            justify-self: right;
+                            margin: 0;
+                            color: $priceColor;
+                        }
+                        p {
+                            @include articleFont;
+                            font-size: 4vw;
+                            opacity: 0;
+                        }
+                    }
+                    &:hover {
+                        @include gridCenter;
+                    }
+                    &:hover img {
+                        width: 30vw;
+                        height: 40vw;
+                        left: 0;
+                        border: none;
+                        border-radius: 20px 0 0 20px;
+                        transition: all 0.6s ease-in;
+                    }
+                    &:hover div {
+                        box-sizing: border-box;
+                        border-radius: 0 20px 20px 0;
+                        @include pageShadow(2px);
+                        grid-template-rows: 1fr 1fr 3fr;
+                        padding: 5px;
+                        height: 40vw;
+                        width: 50vw;
+                        left: 0vw;
+                        transition: all 0.6s ease-in;
+                        background-color: rgba(255, 255, 255, 0.8);
+                        h2,
+                        h3 {
+                            position: static;
+                            margin: 0 5px;
+                            background-color: 0;
+                            padding: 1px 2px;
+                        }
+                        p {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /*mobile-homeMenu-start*/
+    /*mobile-contact-start*/
+    
+    #contact {
+        z-index: 1;
+        @include gridCenter;
+        width: 100%;
+        row-gap: 5vh;
+        padding-top: 5vh;
+        #map {
+            width: 80%;
+            height: 70vw;
+            h1 {
+                @include otherFont;
+                text-transform: uppercase;
+                font-size: 1rem;
+            }
+            iframe {
+                border-radius: 20px;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    
+    #contact-text {
+        z-index: -1;
+        position: relative;
+        top: 12px;
+        background: rgba(196, 196, 196, 0.2);
+        padding: 3vh 0;
+        width: 100%;
+        height: auto;
+        @include gridCenter;
+        grid-template-columns: 1fr 1.2fr;
+        h2 {
+            z-index: 1;
+            @include otherFont;
+            color: black;
+            text-transform: uppercase;
+            font-size: 4vw;
+            margin-left: 9vw;
+        }
+        p {
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            justify-self: left;
+            a,
+            span {
+                text-align: justify;
+                text-decoration: none;
+                @include otherFont;
+                color: black;
+                font-size: 3vw;
+                line-height: 5vw;
+            }
+            .contact-title {
+                justify-self: right;
+                margin-right: 1vw;
+            }
+        }
+    }
+    
+    @media only screen and (min-width:600px) {
+        .tablet-body {
+            display: block;
+        }
+        .mobile-header {
+            display: none;
+        }
+        header {
+            height: auto;
+            background: none;
+            position: fixed;
+            top: 0;
+            grid-template-columns: 1fr 4fr 2fr;
+            >img {
+                position: relative;
+                width: 10vw;
+                height: auto;
+                background: none;
+                top: 2vw;
+                left: 2vw;
+            }
+            #tel {
+                font-size: 1.5rem;
+                height: auto;
+                padding: 0.5vw 1vw;
+                border-radius: 1vw;
+                left: 15vw;
+                top: 6vw;
+                right: auto;
+                width: auto;
+                background-color: cornsilk;
+            }
+            .nav-menu {
+                background: none;
+                position: relative;
+                top: -10%;
+                align-items: center;
+                overflow: visible;
+                >a,
+                div>a,
+                .home {
+                    background: none;
+                    color: $desktopFontColor;
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                    text-shadow: 1px 1px 2px rgb(236, 233, 233);
+                    &:hover {
+                        background: none;
+                        color: $desktopFontColor;
+                        font-size: 1.4rem;
+                        transition: all 0.2s ease-in-out;
+                    }
+                    &:active {
+                        font-size: 1rem;
+                        transition: all 0.1s ease-in-out;
+                    }
+                }
+                .nav-menu-dropdown {
+                    &:hover .nav-menu-dropdown-container {
+                        display: block;
+                    }
+                }
+            }
+        }
+        .homepagePhoto {
+            margin-top: 0;
+            width: 100%;
+            height: 50vw;
+            .PhotoFrame {
+                width: 100%;
+                height: 100%;
+                margin-top: 0;
+                border-radius: 0;
+                .photo {
+                    width: 100%;
+                    height: 100%;
+                }
+                .frame {
+                    top: 25%;
+                    &-back {
+                        top: 0;
+                    }
+                }
+            }
+        }
+        #homeMenu {
+            width: 100%;
+            row-gap: 1vh;
+            h1 {
+                justify-self: center;
+                margin-bottom: 0;
+                margin-left: 0;
+            }
+            .menu-section {
+                width: 84%;
+                height: 24vw;
+                overflow-x: scroll;
+                overflow-y: hidden;
+                .scroll {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    @include gridCenter;
+                    grid-template-rows: 1fr;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    column-gap: 8vw;
+                    .foodCard {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        background-color: darkkhaki;
+                        grid-template-columns: 1fr;
+                        overflow: hidden;
+                        &:hover {
+                            display: block;
+                        }
+                        &:hover img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                        &:hover div {
+                            display: block;
+                            position: absolute;
+                            background-color: rgba(22, 22, 22, 0.7);
+                            padding: 10px;
+                            height: 100%;
+                            width: 100%;
+                            top: 0;
+                            border-radius: 0;
+                            transition: all 0.5s ease-in-out;
+                            h2,
+                            h3 {
+                                position: static;
+                                padding: 15px 0;
+                                margin: 10px 0;
+                            }
+                        }
+                        img {
+                            position: static;
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 0;
+                            left: 0;
+                            border: 0;
+                        }
+                        div {
+                            box-sizing: border-box;
+                            width: 100%;
+                            top: 70%;
+                            left: 0;
+                            height: 100%;
+                            overflow: visible;
+                            position: absolute;
+                            border-radius: 0;
+                            background: rgba(22, 22, 22, 0.7);
+                            padding: 10px;
+                            h2 {
+                                width: 100%;
+                                position: static;
+                                font-size: 1.5rem;
+                                background: none;
+                                color: $cardBgColor;
+                                padding: 0;
+                                text-align: center;
+                            }
+                            h3 {
+                                width: 100%;
+                                position: static;
+                                font-size: 1.2rem;
+                                padding: 0;
+                                text-align: right;
+                                background: none;
+                                color: $cardBgColor;
+                            }
+                            p {
+                                position: static;
+                                color: $cardBgColor;
+                                top: 0;
+                                opacity: 1;
+                                padding: 1vw;
+                                height: 100%;
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    @import './footer';
