@@ -319,18 +319,6 @@ header div a:hover {
   color: #ffffff;
 }
 
-header .background {
-  position: fixed;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  left: 0;
-  background-image: url(../images/Untitled-1.jpg);
-  bottom: 0;
-  width: 100%;
-  height: 8vh;
-}
-
 header .nav-menu {
   z-index: 20;
   display: -ms-grid;
@@ -342,10 +330,11 @@ header .nav-menu {
   -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   bottom: 0;
-  height: 8vh;
+  height: 7vh;
   text-align: center;
   width: 100%;
   border-radius: 20px 20px 0 0;
+  background-color: rgba(255, 255, 255, 0.9);
   overflow: hidden;
   position: fixed;
   -webkit-box-align: end;
@@ -366,7 +355,7 @@ header .nav-menu .home {
 
 header .nav-menu .home .homeIcon {
   width: 40%;
-  height: 5vh;
+  height: 4vh;
   background-image: url(../images/Iconhome.png);
   background-repeat: no-repeat;
   background-size: 200%;
@@ -407,7 +396,7 @@ header .nav-menu div > a {
 header .nav-menu > a div,
 header .nav-menu div > a div {
   width: 40%;
-  height: 5vh;
+  height: 4vh;
   background-repeat: no-repeat;
   background-size: 200%;
   background-position-x: 0;
@@ -592,6 +581,7 @@ header .nav-menu-dropdown .nav-menu-dropdown-container {
           align-items: center;
   justify-items: center;
   row-gap: 5vh;
+  overflow: hidden;
 }
 
 #homeMenu h1 {
@@ -885,13 +875,15 @@ header .nav-menu-dropdown .nav-menu-dropdown-container {
   }
   #homeMenu .menu-section {
     width: 84%;
-    height: 24vw;
+    height: 23vw;
     overflow-x: scroll;
     overflow-y: hidden;
   }
   #homeMenu .menu-section .scroll {
     position: relative;
-    width: auto;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
     height: 100%;
     display: -ms-grid;
     display: grid;
@@ -908,7 +900,7 @@ header .nav-menu-dropdown .nav-menu-dropdown-container {
   }
   #homeMenu .menu-section .scroll .foodCard {
     display: block;
-    width: 25vw;
+    width: 23vw;
     height: 100%;
     background-color: darkkhaki;
     -ms-grid-columns: 1fr;
