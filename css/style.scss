@@ -119,110 +119,180 @@
             text-transform: uppercase;
             justify-self: left;
             margin-left: 15vw;
-            margin-bottom: -5vh;
+            margin-bottom: -4vh;
         }
         .menu-section {
-            z-index: 1;
-            @include gridCenter;
-            width: 80%;
-            row-gap: 8vh;
+            width: 90%;
             .scroll {
+                position: relative;
+                width: 100%;
+                height: 100%;
                 @include gridCenter;
+                justify-content: space-evenly;
+                grid-template-columns: repeat(auto-fit, 35vw);
+                column-gap: 2vw;
                 row-gap: 2vh;
                 .foodCard {
-                    z-index: 1;
-                    width: 80vw;
-                    @include gridCenter;
                     position: relative;
-                    grid-template-columns: 3fr 5fr;
+                    display: block;
+                    width: 100%;
+                    height: 15vh;
+                    overflow: hidden;
+                    border-radius: 20px;
+                    &:hover div {
+                        top: 0;
+                        transition: all 0.5s ease-in-out;
+                    }
                     img {
-                        filter: brightness(110%);
-                        width: 50vw;
-                        height: 40vw;
-                        border: 1vw solid white;
-                        border-radius: 50%;
+                        position: static;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 0;
+                        left: 0;
+                        border: 0;
                         object-fit: cover;
-                        @include pageShadow(2px);
-                        position: relative;
-                        left: 15vw;
                     }
                     div {
-                        @include gridCenter;
-                        position: relative;
-                        left: -36vw;
-                        overflow: hidden;
-                        width: 50vw;
-                        height: 40vw;
-                        border-radius: 50%;
-                        h2 {
-                            position: absolute;
-                            bottom: 10vw;
-                            padding: 2px 5px 2px 3vw;
-                            border-radius: 0 6px 6px 0;
-                            background-color: rgba(255, 255, 255, 0.9);
-                            @include articleFont;
-                            font-size: 3.5vw;
-                            text-transform: uppercase;
-                            line-height: 12px;
-                            justify-self: left;
-                            margin: 0;
-                        }
-                        h3 {
-                            position: absolute;
-                            bottom: 5vw;
-                            padding: 2px 8vw 2px 5px;
-                            border-radius: 6px 0 0 6px;
-                            background-color: rgba(255, 255, 255, 0.9);
-                            @include articleFont;
-                            font-size: 3.5vw;
-                            text-transform: uppercase;
-                            line-height: 10px;
-                            justify-self: right;
-                            margin: 0;
-                            color: $priceColor;
-                        }
-                        p {
-                            @include articleFont;
-                            font-size: 4vw;
-                            opacity: 0;
-                        }
-                    }
-                    &:hover {
-                        @include gridCenter;
-                    }
-                    &:hover img {
-                        width: 30vw;
-                        height: 40vw;
-                        left: 0;
-                        border: none;
-                        border-radius: 20px 0 0 20px;
-                        transition: all 0.6s ease-in;
-                    }
-                    &:hover div {
                         box-sizing: border-box;
-                        border-radius: 0 20px 20px 0;
-                        @include pageShadow(2px);
-                        grid-template-rows: 1fr 1fr 3fr;
-                        padding: 5px;
-                        height: 40vw;
-                        width: 50vw;
-                        left: 0vw;
-                        transition: all 0.6s ease-in;
-                        background-color: rgba(255, 255, 255, 0.8);
-                        h2,
-                        h3 {
+                        width: 100%;
+                        top: 80%;
+                        left: 0;
+                        height: 100%;
+                        overflow: visible;
+                        position: absolute;
+                        border-radius: 0;
+                        background: rgba(22, 22, 22, 0.7);
+                        padding: 5px 10px;
+                        h2 {
+                            width: 100%;
                             position: static;
-                            margin: 0 5px;
-                            background-color: 0;
-                            padding: 1px 2px;
+                            font-size: 0.8rem;
+                            text-transform: uppercase;
+                            color: $cardBgColor;
+                            padding: 0;
+                            text-align: center;
+                        }
+                        h3 {
+                            width: 100%;
+                            position: static;
+                            font-size: 0.7rem;
+                            text-transform: uppercase;
+                            padding-top: 1vh;
+                            text-align: right;
+                            color: $cardBgColor;
                         }
                         p {
-                            opacity: 1;
+                            position: static;
+                            color: $cardBgColor;
+                            font-size: 0.6rem;
+                            padding-top: 1.5vh;
                         }
                     }
                 }
             }
         }
+        // .menu-section {
+        //     z-index: 1;
+        //     @include gridCenter;
+        //     width: 80%;
+        //     row-gap: 8vh;
+        //     .scroll {
+        //         @include gridCenter;
+        //         row-gap: 2vh;
+        //         .foodCard {
+        //             z-index: 1;
+        //             width: 80vw;
+        //             @include gridCenter;
+        //             position: relative;
+        //             grid-template-columns: 3fr 5fr;
+        //             img {
+        //                 filter: brightness(110%);
+        //                 width: 50vw;
+        //                 height: 40vw;
+        //                 border: 1vw solid white;
+        //                 border-radius: 50%;
+        //                 object-fit: cover;
+        //                 @include pageShadow(2px);
+        //                 position: relative;
+        //                 left: 15vw;
+        //             }
+        //             div {
+        //                 @include gridCenter;
+        //                 position: relative;
+        //                 left: -36vw;
+        //                 overflow: hidden;
+        //                 width: 50vw;
+        //                 height: 40vw;
+        //                 border-radius: 50%;
+        //                 h2 {
+        //                     position: absolute;
+        //                     bottom: 10vw;
+        //                     padding: 2px 5px 2px 3vw;
+        //                     border-radius: 0 6px 6px 0;
+        //                     background-color: rgba(255, 255, 255, 0.9);
+        //                     @include articleFont;
+        //                     font-size: 3.5vw;
+        //                     text-transform: uppercase;
+        //                     line-height: 12px;
+        //                     justify-self: left;
+        //                     margin: 0;
+        //                 }
+        //                 h3 {
+        //                     position: absolute;
+        //                     bottom: 5vw;
+        //                     padding: 2px 8vw 2px 5px;
+        //                     border-radius: 6px 0 0 6px;
+        //                     background-color: rgba(255, 255, 255, 0.9);
+        //                     @include articleFont;
+        //                     font-size: 3.5vw;
+        //                     text-transform: uppercase;
+        //                     line-height: 10px;
+        //                     justify-self: right;
+        //                     margin: 0;
+        //                     color: $priceColor;
+        //                 }
+        //                 p {
+        //                     @include articleFont;
+        //                     font-size: 4vw;
+        //                     opacity: 0;
+        //                 }
+        //             }
+        //             &:hover {
+        //                 @include gridCenter;
+        //             }
+        //             &:hover img {
+        //                 width: 30vw;
+        //                 height: 40vw;
+        //                 left: 0;
+        //                 border: none;
+        //                 border-radius: 20px 0 0 20px;
+        //                 transition: all 0.6s ease-in;
+        //             }
+        //             &:hover div {
+        //                 box-sizing: border-box;
+        //                 border-radius: 0 20px 20px 0;
+        //                 @include pageShadow(2px);
+        //                 grid-template-rows: 1fr 1fr 3fr;
+        //                 padding: 5px;
+        //                 height: 40vw;
+        //                 width: 50vw;
+        //                 left: 0vw;
+        //                 transition: all 0.6s ease-in;
+        //                 background-color: rgba(255, 255, 255, 0.8);
+        //                 h2,
+        //                 h3 {
+        //                     position: static;
+        //                     margin: 0 5px;
+        //                     background-color: 0;
+        //                     padding: 1px 2px;
+        //                 }
+        //                 p {
+        //                     opacity: 1;
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
     }
     /*mobile-homeMenu-start*/
     /*mobile-contact-start*/
@@ -389,43 +459,19 @@
                 overflow-y: hidden;
                 .scroll {
                     position: relative;
-                    width: 100%;
+                    width: auto;
                     height: 100%;
                     @include gridCenter;
                     grid-template-rows: 1fr;
-                    grid-template-columns: 1fr 1fr 1fr;
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
                     column-gap: 8vw;
                     .foodCard {
                         display: block;
-                        width: 100%;
+                        width: 25vw;
                         height: 100%;
                         background-color: darkkhaki;
                         grid-template-columns: 1fr;
                         overflow: hidden;
-                        &:hover {
-                            display: block;
-                        }
-                        &:hover img {
-                            width: 100%;
-                            height: 100%;
-                        }
-                        &:hover div {
-                            display: block;
-                            position: absolute;
-                            background-color: rgba(22, 22, 22, 0.7);
-                            padding: 10px;
-                            height: 100%;
-                            width: 100%;
-                            top: 0;
-                            border-radius: 0;
-                            transition: all 0.5s ease-in-out;
-                            h2,
-                            h3 {
-                                position: static;
-                                padding: 15px 0;
-                                margin: 10px 0;
-                            }
-                        }
                         img {
                             position: static;
                             width: 100%;
@@ -435,42 +481,17 @@
                             border: 0;
                         }
                         div {
-                            box-sizing: border-box;
-                            width: 100%;
-                            top: 70%;
-                            left: 0;
-                            height: 100%;
-                            overflow: visible;
-                            position: absolute;
-                            border-radius: 0;
-                            background: rgba(22, 22, 22, 0.7);
-                            padding: 10px;
+                            top: 80%;
+                            padding: 15px;
                             h2 {
-                                width: 100%;
-                                position: static;
-                                font-size: 1.5rem;
-                                background: none;
-                                color: $cardBgColor;
-                                padding: 0;
-                                text-align: center;
+                                font-size: 1.2rem;
                             }
                             h3 {
-                                width: 100%;
-                                position: static;
-                                font-size: 1.2rem;
-                                padding: 0;
-                                text-align: right;
-                                background: none;
-                                color: $cardBgColor;
+                                font-size: 1rem;
+                                padding-top: 1.2vw;
                             }
                             p {
-                                position: static;
-                                color: $cardBgColor;
-                                top: 0;
-                                opacity: 1;
-                                padding: 1vw;
-                                height: 100%;
-                                font-size: 1rem;
+                                font-size: 0.8rem;
                             }
                         }
                     }

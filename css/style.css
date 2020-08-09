@@ -319,6 +319,18 @@ header div a:hover {
   color: #ffffff;
 }
 
+header .background {
+  position: fixed;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  left: 0;
+  background-image: url(../images/Untitled-1.jpg);
+  bottom: 0;
+  width: 100%;
+  height: 8vh;
+}
+
 header .nav-menu {
   z-index: 20;
   display: -ms-grid;
@@ -327,19 +339,18 @@ header .nav-menu {
       -ms-flex-align: center;
           align-items: center;
   justify-items: center;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
   -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  position: fixed;
   bottom: 0;
   height: 8vh;
-  background-color: #ffffff;
   text-align: center;
   width: 100%;
   border-radius: 20px 20px 0 0;
   overflow: hidden;
+  position: fixed;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 header .nav-menu .home {
@@ -589,158 +600,98 @@ header .nav-menu-dropdown .nav-menu-dropdown-container {
   -ms-grid-column-align: left;
       justify-self: left;
   margin-left: 15vw;
-  margin-bottom: -5vh;
+  margin-bottom: -4vh;
 }
 
 #homeMenu .menu-section {
-  z-index: 1;
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  justify-items: center;
-  width: 80%;
-  row-gap: 8vh;
+  width: 90%;
 }
 
 #homeMenu .menu-section .scroll {
+  position: relative;
+  width: 100%;
+  height: 100%;
   display: -ms-grid;
   display: grid;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   justify-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-grid-columns: (35vw)[auto-fit];
+      grid-template-columns: repeat(auto-fit, 35vw);
+  -webkit-column-gap: 2vw;
+          column-gap: 2vw;
   row-gap: 2vh;
 }
 
 #homeMenu .menu-section .scroll .foodCard {
-  z-index: 1;
-  width: 80vw;
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  justify-items: center;
   position: relative;
-  -ms-grid-columns: 3fr 5fr;
-      grid-template-columns: 3fr 5fr;
-}
-
-#homeMenu .menu-section .scroll .foodCard img {
-  -webkit-filter: brightness(110%);
-          filter: brightness(110%);
-  width: 50vw;
-  height: 40vw;
-  border: 1vw solid white;
-  border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -webkit-box-shadow: 1px 1px 2px 0 #383838;
-          box-shadow: 1px 1px 2px 0 #383838;
-  position: relative;
-  left: 15vw;
-}
-
-#homeMenu .menu-section .scroll .foodCard div {
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  justify-items: center;
-  position: relative;
-  left: -36vw;
+  display: block;
+  width: 100%;
+  height: 15vh;
   overflow: hidden;
-  width: 50vw;
-  height: 40vw;
-  border-radius: 50%;
-}
-
-#homeMenu .menu-section .scroll .foodCard div h2 {
-  position: absolute;
-  bottom: 10vw;
-  padding: 2px 5px 2px 3vw;
-  border-radius: 0 6px 6px 0;
-  background-color: rgba(255, 255, 255, 0.9);
-  font-family: 'Rokkitt', serif;
-  font-size: 3.5vw;
-  text-transform: uppercase;
-  line-height: 12px;
-  -ms-grid-column-align: left;
-      justify-self: left;
-  margin: 0;
-}
-
-#homeMenu .menu-section .scroll .foodCard div h3 {
-  position: absolute;
-  bottom: 5vw;
-  padding: 2px 8vw 2px 5px;
-  border-radius: 6px 0 0 6px;
-  background-color: rgba(255, 255, 255, 0.9);
-  font-family: 'Rokkitt', serif;
-  font-size: 3.5vw;
-  text-transform: uppercase;
-  line-height: 10px;
-  -ms-grid-column-align: right;
-      justify-self: right;
-  margin: 0;
-  color: red;
-}
-
-#homeMenu .menu-section .scroll .foodCard div p {
-  font-family: 'Rokkitt', serif;
-  font-size: 4vw;
-  opacity: 0;
-}
-
-#homeMenu .menu-section .scroll .foodCard:hover {
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  justify-items: center;
-}
-
-#homeMenu .menu-section .scroll .foodCard:hover img {
-  width: 30vw;
-  height: 40vw;
-  left: 0;
-  border: none;
-  border-radius: 20px 0 0 20px;
-  -webkit-transition: all 0.6s ease-in;
-  transition: all 0.6s ease-in;
+  border-radius: 20px;
 }
 
 #homeMenu .menu-section .scroll .foodCard:hover div {
+  top: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+#homeMenu .menu-section .scroll .foodCard img {
+  position: static;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  left: 0;
+  border: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#homeMenu .menu-section .scroll .foodCard div {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border-radius: 0 20px 20px 0;
-  -webkit-box-shadow: 1px 1px 2px 0 #383838;
-          box-shadow: 1px 1px 2px 0 #383838;
-  -ms-grid-rows: 1fr 1fr 3fr;
-      grid-template-rows: 1fr 1fr 3fr;
-  padding: 5px;
-  height: 40vw;
-  width: 50vw;
-  left: 0vw;
-  -webkit-transition: all 0.6s ease-in;
-  transition: all 0.6s ease-in;
-  background-color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  top: 80%;
+  left: 0;
+  height: 100%;
+  overflow: visible;
+  position: absolute;
+  border-radius: 0;
+  background: rgba(22, 22, 22, 0.7);
+  padding: 5px 10px;
 }
 
-#homeMenu .menu-section .scroll .foodCard:hover div h2,
-#homeMenu .menu-section .scroll .foodCard:hover div h3 {
+#homeMenu .menu-section .scroll .foodCard div h2 {
+  width: 100%;
   position: static;
-  margin: 0 5px;
-  background-color: 0;
-  padding: 1px 2px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 0;
+  text-align: center;
 }
 
-#homeMenu .menu-section .scroll .foodCard:hover div p {
-  opacity: 1;
+#homeMenu .menu-section .scroll .foodCard div h3 {
+  width: 100%;
+  position: static;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  padding-top: 1vh;
+  text-align: right;
+  color: #ffffff;
+}
+
+#homeMenu .menu-section .scroll .foodCard div p {
+  position: static;
+  color: #ffffff;
+  font-size: 0.6rem;
+  padding-top: 1.5vh;
 }
 
 /*mobile-homeMenu-start*/
@@ -940,7 +891,7 @@ header .nav-menu-dropdown .nav-menu-dropdown-container {
   }
   #homeMenu .menu-section .scroll {
     position: relative;
-    width: 100%;
+    width: auto;
     height: 100%;
     display: -ms-grid;
     display: grid;
@@ -950,44 +901,19 @@ header .nav-menu-dropdown .nav-menu-dropdown-container {
     justify-items: center;
     -ms-grid-rows: 1fr;
         grid-template-rows: 1fr;
-    -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     -webkit-column-gap: 8vw;
             column-gap: 8vw;
   }
   #homeMenu .menu-section .scroll .foodCard {
     display: block;
-    width: 100%;
+    width: 25vw;
     height: 100%;
     background-color: darkkhaki;
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     overflow: hidden;
-  }
-  #homeMenu .menu-section .scroll .foodCard:hover {
-    display: block;
-  }
-  #homeMenu .menu-section .scroll .foodCard:hover img {
-    width: 100%;
-    height: 100%;
-  }
-  #homeMenu .menu-section .scroll .foodCard:hover div {
-    display: block;
-    position: absolute;
-    background-color: rgba(22, 22, 22, 0.7);
-    padding: 10px;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    border-radius: 0;
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-  }
-  #homeMenu .menu-section .scroll .foodCard:hover div h2,
-  #homeMenu .menu-section .scroll .foodCard:hover div h3 {
-    position: static;
-    padding: 15px 0;
-    margin: 10px 0;
   }
   #homeMenu .menu-section .scroll .foodCard img {
     position: static;
@@ -998,44 +924,18 @@ header .nav-menu-dropdown .nav-menu-dropdown-container {
     border: 0;
   }
   #homeMenu .menu-section .scroll .foodCard div {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    width: 100%;
-    top: 70%;
-    left: 0;
-    height: 100%;
-    overflow: visible;
-    position: absolute;
-    border-radius: 0;
-    background: rgba(22, 22, 22, 0.7);
-    padding: 10px;
+    top: 80%;
+    padding: 15px;
   }
   #homeMenu .menu-section .scroll .foodCard div h2 {
-    width: 100%;
-    position: static;
-    font-size: 1.5rem;
-    background: none;
-    color: #ffffff;
-    padding: 0;
-    text-align: center;
+    font-size: 1.2rem;
   }
   #homeMenu .menu-section .scroll .foodCard div h3 {
-    width: 100%;
-    position: static;
-    font-size: 1.2rem;
-    padding: 0;
-    text-align: right;
-    background: none;
-    color: #ffffff;
+    font-size: 1rem;
+    padding-top: 1.2vw;
   }
   #homeMenu .menu-section .scroll .foodCard div p {
-    position: static;
-    color: #ffffff;
-    top: 0;
-    opacity: 1;
-    padding: 1vw;
-    height: 100%;
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 }
 
