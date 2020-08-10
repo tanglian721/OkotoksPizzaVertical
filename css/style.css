@@ -675,6 +675,7 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
   font-size: 3rem;
   line-height: 5rem;
   margin-bottom: 6vh;
+  text-transform: uppercase;
 }
 
 .intro p {
@@ -693,7 +694,6 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
       -ms-flex-align: center;
           align-items: center;
   justify-items: center;
-  row-gap: 5vh;
   margin-top: 25vw;
   position: relative;
   width: 100%;
@@ -757,6 +757,7 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
 }
 
 #homeMenu .menu-section .foodCard div {
+  position: absolute;
   z-index: 3;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -765,7 +766,6 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
   left: 0;
   height: 100%;
   overflow: visible;
-  position: absolute;
   border-radius: 0;
   background: -webkit-gradient(linear, left bottom, left top, color-stop(1.19%, rgba(0, 0, 0, 0.75)), color-stop(48.02%, rgba(0, 0, 0, 0.68)), color-stop(68.61%, rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.01)));
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 1.19%, rgba(0, 0, 0, 0.68) 48.02%, rgba(0, 0, 0, 0.56) 68.61%, rgba(0, 0, 0, 0.01) 100%);
@@ -879,10 +879,13 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
   .mobile-header {
     display: none;
   }
+  .mobile-body {
+    display: none;
+  }
   .homepagePhoto {
-    margin-top: 0;
+    margin: 0;
     width: 100%;
-    height: 50vw;
+    height: 60vw;
   }
   .homepagePhoto .PhotoFrame {
     width: 100%;
@@ -900,84 +903,117 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
   .homepagePhoto .PhotoFrame .frame-back {
     top: 0;
   }
-  #homeMenu {
-    width: 80%;
-    margin-left: 10%;
-    row-gap: 1vh;
-  }
-  #homeMenu h1 {
-    -ms-grid-column-align: center;
-        justify-self: center;
-    margin-bottom: 0;
-    margin-left: 0;
-  }
-  #homeMenu .menu-section {
-    width: 100%;
-    height: 20vw;
-    overflow: hidden;
-    overflow-x: scroll;
-    overflow-y: hidden;
-  }
-  #homeMenu .menu-section .scroll {
-    position: relative;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    height: 100%;
+  .intro {
     display: -ms-grid;
     display: grid;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
     justify-items: center;
+    -ms-grid-columns: 1fr 1.2fr;
+        grid-template-columns: 1fr 1.2fr;
+    margin: 0;
+    padding: 0;
+  }
+  .intro h1 {
+    margin-bottom: 0;
+  }
+  .intro p {
+    padding-right: 15vw;
+  }
+  #homeMenu {
+    width: 100%;
+    height: 35vw;
+    margin-top: 10vw;
     -ms-grid-rows: 1fr;
         grid-template-rows: 1fr;
-    -ms-grid-columns: 1fr 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    -webkit-column-gap: 8vw;
-            column-gap: 8vw;
+    -ms-grid-columns: 1fr 1.2fr;
+        grid-template-columns: 1fr 1.2fr;
+    background-color: rgba(0, 0, 0, 0.5);
   }
-  #homeMenu .menu-section .scroll .foodCard {
-    display: block;
-    width: 20vw;
+  #homeMenu .menu-section {
+    width: 70%;
+    height: 80%;
+    row-gap: 1vw;
+    -webkit-column-gap: 1vw;
+            column-gap: 1vw;
+    -ms-grid-column-align: right;
+        justify-self: right;
+  }
+  #homeMenu .menu-section::after {
+    content: none;
+  }
+  #homeMenu .menu-section .rightCard {
+    -webkit-transform: none;
+            transform: none;
+  }
+  #homeMenu .menu-section .foodCard {
+    width: 100%;
     height: 100%;
+    display: block;
     background-color: darkkhaki;
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     overflow: hidden;
   }
-  #homeMenu .menu-section .scroll .foodCard img {
+  #homeMenu .menu-section .foodCard img {
     position: static;
     width: 100%;
-    height: 100%;
-    border-radius: 0;
     left: 0;
     border: 0;
   }
-  #homeMenu .menu-section .scroll .foodCard div {
+  #homeMenu .menu-section .foodCard div {
     top: 78%;
     padding: 15px;
   }
-  #homeMenu .menu-section .scroll .foodCard div h2 {
+  #homeMenu .menu-section .foodCard div h2 {
     font-size: 1rem;
   }
-  #homeMenu .menu-section .scroll .foodCard div h3 {
+  #homeMenu .menu-section .foodCard div h3 {
     font-size: 1rem;
     margin-top: 2vw;
   }
-  #homeMenu .menu-section .scroll .foodCard div p {
+  #homeMenu .menu-section .foodCard div p {
     font-size: 0.8rem;
   }
-  #contact #map {
-    height: 40vw;
+  #homeMenu P {
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 3.5rem;
+    line-height: 10rem;
+    letter-spacing: 3px;
   }
-  #contact #map h1 {
-    font-size: 1.5rem;
+  #contact {
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    justify-items: center;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    width: 80%;
+    height: 40vw;
+    margin-left: 10%;
+  }
+  #contact #map {
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    justify-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  #contact #map iframe {
+    width: 25vw;
+    height: 25vw;
+    border-radius: 50%;
   }
   #contact #contact-text {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    margin-top: 4vh;
     padding: 4vh 5%;
     border-radius: 20px 0;
     width: 100%;
@@ -1070,11 +1106,16 @@ footer #footer-bottom {
 }
 
 @media only screen and (min-width: 600px) {
-  footer #footer-top {
-    width: 100%;
+  footer #footer-top img {
+    width: 8%;
+    padding: 2vw;
   }
   footer #footer-top div {
-    width: 50%;
+    width: 100%;
+  }
+  footer #footer-top div p,
+  footer #footer-top div a {
+    display: inline;
   }
 }
 /*# sourceMappingURL=style.css.map */

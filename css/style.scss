@@ -1,490 +1,456 @@
-    @import './variable';
-    @import './mixin';
-    @import './animation';
-    body {
-        @include bodyDefault;
-        // background: linear-gradient(317.45deg, rgba(255, 160, 13, 0.52) -78.63%, #FFFFFF 106.21%);
-        min-height: 100vh;
+@import './variable';
+@import './mixin';
+@import './animation';
+body {
+    @include bodyDefault;
+    // background: linear-gradient(317.45deg, rgba(255, 160, 13, 0.52) -78.63%, #FFFFFF 106.21%);
+    min-height: 100vh;
+    position: relative;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.splitter-blank {
+    height: 5vh;
+}
+
+.tablet-body {
+    display: none;
+}
+
+@import './header';
+.homepagePhoto {
+    box-sizing: border-box;
+    @include gridCenter;
+    position: relative;
+    top: -15vw;
+    width: 100%;
+    height: 70vh;
+    .PhotoFrame {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
         position: relative;
+        .photo {
+            background-position: center;
+            background-size: cover;
+            position: absolute;
+            top: 0;
+        }
+        .frame {
+            position: relative;
+            width: 100%;
+            height: 90%;
+            top: 9%;
+            transform: skewY(-8deg);
+            transform-origin: 13%;
+            overflow: hidden;
+            &-mid {
+                z-index: 5;
+                height: 85%;
+                @include pageShadow(5px);
+                .photos {
+                    width: 100%;
+                    height: 100%;
+                    animation: photoFix 15s linear infinite;
+                    .photo {
+                        width: 100%;
+                        height: 100%;
+                    }
+                    .photo1 {
+                        background-image: url(../images/pizzaHomepage1.jpg);
+                        animation: photo1 15s ease-in-out infinite;
+                    }
+                    .photo2 {
+                        background-image: url(../images/pizzaHomepage2.jpg);
+                        animation: photo2 15s ease-in-out infinite;
+                    }
+                    .photo3 {
+                        background-image: url(../images/pizzaHomepage3.jpg);
+                        animation: photo3 15s ease-in-out infinite;
+                    }
+                }
+            }
+            &-back {
+                z-index: 3;
+                transform: none;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 50%;
+                filter: blur(3px);
+                &-after {
+                    transform: translateY(100%);
+                }
+                .photos {
+                    width: 100%;
+                    height: 100%;
+                    animation: photoBackFix 15s linear infinite;
+                    .photo {
+                        width: 100%;
+                        height: 100%;
+                    }
+                    .photo1 {
+                        background-image: linear-gradient(317.45deg, rgba(255, 160, 13, 0.22) -78.63%, rgba(255, 255, 255, 0.2) 106.21%), url(../images/pizzaHomepage1.jpg);
+                        animation: photo1 15s ease-in-out infinite;
+                    }
+                    .photo2 {
+                        background-image: linear-gradient(317.45deg, rgba(255, 160, 13, 0.22) -78.63%, #FFFFFF 106.21%), url(../images/pizzaHomepage2.jpg);
+                        animation: photo2 15s ease-in-out infinite;
+                    }
+                    .photo3 {
+                        background-image: linear-gradient(317.45deg, rgba(255, 160, 13, 0.22) -78.63%, #FFFFFF 106.21%), url(../images/pizzaHomepage3.jpg);
+                        animation: photo3 15s ease-in-out infinite;
+                    }
+                }
+            }
+        }
     }
-    
-    * {
-        margin: 0;
-        padding: 0;
+}
+
+
+/*mobile-homeMenu-start*/
+
+.intro {
+    // background-color: #242424;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: -2vh;
+    padding: 0 15vw;
+    margin-bottom: 20vh;
+    h1 {
+        // color: white;
+        font-size: 3rem;
+        line-height: 5rem;
+        margin-bottom: 6vh;
+        text-transform: uppercase;
     }
-    
-    .splitter-blank {
-        height: 5vh;
+    p {
+        // color: white;
+        font-size: 1rem;
+        line-height: 2rem;
+        letter-spacing: 1px;
     }
-    
+}
+
+#homeMenu {
+    box-sizing: border-box;
+    z-index: -1;
+    @include gridCenter;
+    margin-top: 25vw;
+    position: relative;
+    width: 100%;
+    h1 {
+        background-color: rgba(0, 0, 0, 0.9);
+        color: white;
+        position: absolute;
+        @include articleFont;
+        text-transform: uppercase;
+        font-size: 2rem;
+        width: 50vw;
+        height: 25vw;
+        padding-left: 10vw;
+        line-height: 25vw;
+        top: -25vw;
+        left: 0;
+    }
+    .menu-section {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        @include gridCenter;
+        grid-template-columns: 1fr 1fr;
+        .foodCard {
+            box-sizing: border-box;
+            position: relative;
+            display: block;
+            width: 50vw;
+            height: 50vw;
+            overflow: hidden;
+            &:hover div {
+                top: 0;
+                transition: all 0.5s ease-in-out;
+            }
+            img {
+                z-index: 1;
+                position: relative;
+                width: 100%;
+                height: 100%;
+                border-radius: 0;
+                left: 0;
+                border: 0;
+                object-fit: cover;
+            }
+            div {
+                position: absolute;
+                z-index: 3;
+                box-sizing: border-box;
+                width: 100%;
+                top: 85%;
+                left: 0;
+                height: 100%;
+                overflow: visible;
+                border-radius: 0;
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 1.19%, rgba(0, 0, 0, 0.68) 48.02%, rgba(0, 0, 0, 0.56) 68.61%, rgba(0, 0, 0, 0.01) 100%);
+                padding: 5px 10px;
+                h2 {
+                    width: 100%;
+                    position: static;
+                    font-size: 1rem;
+                    text-transform: uppercase;
+                    color: $cardBgColor;
+                    padding: 0;
+                    text-align: center;
+                }
+                h3 {
+                    width: 100%;
+                    position: static;
+                    font-size: 0.7rem;
+                    text-transform: uppercase;
+                    padding-top: 1vh;
+                    text-align: right;
+                    color: $cardBgColor;
+                }
+                p {
+                    position: static;
+                    color: $cardBgColor;
+                    font-size: 0.6rem;
+                    padding-top: 1.5vh;
+                }
+            }
+        }
+        .rightCard {
+            transform: translateY(-50%);
+        }
+        &::after {
+            content: 'recommends';
+            @include articleFont;
+            text-transform: uppercase;
+            color: $cardBgColor;
+            font-size: 1.5rem;
+            position: absolute;
+            line-height: 25vw;
+            top: 75%;
+            right: 0;
+            width: 50vw;
+            height: 25vw;
+            background-color: black;
+        }
+    }
+}
+
+
+/*mobile-homeMenu-start*/
+
+
+/*mobile-contact-start*/
+
+#contact {
+    box-sizing: border-box;
+    z-index: 1;
+    width: 100%;
+    #contact-text {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 10vw 10vw 10vw;
+        z-index: -1;
+        background: $cardBgColor;
+        h2,
+        p,
+        a {
+            text-decoration: none;
+            color: $desktopFontColor;
+            display: block;
+        }
+        h2 {
+            text-transform: uppercase;
+            font-size: 1rem;
+            line-height: 2rem;
+            font-weight: lighter;
+            letter-spacing: 1.5px;
+            margin-top: 2rem;
+        }
+        p,
+        a {
+            font-size: 0.8rem;
+            letter-spacing: 1.2px;
+        }
+    }
+    #map {
+        width: 100%;
+        height: 70vw;
+        iframe {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+@media only screen and (min-width:600px) {
     .tablet-body {
+        display: block;
+    }
+    .mobile-header {
         display: none;
     }
-    
-    @import './header';
+    .mobile-body {
+        display: none;
+    }
     .homepagePhoto {
-        box-sizing: border-box;
-        @include gridCenter;
-        position: relative;
-        top: -15vw;
+        margin: 0;
         width: 100%;
-        height: 70vh;
+        height: 60vw;
         .PhotoFrame {
             width: 100%;
             height: 100%;
-            overflow: hidden;
-            position: relative;
+            margin-top: 0;
+            border-radius: 0;
             .photo {
-                background-position: center;
-                background-size: cover;
-                position: absolute;
-                top: 0;
+                width: 100%;
+                height: 100%;
             }
             .frame {
-                position: relative;
-                width: 100%;
-                height: 90%;
-                top: 9%;
-                transform: skewY(-8deg);
-                transform-origin: 13%;
-                overflow: hidden;
-                &-mid {
-                    z-index: 5;
-                    height: 85%;
-                    @include pageShadow(5px);
-                    .photos {
-                        width: 100%;
-                        height: 100%;
-                        animation: photoFix 15s linear infinite;
-                        .photo {
-                            width: 100%;
-                            height: 100%;
-                        }
-                        .photo1 {
-                            background-image: url(../images/pizzaHomepage1.jpg);
-                            animation: photo1 15s ease-in-out infinite;
-                        }
-                        .photo2 {
-                            background-image: url(../images/pizzaHomepage2.jpg);
-                            animation: photo2 15s ease-in-out infinite;
-                        }
-                        .photo3 {
-                            background-image: url(../images/pizzaHomepage3.jpg);
-                            animation: photo3 15s ease-in-out infinite;
-                        }
-                    }
-                }
+                top: 25%;
                 &-back {
-                    z-index: 3;
-                    transform: none;
-                    position: absolute;
                     top: 0;
-                    width: 100%;
-                    height: 50%;
-                    filter: blur(3px);
-                    &-after {
-                        transform: translateY(100%);
-                    }
-                    .photos {
-                        width: 100%;
-                        height: 100%;
-                        animation: photoBackFix 15s linear infinite;
-                        .photo {
-                            width: 100%;
-                            height: 100%;
-                        }
-                        .photo1 {
-                            background-image: linear-gradient(317.45deg, rgba(255, 160, 13, 0.22) -78.63%, rgba(255, 255, 255, 0.2) 106.21%), url(../images/pizzaHomepage1.jpg);
-                            animation: photo1 15s ease-in-out infinite;
-                        }
-                        .photo2 {
-                            background-image: linear-gradient(317.45deg, rgba(255, 160, 13, 0.22) -78.63%, #FFFFFF 106.21%), url(../images/pizzaHomepage2.jpg);
-                            animation: photo2 15s ease-in-out infinite;
-                        }
-                        .photo3 {
-                            background-image: linear-gradient(317.45deg, rgba(255, 160, 13, 0.22) -78.63%, #FFFFFF 106.21%), url(../images/pizzaHomepage3.jpg);
-                            animation: photo3 15s ease-in-out infinite;
-                        }
-                    }
                 }
             }
         }
     }
-    /*mobile-homeMenu-start*/
-    
     .intro {
-        // background-color: #242424;
-        box-sizing: border-box;
-        width: 100%;
-        margin-top: -2vh;
-        padding: 0 15vw;
-        margin-bottom: 20vh;
+        @include gridCenter;
+        grid-template-columns: 1fr 1.2fr;
+        margin: 0;
+        padding: 0;
         h1 {
-            // color: white;
-            font-size: 3rem;
-            line-height: 5rem;
-            margin-bottom: 6vh;
+            margin-bottom: 0;
         }
         p {
-            // color: white;
-            font-size: 1rem;
-            line-height: 2rem;
-            letter-spacing: 1px;
+            padding-right: 15vw;
+            ;
         }
     }
-    
     #homeMenu {
-        box-sizing: border-box;
-        z-index: -1;
-        @include gridCenter;
-        row-gap: 5vh;
-        margin-top: 25vw;
-        position: relative;
         width: 100%;
-        h1 {
-            background-color: rgba(0, 0, 0, 0.9);
-            color: white;
-            position: absolute;
-            @include articleFont;
-            text-transform: uppercase;
-            font-size: 2rem;
-            width: 50vw;
-            height: 25vw;
-            padding-left: 10vw;
-            line-height: 25vw;
-            top: -25vw;
-            left: 0;
-        }
+        height: 35vw;
+        margin-top: 10vw;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1.2fr;
+        background-color: rgba(0, 0, 0, 0.5);
         .menu-section {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            @include gridCenter;
-            grid-template-columns: 1fr 1fr;
-            .foodCard {
-                box-sizing: border-box;
-                position: relative;
-                display: block;
-                width: 50vw;
-                height: 50vw;
-                overflow: hidden;
-                &:hover div {
-                    top: 0;
-                    transition: all 0.5s ease-in-out;
-                }
-                img {
-                    z-index: 1;
-                    position: relative;
-                    width: 100%;
-                    height: 100%;
-                    border-radius: 0;
-                    left: 0;
-                    border: 0;
-                    object-fit: cover;
-                }
-                div {
-                    z-index: 3;
-                    box-sizing: border-box;
-                    width: 100%;
-                    top: 85%;
-                    left: 0;
-                    height: 100%;
-                    overflow: visible;
-                    position: absolute;
-                    border-radius: 0;
-                    background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 1.19%, rgba(0, 0, 0, 0.68) 48.02%, rgba(0, 0, 0, 0.56) 68.61%, rgba(0, 0, 0, 0.01) 100%);
-                    padding: 5px 10px;
-                    h2 {
-                        width: 100%;
-                        position: static;
-                        font-size: 1rem;
-                        text-transform: uppercase;
-                        color: $cardBgColor;
-                        padding: 0;
-                        text-align: center;
-                    }
-                    h3 {
-                        width: 100%;
-                        position: static;
-                        font-size: 0.7rem;
-                        text-transform: uppercase;
-                        padding-top: 1vh;
-                        text-align: right;
-                        color: $cardBgColor;
-                    }
-                    p {
-                        position: static;
-                        color: $cardBgColor;
-                        font-size: 0.6rem;
-                        padding-top: 1.5vh;
-                    }
-                }
+            width: 70%;
+            height: 80%;
+            row-gap: 1vw;
+            column-gap: 1vw;
+            justify-self: right;
+            &::after {
+                content: none
             }
             .rightCard {
-                transform: translateY(-50%);
+                transform: none;
             }
-            &::after {
-                content: 'recommends';
-                @include articleFont;
-                text-transform: uppercase;
-                color: $cardBgColor;
-                font-size: 1.5rem;
-                position: absolute;
-                line-height: 25vw;
-                top: 75%;
-                right: 0;
-                width: 50vw;
-                height: 25vw;
-                background-color: black;
-            }
-        }
-    }
-    /*mobile-homeMenu-start*/
-    /*mobile-contact-start*/
-    
-    #contact {
-        box-sizing: border-box;
-        z-index: 1;
-        width: 100%;
-        #contact-text {
-            box-sizing: border-box;
-            width: 100%;
-            padding: 0 10vw 10vw 10vw;
-            z-index: -1;
-            background: $cardBgColor;
-            h2,
-            p,
-            a {
-                text-decoration: none;
-                color: $desktopFontColor;
+            .foodCard {
+                width: 100%;
+                height: 100%;
                 display: block;
-            }
-            h2 {
-                text-transform: uppercase;
-                font-size: 1rem;
-                line-height: 2rem;
-                font-weight: lighter;
-                letter-spacing: 1.5px;
-                margin-top: 2rem;
-            }
-            p,
-            a {
-                font-size: 0.8rem;
-                letter-spacing: 1.2px;
-            }
-        }
-        #map {
-            width: 100%;
-            height: 70vw;
-            iframe {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
-    }
-    
-    @media only screen and (min-width:600px) {
-        .tablet-body {
-            display: block;
-        }
-        .mobile-header {
-            display: none;
-        }
-        // header {
-        //     height: auto;
-        //     background: none;
-        //     position: fixed;
-        //     top: 0;
-        //     grid-template-columns: 1fr 4fr 2fr;
-        //     >img {
-        //         position: relative;
-        //         width: 10vw;
-        //         height: auto;
-        //         background: none;
-        //         top: 2vw;
-        //         left: 2vw;
-        //     }
-        //     #tel {
-        //         font-size: 1rem;
-        //         font-weight: bolder;
-        //         color: $desktopFontColor;
-        //         height: auto;
-        //         padding: 0.5vw 1vw;
-        //         border-radius: 1vw;
-        //         left: 75%;
-        //         top: 2.5%;
-        //         right: auto;
-        //         width: auto;
-        //         background: rgba($color: #ffffff, $alpha: 0.8);
-        //         @include pageShadow(5px);
-        //     }
-        //     .nav-menu {
-        //         background: none;
-        //         position: relative;
-        //         top: -10%;
-        //         align-items: center;
-        //         overflow: visible;
-        //         grid-template-columns: repeat(5, auto);
-        //         >a,
-        //         div>a,
-        //         .home {
-        //             background: none;
-        //             color: $desktopFontColor;
-        //             font-size: 1rem;
-        //             font-weight: 600;
-        //             text-shadow: 1px 1px 2px rgb(236, 233, 233);
-        //             border-radius: 20px;
-        //             padding: 0;
-        //             background-color: rgba($color: #ffffff, $alpha: 0.8);
-        //             &:hover {
-        //                 background: rgba($color: #ffffff, $alpha: 0.8);
-        //                 color: $desktopFontColor;
-        //                 font-size: 0.9rem;
-        //                 transition: all 0.2s ease-in-out;
-        //             }
-        //             // &:active {
-        //             //     font-size: 1rem;
-        //             //     transition: all 0.1s ease-in-out;
-        //             // }
-        //         }
-        //         .nav-menu-dropdown {
-        //             &:hover .nav-menu-dropdown-container {
-        //                 display: block;
-        //             }
-        //         }
-        //     }
-        // }
-        .homepagePhoto {
-            margin-top: 0;
-            width: 100%;
-            height: 50vw;
-            .PhotoFrame {
-                width: 100%;
-                height: 100%;
-                margin-top: 0;
-                border-radius: 0;
-                .photo {
-                    width: 100%;
-                    height: 100%;
-                }
-                .frame {
-                    top: 25%;
-                    &-back {
-                        top: 0;
-                    }
-                }
-            }
-        }
-        #homeMenu {
-            width: 80%;
-            margin-left: 10%;
-            row-gap: 1vh;
-            h1 {
-                justify-self: center;
-                margin-bottom: 0;
-                margin-left: 0;
-            }
-            .menu-section {
-                width: 100%;
-                height: 20vw;
+                background-color: darkkhaki;
+                grid-template-columns: 1fr;
                 overflow: hidden;
-                overflow-x: scroll;
-                overflow-y: hidden;
-                .scroll {
-                    position: relative;
-                    width: fit-content;
-                    height: 100%;
-                    @include gridCenter;
-                    grid-template-rows: 1fr;
-                    grid-template-columns: 1fr 1fr 1fr 1fr;
-                    column-gap: 8vw;
-                    .foodCard {
-                        display: block;
-                        width: 20vw;
-                        height: 100%;
-                        background-color: darkkhaki;
-                        grid-template-columns: 1fr;
-                        overflow: hidden;
-                        img {
-                            position: static;
-                            width: 100%;
-                            height: 100%;
-                            border-radius: 0;
-                            left: 0;
-                            border: 0;
-                        }
-                        div {
-                            top: 78%;
-                            padding: 15px;
-                            h2 {
-                                font-size: 1rem;
-                            }
-                            h3 {
-                                font-size: 1rem;
-                                margin-top: 2vw;
-                            }
-                            p {
-                                font-size: 0.8rem;
-                            }
-                        }
-                    }
+                img {
+                    position: static;
+                    width: 100%;
+                    left: 0;
+                    border: 0;
                 }
-            }
-        }
-        #contact {
-            #map {
-                h1 {
-                    font-size: 1.5rem;
-                }
-                height: 40vw;
-            }
-            #contact-text {
-                box-sizing: border-box;
-                margin-top: 4vh;
-                padding: 4vh 5%;
-                border-radius: 20px 0;
-                width: 100%;
-                h2 {
-                    margin-left: 0;
-                    font-size: 1.5rem;
-                }
-                p {
-                    justify-self: center;
-                    a,
-                    span {
-                        line-height: 1.3rem;
+                div {
+                    top: 78%;
+                    padding: 15px;
+                    h2 {
                         font-size: 1rem;
                     }
+                    h3 {
+                        font-size: 1rem;
+                        margin-top: 2vw;
+                    }
+                    p {
+                        font-size: 0.8rem;
+                    }
+                }
+            }
+        }
+        P {
+            text-transform: uppercase;
+            color: $cardBgColor;
+            font-size: 3.5rem;
+            line-height: 10rem;
+            letter-spacing: 3px;
+        }
+    }
+    #contact {
+        @include gridCenter;
+        grid-template-columns: 1fr 1fr;
+        width: 80%;
+        height: 40vw;
+        margin-left: 10%;
+        #map {
+            @include gridCenter;
+            width: 100%;
+            height: 100%;
+            iframe {
+                width: 25vw;
+                height: 25vw;
+                border-radius: 50%;
+            }
+        }
+        #contact-text {
+            box-sizing: border-box;
+            padding: 4vh 5%;
+            border-radius: 20px 0;
+            width: 100%;
+            h2 {
+                margin-left: 0;
+                font-size: 1.5rem;
+            }
+            p {
+                justify-self: center;
+                a,
+                span {
+                    line-height: 1.3rem;
+                    font-size: 1rem;
                 }
             }
         }
     }
-    
-    @media only screen and (min-width:1367px) {
-        #homeMenu {
-            .menu-section {
-                width: 80%;
-                height: 16vw;
-                overflow-x: hidden;
-                .scroll {
-                    column-gap: 5vw;
-                    .foodCard {
-                        width: 16vw;
-                        div {
-                            h2,
-                            h3 {
-                                font-size: 1.5rem;
-                            }
-                            p {
-                                font-size: 1.2rem;
-                            }
+}
+
+@media only screen and (min-width:1367px) {
+    #homeMenu {
+        .menu-section {
+            width: 80%;
+            height: 16vw;
+            overflow-x: hidden;
+            .scroll {
+                column-gap: 5vw;
+                .foodCard {
+                    width: 16vw;
+                    div {
+                        h2,
+                        h3 {
+                            font-size: 1.5rem;
+                        }
+                        p {
+                            font-size: 1.2rem;
                         }
                     }
                 }
             }
         }
     }
-    
-    ;
-    @import './footer';
+}
+
+;
+@import './footer';

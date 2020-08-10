@@ -39,9 +39,16 @@ footer {
 @media only screen and (min-width:600px) {
     footer {
         #footer-top {
-            width: 100%;
+            img {
+                width: 8%;
+                padding: 2vw;
+            }
             div {
-                width: 50%;
+                width: 100%;
+                p,
+                a {
+                    display: inline;
+                }
             }
         }
     }
