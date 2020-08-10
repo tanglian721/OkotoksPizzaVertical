@@ -285,80 +285,76 @@
     }
     
     @media only screen and (min-width:600px) {
-        body {
-            background: none;
-            background-color: rgb(236, 230, 217);
-        }
         .tablet-body {
             display: block;
         }
         .mobile-header {
             display: none;
         }
-        header {
-            height: auto;
-            background: none;
-            position: fixed;
-            top: 0;
-            grid-template-columns: 1fr 4fr 2fr;
-            >img {
-                position: relative;
-                width: 10vw;
-                height: auto;
-                background: none;
-                top: 2vw;
-                left: 2vw;
-            }
-            #tel {
-                font-size: 1rem;
-                font-weight: bolder;
-                color: $desktopFontColor;
-                height: auto;
-                padding: 0.5vw 1vw;
-                border-radius: 1vw;
-                left: 75%;
-                top: 2.5%;
-                right: auto;
-                width: auto;
-                background: rgba($color: #ffffff, $alpha: 0.8);
-                @include pageShadow(5px);
-            }
-            .nav-menu {
-                background: none;
-                position: relative;
-                top: -10%;
-                align-items: center;
-                overflow: visible;
-                grid-template-columns: repeat(5, auto);
-                >a,
-                div>a,
-                .home {
-                    background: none;
-                    color: $desktopFontColor;
-                    font-size: 1rem;
-                    font-weight: 600;
-                    text-shadow: 1px 1px 2px rgb(236, 233, 233);
-                    border-radius: 20px;
-                    padding: 0;
-                    background-color: rgba($color: #ffffff, $alpha: 0.8);
-                    &:hover {
-                        background: rgba($color: #ffffff, $alpha: 0.8);
-                        color: $desktopFontColor;
-                        font-size: 0.9rem;
-                        transition: all 0.2s ease-in-out;
-                    }
-                    // &:active {
-                    //     font-size: 1rem;
-                    //     transition: all 0.1s ease-in-out;
-                    // }
-                }
-                .nav-menu-dropdown {
-                    &:hover .nav-menu-dropdown-container {
-                        display: block;
-                    }
-                }
-            }
-        }
+        // header {
+        //     height: auto;
+        //     background: none;
+        //     position: fixed;
+        //     top: 0;
+        //     grid-template-columns: 1fr 4fr 2fr;
+        //     >img {
+        //         position: relative;
+        //         width: 10vw;
+        //         height: auto;
+        //         background: none;
+        //         top: 2vw;
+        //         left: 2vw;
+        //     }
+        //     #tel {
+        //         font-size: 1rem;
+        //         font-weight: bolder;
+        //         color: $desktopFontColor;
+        //         height: auto;
+        //         padding: 0.5vw 1vw;
+        //         border-radius: 1vw;
+        //         left: 75%;
+        //         top: 2.5%;
+        //         right: auto;
+        //         width: auto;
+        //         background: rgba($color: #ffffff, $alpha: 0.8);
+        //         @include pageShadow(5px);
+        //     }
+        //     .nav-menu {
+        //         background: none;
+        //         position: relative;
+        //         top: -10%;
+        //         align-items: center;
+        //         overflow: visible;
+        //         grid-template-columns: repeat(5, auto);
+        //         >a,
+        //         div>a,
+        //         .home {
+        //             background: none;
+        //             color: $desktopFontColor;
+        //             font-size: 1rem;
+        //             font-weight: 600;
+        //             text-shadow: 1px 1px 2px rgb(236, 233, 233);
+        //             border-radius: 20px;
+        //             padding: 0;
+        //             background-color: rgba($color: #ffffff, $alpha: 0.8);
+        //             &:hover {
+        //                 background: rgba($color: #ffffff, $alpha: 0.8);
+        //                 color: $desktopFontColor;
+        //                 font-size: 0.9rem;
+        //                 transition: all 0.2s ease-in-out;
+        //             }
+        //             // &:active {
+        //             //     font-size: 1rem;
+        //             //     transition: all 0.1s ease-in-out;
+        //             // }
+        //         }
+        //         .nav-menu-dropdown {
+        //             &:hover .nav-menu-dropdown-container {
+        //                 display: block;
+        //             }
+        //         }
+        //     }
+        // }
         .homepagePhoto {
             margin-top: 0;
             width: 100%;
@@ -466,22 +462,6 @@
     }
     
     @media only screen and (min-width:1367px) {
-        header {
-            >img {
-                width: 6vw;
-            }
-            #tel {
-                left: 80%;
-                top: 5%
-            }
-            .nav-menu {
-                >a,
-                div>a,
-                .home {
-                    font-size: 1.5rem;
-                }
-            }
-        }
         #homeMenu {
             .menu-section {
                 width: 80%;

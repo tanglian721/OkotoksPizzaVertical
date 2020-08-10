@@ -1,222 +1,230 @@
-@import './variable';
-@import './mixin';
-header {
-    z-index: 20;
-    position: sticky;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    >img {
+    @import './variable';
+    @import './mixin';
+    header {
         z-index: 20;
-        height: 4vh;
-        position: absolute;
-        top: 3vw;
-        left: 5vw;
-    }
-    >label {
-        position: absolute;
-        left: 80vw;
-        display: inline-block;
-        height: 15vw;
-        width: 1em;
-        font-size: 15px;
-        box-sizing: border-box;
-        text-indent: -9999px;
-        vertical-align: middle;
-        position: relative;
-        &::before {
-            content: '';
-            box-sizing: inherit;
-            position: absolute;
-            left: 0%;
-            top: 50%;
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-            box-shadow: 0 -.35em, 0 .35em;
-            border-top: 2px solid;
-            width: 100%;
-            color: $cardBgColor;
-        }
-    }
-    #tel {
-        z-index: 999;
         position: sticky;
-        top: 4vw;
-        left: 30vw;
-        font-size: 1rem;
-        text-decoration: none;
-        @include headerFont;
-        color: $cardBgColor;
-        &:active {
-            font-size: 0.9rem;
-            transition: all 0.2s ease-in;
-        }
-    }
-    div a {
-        @include headerFont;
-        padding: 1vh 0;
-        color: $primaryColor;
-        font-size: 0.8rem;
-        display: block;
-        text-decoration: none;
-        text-transform: uppercase;
         width: 100%;
-        line-height: 2vh;
-        img {
-            height: 5vh;
-        }
-        &:hover {
-            background-color: $primaryColor;
-            color: $cardBgColor;
-        }
-    }
-    #nav-dropdown-check:checked~.nav-menu {
-        display: grid;
-    }
-    .nav-menu {
-        position: absolute;
+        top: 0;
+        left: 0;
         background-color: rgba(0, 0, 0, 0.6);
-        @include gridCenter;
-        text-align: center;
-        width: 100%;
-        display: none;
-        a {
+        >img {
+            z-index: 20;
+            height: 4vh;
+            position: absolute;
+            top: 3vw;
+            left: 10vw;
+        }
+        >label {
+            position: absolute;
+            left: 85vw;
+            display: inline-block;
+            height: 15vw;
+            width: 1em;
+            font-size: 15px;
+            box-sizing: border-box;
+            text-indent: -9999px;
+            vertical-align: middle;
+            position: relative;
+            &::before {
+                content: '';
+                box-sizing: inherit;
+                position: absolute;
+                left: 0%;
+                top: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                box-shadow: 0 -.35em, 0 .35em;
+                border-top: 2px solid;
+                width: 100%;
+                color: $cardBgColor;
+            }
+        }
+        #tel {
+            z-index: 999;
+            position: sticky;
+            top: 4vw;
+            left: 35vw;
+            font-size: 1rem;
+            text-decoration: none;
             @include headerFont;
             color: $cardBgColor;
+            &:active {
+                font-size: 0.9rem;
+                transition: all 0.2s ease-in;
+            }
+        }
+        div a {
+            @include headerFont;
+            padding: 1vh 0;
+            color: $primaryColor;
+            font-size: 0.8rem;
+            display: block;
+            text-decoration: none;
             text-transform: uppercase;
             width: 100%;
-            line-height: 10vw;
+            line-height: 2vh;
+            img {
+                height: 5vh;
+            }
             &:hover {
                 background-color: $primaryColor;
                 color: $cardBgColor;
             }
         }
-        .nav-menu-dropdown {
+        #nav-dropdown-check:checked~.nav-menu {
+            display: grid;
+        }
+        .nav-menu {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.6);
             @include gridCenter;
+            text-align: center;
             width: 100%;
-            position: relative;
-            label {
-                position: absolute;
-                display: inline-block;
-                top: -7.5vw;
-                left: 30vw;
-                width: 1em;
-                font-size: 15px;
-                box-sizing: border-box;
-                text-indent: -9999px;
-                vertical-align: middle;
-                position: relative;
-                &::before {
-                    content: '';
-                    box-sizing: inherit;
-                    position: absolute;
-                    left: 50%;
-                    top: 50%;
-                    -ms-transform: translate(-50%, -50%);
-                    transform: translate(-50%, -50%);
-                    height: .65em;
-                    width: .65em;
-                    border-style: solid;
-                    border-width: 2px 0 0 2px;
-                    -ms-transform: translate(-50%, -75%) rotate(225deg);
-                    transform: translate(-50%, -75%) rotate(225deg);
+            display: none;
+            a {
+                @include headerFont;
+                color: $cardBgColor;
+                text-transform: uppercase;
+                width: 100%;
+                line-height: 10vw;
+                &:hover {
+                    background-color: $primaryColor;
                     color: $cardBgColor;
                 }
             }
-            >a:hover~#nav-menu-dropdown-icon {
-                &::before {
-                    color: $cardBgColor;
-                }
-            }
-            .nav-menu-dropdown-container {
+            .nav-menu-dropdown {
                 @include gridCenter;
                 width: 100%;
-                display: none;
-                background-color: rgba($color: gray, $alpha: 0.1);
-            }
-            #nav-menu-dropdown-check:checked~.nav-menu-dropdown-container {
-                display: grid;
+                position: relative;
+                label {
+                    position: absolute;
+                    display: inline-block;
+                    top: -7.5vw;
+                    left: 30vw;
+                    width: 1em;
+                    font-size: 15px;
+                    box-sizing: border-box;
+                    text-indent: -9999px;
+                    vertical-align: middle;
+                    position: relative;
+                    &::before {
+                        content: '';
+                        box-sizing: inherit;
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        -ms-transform: translate(-50%, -50%);
+                        transform: translate(-50%, -50%);
+                        height: .65em;
+                        width: .65em;
+                        border-style: solid;
+                        border-width: 2px 0 0 2px;
+                        -ms-transform: translate(-50%, -75%) rotate(225deg);
+                        transform: translate(-50%, -75%) rotate(225deg);
+                        color: $cardBgColor;
+                    }
+                }
+                >a:hover~#nav-menu-dropdown-icon {
+                    &::before {
+                        color: $cardBgColor;
+                    }
+                }
+                .nav-menu-dropdown-container {
+                    @include gridCenter;
+                    width: 100%;
+                    display: none;
+                    background-color: rgba($color: gray, $alpha: 0.1);
+                }
+                #nav-menu-dropdown-check:checked~.nav-menu-dropdown-container {
+                    display: grid;
+                }
             }
         }
     }
-}
-
-// @media only screen and (min-width:600px) {
-//     .mobile-header {
-//         display: none;
-//     }
-//     header {
-//         z-index: 10;
-//         position: sticky;
-//         background: none;
-//         grid-template-columns: 3fr 10fr 5fr;
-//         margin: 2vh 0;
-//         &:fixed {
-//             background-color: $cardBgColor;
-//         }
-//         >img {
-//             height: 5vw;
-//             width: auto;
-//             position: static;
-//         }
-//         #tel {
-//             position: static;
-//             background-color: $cardBgColor;
-//             color: $desktopFontColor;
-//             padding: 5px 15px;
-//             height: auto;
-//             border-radius: 15px;
-//             border: 2px solid $primaryColor;
-//             &:hover {
-//                 font-size: 1.2rem;
-//                 transition: all 0.2s ease-in;
-//             }
-//         }
-//         .nav-menu {
-//             @include gridCenter;
-//             position: static;
-//             height: 7vw;
-//             background: none;
-//             overflow: visible;
-//             grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-//             a {
-//                 padding-top: 0;
-//                 color: $desktopFontColor;
-//                 line-height: 7vw;
-//                 text-shadow: 1px 1px 0 white;
-//                 &:hover {
-//                     background: none;
-//                     color: $desktopFontColor;
-//                     @include textShadow(2px);
-//                 }
-//             }
-//             .nav-menu-dropdown {
-//                 label {
-//                     display: none;
-//                 }
-//                 position: relative;
-//                 .nav-menu-dropdown-container {
-//                     position: absolute;
-//                     top: 6vw;
-//                     min-width: 150px;
-//                     background: none;
-//                     a {
-//                         line-height: 30px;
-//                     }
-//                 }
-//                 &:hover .nav-menu-dropdown-container {
-//                     display: block;
-//                 }
-//             }
-//         }
-//     }
-// }
-// @media only screen and (min-width:1280px) {
-//     header {
-//         grid-template-columns: 1fr 3fr 10fr 5fr 1fr;
-//         div a {
-//             font-size: 1.2rem;
-//         }
-//     }
-// }
+    
+    @media only screen and (min-width:600px) {
+        .mobile-header {
+            display: none;
+        }
+        header {
+            @include gridCenter;
+            height: 6vw;
+            z-index: 10;
+            position: sticky;
+            grid-template-columns: 3fr 10fr 5fr;
+            >img {
+                height: 4vw;
+                width: auto;
+                position: static;
+            }
+            #tel {
+                position: static;
+                font-size: 0.8rem;
+                text-shadow: 1px 1px 0 white;
+                color: $desktopFontColor;
+                &:hover {
+                    font-size: 1rem;
+                    transition: all 0.2s ease-in;
+                }
+            }
+            .nav-menu {
+                @include gridCenter;
+                position: static;
+                height: 6vw;
+                background: none;
+                overflow: visible;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                a {
+                    padding-top: 0;
+                    color: $desktopFontColor;
+                    line-height: 6vw;
+                    text-shadow: 1px 1px 0 white;
+                    &:hover {
+                        background: none;
+                        color: $cardBgColor;
+                        text-shadow: 1px 1px 0 rgb(31, 31, 31);
+                        @include textShadow(2px);
+                    }
+                }
+                .nav-menu-dropdown {
+                    label {
+                        display: none;
+                    }
+                    position: relative;
+                    .nav-menu-dropdown-container {
+                        position: absolute;
+                        top: 6vw;
+                        min-width: 150px;
+                        background: none;
+                        a {
+                            line-height: 30px;
+                            background-color: rgba(0, 0, 0, 0.6);
+                        }
+                    }
+                    &:hover .nav-menu-dropdown-container {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+    
+    @media only screen and (min-width:1367px) {
+        header {
+            >img {
+                width: 5vw;
+            }
+            #tel {
+                left: 80%;
+                top: 5%;
+                font-size: 1rem;
+            }
+            .nav-menu {
+                >a,
+                div>a,
+                .home {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
