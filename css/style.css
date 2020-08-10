@@ -912,14 +912,14 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
     justify-items: center;
     -ms-grid-columns: 1fr 1.2fr;
         grid-template-columns: 1fr 1.2fr;
-    margin: 0;
+    margin-bottom: 0;
     padding: 0;
   }
   .intro h1 {
     margin-bottom: 0;
   }
   .intro p {
-    padding-right: 15vw;
+    padding-right: 5vw;
   }
   #homeMenu {
     width: 100%;
@@ -963,14 +963,14 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
     border: 0;
   }
   #homeMenu .menu-section .foodCard div {
-    top: 78%;
+    top: 70%;
     padding: 15px;
   }
   #homeMenu .menu-section .foodCard div h2 {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
   #homeMenu .menu-section .foodCard div h3 {
-    font-size: 1rem;
+    font-size: 0.8rem;
     margin-top: 2vw;
   }
   #homeMenu .menu-section .foodCard div p {
@@ -979,9 +979,9 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
   #homeMenu P {
     text-transform: uppercase;
     color: #ffffff;
-    font-size: 3.5rem;
-    line-height: 10rem;
-    letter-spacing: 3px;
+    font-size: 3rem;
+    line-height: 8rem;
+    letter-spacing: 2px;
   }
   #contact {
     display: -ms-grid;
@@ -992,9 +992,13 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
     justify-items: center;
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
-    width: 80%;
-    height: 40vw;
-    margin-left: 10%;
+    width: 70%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin-left: 15%;
+    margin-top: 10vw;
+    margin-bottom: 10vw;
   }
   #contact #map {
     display: -ms-grid;
@@ -1014,13 +1018,12 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
   #contact #contact-text {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    padding: 4vh 5%;
+    padding: 0;
     border-radius: 20px 0;
     width: 100%;
   }
   #contact #contact-text h2 {
     margin-left: 0;
-    font-size: 1.5rem;
   }
   #contact #contact-text p {
     -ms-grid-column-align: center;
@@ -1029,29 +1032,6 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
   #contact #contact-text p a,
   #contact #contact-text p span {
     line-height: 1.3rem;
-    font-size: 1rem;
-  }
-}
-
-@media only screen and (min-width: 1367px) {
-  #homeMenu .menu-section {
-    width: 80%;
-    height: 16vw;
-    overflow-x: hidden;
-  }
-  #homeMenu .menu-section .scroll {
-    -webkit-column-gap: 5vw;
-            column-gap: 5vw;
-  }
-  #homeMenu .menu-section .scroll .foodCard {
-    width: 16vw;
-  }
-  #homeMenu .menu-section .scroll .foodCard div h2,
-  #homeMenu .menu-section .scroll .foodCard div h3 {
-    font-size: 1.5rem;
-  }
-  #homeMenu .menu-section .scroll .foodCard div p {
-    font-size: 1.2rem;
   }
 }
 
