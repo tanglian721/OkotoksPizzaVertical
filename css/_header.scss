@@ -5,6 +5,7 @@ header {
     position: sticky;
     width: 100%;
     top: 0;
+    left: 0;
     background-color: rgba(0, 0, 0, 0.6);
     >img {
         z-index: 20;
@@ -98,10 +99,10 @@ header {
             label {
                 position: absolute;
                 display: inline-block;
-                top: -5vw;
+                top: -7.5vw;
                 left: 30vw;
                 width: 1em;
-                font-size: 20px;
+                font-size: 15px;
                 box-sizing: border-box;
                 text-indent: -9999px;
                 vertical-align: middle;
@@ -120,7 +121,7 @@ header {
                     border-width: 2px 0 0 2px;
                     -ms-transform: translate(-50%, -75%) rotate(225deg);
                     transform: translate(-50%, -75%) rotate(225deg);
-                    color: $primaryColor;
+                    color: $cardBgColor;
                 }
             }
             >a:hover~#nav-menu-dropdown-icon {
