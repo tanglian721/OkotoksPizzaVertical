@@ -3,7 +3,7 @@
     @import './animation';
     body {
         @include bodyDefault;
-        background: linear-gradient(317.45deg, rgba(255, 160, 13, 0.52) -78.63%, #FFFFFF 106.21%);
+        // background: linear-gradient(317.45deg, rgba(255, 160, 13, 0.52) -78.63%, #FFFFFF 106.21%);
         min-height: 100vh;
         position: relative;
     }
@@ -23,15 +23,16 @@
     
     @import './header';
     .homepagePhoto {
-        margin-top: 10vh;
+        box-sizing: border-box;
         @include gridCenter;
+        position: relative;
+        top: -15vw;
         width: 100%;
+        height: 70vh;
         .PhotoFrame {
-            margin-top: 5vw;
-            width: 70vw;
-            height: 50vh;
+            width: 100%;
+            height: 100%;
             overflow: hidden;
-            border-radius: 20px;
             position: relative;
             .photo {
                 background-position: center;
@@ -111,86 +112,130 @@
     }
     /*mobile-homeMenu-start*/
     
+    .intro {
+        // background-color: #242424;
+        box-sizing: border-box;
+        width: 100%;
+        margin-top: -2vh;
+        padding: 0 15vw;
+        margin-bottom: 20vh;
+        h1 {
+            // color: white;
+            font-size: 3rem;
+            line-height: 5rem;
+            margin-bottom: 6vh;
+        }
+        p {
+            // color: white;
+            font-size: 1rem;
+            line-height: 2rem;
+            letter-spacing: 1px;
+        }
+    }
+    
     #homeMenu {
+        box-sizing: border-box;
         z-index: -1;
         @include gridCenter;
         row-gap: 5vh;
-        overflow: hidden;
+        margin-top: 25vw;
+        position: relative;
+        width: 100%;
         h1 {
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            position: absolute;
             @include articleFont;
             text-transform: uppercase;
-            justify-self: left;
-            margin-left: 15vw;
-            margin-bottom: -4vh;
+            font-size: 2rem;
+            width: 50vw;
+            height: 25vw;
+            padding-left: 10vw;
+            line-height: 25vw;
+            top: -25vw;
+            left: 0;
         }
         .menu-section {
-            width: 90%;
-            .scroll {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            @include gridCenter;
+            grid-template-columns: 1fr 1fr;
+            .foodCard {
+                box-sizing: border-box;
                 position: relative;
-                width: 100%;
-                height: 100%;
-                @include gridCenter;
-                justify-content: space-evenly;
-                grid-template-columns: repeat(auto-fit, 35vw);
-                column-gap: 2vw;
-                row-gap: 2vh;
-                .foodCard {
+                display: block;
+                width: 50vw;
+                height: 50vw;
+                overflow: hidden;
+                &:hover div {
+                    top: 0;
+                    transition: all 0.5s ease-in-out;
+                }
+                img {
+                    z-index: 1;
                     position: relative;
-                    display: block;
                     width: 100%;
-                    height: 15vh;
-                    overflow: hidden;
-                    border-radius: 20px;
-                    &:hover div {
-                        top: 0;
-                        transition: all 0.5s ease-in-out;
-                    }
-                    img {
+                    height: 100%;
+                    border-radius: 0;
+                    left: 0;
+                    border: 0;
+                    object-fit: cover;
+                }
+                div {
+                    z-index: 3;
+                    box-sizing: border-box;
+                    width: 100%;
+                    top: 85%;
+                    left: 0;
+                    height: 100%;
+                    overflow: visible;
+                    position: absolute;
+                    border-radius: 0;
+                    background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 1.19%, rgba(0, 0, 0, 0.68) 48.02%, rgba(0, 0, 0, 0.56) 68.61%, rgba(0, 0, 0, 0.01) 100%);
+                    padding: 5px 10px;
+                    h2 {
+                        width: 100%;
                         position: static;
-                        width: 100%;
-                        height: 100%;
-                        border-radius: 0;
-                        left: 0;
-                        border: 0;
-                        object-fit: cover;
+                        font-size: 1rem;
+                        text-transform: uppercase;
+                        color: $cardBgColor;
+                        padding: 0;
+                        text-align: center;
                     }
-                    div {
-                        box-sizing: border-box;
+                    h3 {
                         width: 100%;
-                        top: 80%;
-                        left: 0;
-                        height: 100%;
-                        overflow: visible;
-                        position: absolute;
-                        border-radius: 0;
-                        background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 1.19%, rgba(0, 0, 0, 0.68) 48.02%, rgba(0, 0, 0, 0.56) 68.61%, rgba(0, 0, 0, 0.01) 100%);
-                        padding: 5px 10px;
-                        h2 {
-                            width: 100%;
-                            position: static;
-                            font-size: 0.8rem;
-                            text-transform: uppercase;
-                            color: $cardBgColor;
-                            padding: 0;
-                            text-align: center;
-                        }
-                        h3 {
-                            width: 100%;
-                            position: static;
-                            font-size: 0.7rem;
-                            text-transform: uppercase;
-                            padding-top: 1vh;
-                            text-align: right;
-                            color: $cardBgColor;
-                        }
-                        p {
-                            position: static;
-                            color: $cardBgColor;
-                            font-size: 0.6rem;
-                            padding-top: 1.5vh;
-                        }
+                        position: static;
+                        font-size: 0.7rem;
+                        text-transform: uppercase;
+                        padding-top: 1vh;
+                        text-align: right;
+                        color: $cardBgColor;
+                    }
+                    p {
+                        position: static;
+                        color: $cardBgColor;
+                        font-size: 0.6rem;
+                        padding-top: 1.5vh;
                     }
                 }
+            }
+            .rightCard {
+                transform: translateY(-50%);
+            }
+            &::after {
+                content: 'recommends';
+                @include articleFont;
+                text-transform: uppercase;
+                color: $cardBgColor;
+                font-size: 1.5rem;
+                position: absolute;
+                line-height: 25vw;
+                top: 75%;
+                right: 0;
+                width: 50vw;
+                height: 25vw;
+                background-color: black;
             }
         }
     }
@@ -198,70 +243,41 @@
     /*mobile-contact-start*/
     
     #contact {
+        box-sizing: border-box;
         z-index: 1;
-        @include gridCenter;
         width: 100%;
-        row-gap: 5vh;
-        padding-top: 5vh;
-        #map {
-            width: 80%;
-            height: 70vw;
-            h1 {
-                @include otherFont;
+        #contact-text {
+            width: 100%;
+            padding: 0 10vw 10vw 10vw;
+            z-index: -1;
+            background: $cardBgColor;
+            h2,
+            p,
+            a {
+                text-decoration: none;
+                color: $desktopFontColor;
+                display: block;
+            }
+            h2 {
                 text-transform: uppercase;
                 font-size: 1rem;
+                line-height: 2rem;
+                font-weight: lighter;
+                letter-spacing: 1.5px;
+                margin-top: 2rem;
             }
+            p {
+                font-size: 0.8rem;
+                letter-spacing: 1.2px;
+            }
+        }
+        #map {
+            width: 100%;
+            height: 50vw;
             iframe {
-                border-radius: 20px;
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-            }
-        }
-    }
-    
-    #contact-text {
-        z-index: -1;
-        position: relative;
-        top: 12px;
-        background: rgba(196, 196, 196, 0.2);
-        padding: 3vh 0;
-        width: 100%;
-        height: auto;
-        @include gridCenter;
-        grid-template-columns: 1fr 1.4fr;
-        h2 {
-            z-index: 1;
-            @include otherFont;
-            color: black;
-            text-transform: uppercase;
-            font-size: 4vw;
-            margin-left: 9vw;
-        }
-        p {
-            z-index: 1;
-            justify-self: left;
-            a {
-                display: block;
-            }
-            a,
-            span {
-                text-align: justify;
-                text-decoration: none;
-                @include otherFont;
-                color: black;
-                font-size: 3vw;
-                line-height: 5vw;
-            }
-            .contact-title {
-                justify-self: center;
-                margin-right: 1vw;
-            }
-            .space-1 {
-                letter-spacing: 0.15rem;
-            }
-            .space-2 {
-                letter-spacing: 0.6rem;
             }
         }
     }

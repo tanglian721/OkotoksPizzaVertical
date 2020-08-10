@@ -4,17 +4,15 @@ footer {
         width: 100%;
         background-color: black;
     }
-    z-index: 99;
-    @include gridCenter;
-    background-color: $cardBgColor;
-    border-radius: 20px 20px 0 0;
+    background-color: $wordBgColor;
     position: sticky;
     top: 90vh;
     #footer-top {
-        z-index: 99;
         @include gridCenter;
-        grid-template-columns: 1fr 1fr;
-        padding: 2vh 0 2px 0;
+        img {
+            width: 25%;
+            padding: 5vh 0;
+        }
         div {
             text-align: center;
             p,
@@ -28,6 +26,7 @@ footer {
         }
     }
     #footer-bottom {
+        text-align: center;
         z-index: 99;
         text-decoration: none;
         @include otherFont;

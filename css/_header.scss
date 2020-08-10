@@ -1,31 +1,52 @@
 @import './variable';
 @import './mixin';
 header {
-    position: fixed;
-    height: 9vh;
     z-index: 20;
-    @include gridCenter;
-    top: 0;
-    background-color: $cardBgColor;
-    border-radius: 0 0 20px 20px;
+    position: sticky;
     width: 100%;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.6);
     >img {
         z-index: 20;
-        height: 6vh;
-        position: fixed;
+        height: 4vh;
+        position: absolute;
         top: 3vw;
         left: 5vw;
     }
+    >label {
+        position: absolute;
+        left: 80vw;
+        display: inline-block;
+        height: 15vw;
+        width: 1em;
+        font-size: 15px;
+        box-sizing: border-box;
+        text-indent: -9999px;
+        vertical-align: middle;
+        position: relative;
+        &::before {
+            content: '';
+            box-sizing: inherit;
+            position: absolute;
+            left: 0%;
+            top: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            box-shadow: 0 -.35em, 0 .35em;
+            border-top: 2px solid;
+            width: 100%;
+            color: $cardBgColor;
+        }
+    }
     #tel {
-        z-index: 20;
-        position: fixed;
+        z-index: 999;
+        position: sticky;
         top: 4vw;
+        left: 30vw;
         font-size: 1rem;
         text-decoration: none;
         @include headerFont;
-        color: $primaryColor;
-        height: 4vh;
-        right: 5vw;
+        color: $cardBgColor;
         &:active {
             font-size: 0.9rem;
             transition: all 0.2s ease-in;
@@ -49,91 +70,73 @@ header {
             color: $cardBgColor;
         }
     }
+    #nav-dropdown-check:checked~.nav-menu {
+        display: grid;
+    }
     .nav-menu {
-        z-index: 20;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.6);
         @include gridCenter;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        bottom: 0;
-        height: 7vh;
         text-align: center;
         width: 100%;
-        border-radius: 20px 20px 0 0;
-        background-color: rgba($color: #ffffff, $alpha: 0.9);
-        overflow: hidden;
-        position: fixed;
-        align-items: flex-end;
-        .home {
-            background-color: $primaryColor;
-            color: $cardBgColor;
-            @include gridCenter;
-            .homeIcon {
-                width: 40%;
-                height: 4vh;
-                background-image: url(../images/Iconhome.png);
-                background-repeat: no-repeat;
-                background-size: 200%;
-                background-position-x: 100%;
-            }
-            &:active {
-                background-color: $cardBgColor;
-                color: $primaryColor;
-            }
-            &:active div {
-                background-position-x: 0%;
-            }
-        }
-        >a,
-        div>a {
-            @include gridCenter;
+        display: none;
+        a {
             @include headerFont;
-            padding: 1vh 0;
-            color: $primaryColor;
-            font-size: 0.8rem;
-            display: block;
-            text-decoration: none;
+            color: $cardBgColor;
             text-transform: uppercase;
             width: 100%;
-            line-height: 2vh;
-            @include gridCenter;
-            div {
-                width: 40%;
-                height: 4vh;
-                background-repeat: no-repeat;
-                background-size: 200%;
-                background-position-x: 0;
-            }
+            line-height: 10vw;
             &:hover {
                 background-color: $primaryColor;
                 color: $cardBgColor;
-                ;
-            }
-            &:hover div {
-                background-position-x: 100%;
             }
         }
-        .menuIcon {
-            background-image: url(../images/Iconmenu.png);
-        }
-        .special {
-            background-image: url(../images/Iconsale.png);
-        }
-        .about {
-            background-image: url(../images/Iconpizza.png);
-        }
-        .location {
-            background-image: url(../images/Iconlocation.png);
-        }
-    }
-    .nav-menu-dropdown {
-        @include gridCenter;
-        width: 100%;
-        bottom: 0;
-        .nav-menu-dropdown-container {
-            position: absolute;
-            padding-top: 4vw;
-            min-width: 30%;
-            top: 3vw;
-            display: none;
+        .nav-menu-dropdown {
+            @include gridCenter;
+            width: 100%;
+            position: relative;
+            label {
+                position: absolute;
+                display: inline-block;
+                top: -5vw;
+                left: 30vw;
+                width: 1em;
+                font-size: 20px;
+                box-sizing: border-box;
+                text-indent: -9999px;
+                vertical-align: middle;
+                position: relative;
+                &::before {
+                    content: '';
+                    box-sizing: inherit;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    -ms-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
+                    height: .65em;
+                    width: .65em;
+                    border-style: solid;
+                    border-width: 2px 0 0 2px;
+                    -ms-transform: translate(-50%, -75%) rotate(225deg);
+                    transform: translate(-50%, -75%) rotate(225deg);
+                    color: $primaryColor;
+                }
+            }
+            >a:hover~#nav-menu-dropdown-icon {
+                &::before {
+                    color: $cardBgColor;
+                }
+            }
+            .nav-menu-dropdown-container {
+                @include gridCenter;
+                width: 100%;
+                display: none;
+                background-color: rgba($color: gray, $alpha: 0.1);
+            }
+            #nav-menu-dropdown-check:checked~.nav-menu-dropdown-container {
+                display: grid;
+            }
         }
     }
 }
