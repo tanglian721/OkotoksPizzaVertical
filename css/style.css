@@ -258,8 +258,7 @@ body {
 
 header {
   z-index: 20;
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   width: 100%;
   top: 0;
   left: 0;
@@ -306,8 +305,7 @@ header > label::before {
 
 header #tel {
   z-index: 999;
-  position: -webkit-sticky;
-  position: sticky;
+  position: absolute;
   top: 4vw;
   left: 35vw;
   font-size: 1rem;
@@ -684,6 +682,7 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
   letter-spacing: 1px;
 }
 
+/*mobile-homeMenu-start*/
 #homeMenu {
   z-index: -1;
   display: -ms-grid;
@@ -693,6 +692,7 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
           align-items: center;
   justify-items: center;
   width: 100%;
+  background: radial-gradient(124.68% 124.31% at 50% 50%, rgba(238, 238, 238, 0.27) 0%, rgba(0, 0, 0, 0.44) 48.44%);
 }
 
 #homeMenu h1 {
@@ -801,6 +801,7 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
   content: 'recommends';
   font-family: 'Rokkitt', serif;
   text-transform: uppercase;
+  text-align: center;
   color: #ffffff;
   font-size: 1.5rem;
   position: absolute;
@@ -812,7 +813,6 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-/*mobile-homeMenu-start*/
 /*mobile-contact-start*/
 #contact {
   -webkit-box-sizing: border-box;
@@ -1025,6 +1025,12 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
   #contact #contact-text p a,
   #contact #contact-text p span {
     line-height: 1.3rem;
+  }
+}
+
+@media only screen and (min-width: 1367px) {
+  html {
+    font-size: 22px;
   }
 }
 
