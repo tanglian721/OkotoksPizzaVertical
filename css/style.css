@@ -450,8 +450,7 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
     justify-items: center;
     height: 6vw;
     z-index: 10;
-    position: -webkit-sticky;
-    position: sticky;
+    position: fixed;
     -ms-grid-columns: 3fr 10fr 5fr;
         grid-template-columns: 3fr 10fr 5fr;
   }

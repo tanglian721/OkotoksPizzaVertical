@@ -150,7 +150,7 @@
             @include gridCenter;
             height: 6vw;
             z-index: 10;
-            position: sticky;
+            position: fixed;
             grid-template-columns: 3fr 10fr 5fr;
             >img {
                 height: 4vw;

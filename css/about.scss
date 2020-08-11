@@ -1,50 +1,99 @@
-@import './variable';
-@import './mixin';
-body {
-    @include bodyDefault;
-    // background: linear-gradient(317.45deg, rgba(255, 160, 13, 0.52) -78.63%, #FFFFFF 106.21%);
-    min-height: 100vh;
-    position: relative;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
-.splitter-blank {
-    height: 5vh;
-}
-
-.tablet-body {
-    display: none;
-}
-
-@import './header';
-.aboutUs {
-    img {
-        width: 100%;
-        margin-bottom: 6vh;
-    }
-    h2 {
-        font-size: 3rem;
-        line-height: 5rem;
-        margin: 6vh 0;
-        padding: 0 15vw;
-        text-transform: uppercase;
-    }
-    p {
-        font-size: 1rem;
-        line-height: 2rem;
-        letter-spacing: 1px;
-        padding: 0 15vw;
-        margin-bottom: 6vh;
-    }
-    iframe {
-        width: 100%;
-        height: 60vw;
-        object-fit: cover;
-    }
-}
-
-@import './footer'
+ @import './variable';
+ @import './mixin';
+ body {
+     @include bodyDefault;
+     // background: linear-gradient(317.45deg, rgba(255, 160, 13, 0.52) -78.63%, #FFFFFF 106.21%);
+     min-height: 100vh;
+     position: relative;
+ }
+ 
+ * {
+     margin: 0;
+     padding: 0;
+ }
+ 
+ .splitter-blank {
+     height: 5vh;
+ }
+ 
+ .tablet-body {
+     display: none;
+ }
+ 
+ @import './header';
+ .aboutUs {
+     img {
+         width: 100%;
+         margin-bottom: 6vh;
+     }
+     div {
+         h2 {
+             font-size: 3rem;
+             line-height: 5rem;
+             margin: 6vh 0;
+             padding: 0 15vw;
+             text-transform: uppercase;
+         }
+         p {
+             font-size: 1rem;
+             line-height: 2rem;
+             letter-spacing: 1px;
+             padding: 0 15vw;
+             margin-bottom: 6vh;
+         }
+         img {
+             width: 100%;
+             margin-bottom: 6vh;
+         }
+         iframe {
+             width: 100%;
+             height: 60vw;
+             object-fit: cover;
+         }
+     }
+ }
+ 
+ @import './footer';
+ @media only screen and (min-width:600px) {
+     .tablet-body {
+         display: block;
+     }
+     .mobile-header {
+         display: none;
+     }
+     .mobile-body {
+         display: none;
+     }
+     .aboutUs {
+         width: 100%;
+         .about-grid {
+             width: 100%;
+             display: flex;
+             flex-wrap: wrap;
+             justify-content: space-evenly;
+             align-items: center;
+             h2 {
+                 margin: 0;
+                 padding: 0;
+                 width: 40vw;
+             }
+             p {
+                 margin: 5vw 0;
+                 padding: 0;
+                 width: 40%;
+             }
+             img,
+             iframe {
+                 width: 40vw;
+                 height: 25vw;
+                 margin-bottom: 0;
+             }
+         }
+     }
+ }
+ 
+ @media only screen and (min-width:1367px) {
+     html {
+         font-size: 22px;
+     }
+ }
