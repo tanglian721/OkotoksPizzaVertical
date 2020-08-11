@@ -150,10 +150,10 @@
         header {
             @include gridCenter;
             height: 6vw;
-            z-index: 10;
+            z-index: 20;
             position: fixed;
             grid-template-columns: 3fr 10fr 5fr;
-            >img {
+            a>img {
                 height: 4vw;
                 width: auto;
                 position: static;

@@ -216,12 +216,12 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
             align-items: center;
     justify-items: center;
     height: 6vw;
-    z-index: 10;
+    z-index: 20;
     position: fixed;
     -ms-grid-columns: 3fr 10fr 5fr;
         grid-template-columns: 3fr 10fr 5fr;
   }
-  header > img {
+  header a > img {
     height: 4vw;
     width: auto;
     position: static;
@@ -402,7 +402,7 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
 }
 
 #homeMenu .menu-section .foodCard:hover div {
-  top: -5%;
+  top: 0;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
@@ -426,6 +426,7 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
   left: 0;
   height: 120%;
   overflow: scroll;
+  overflow-y: hidden;
   position: absolute;
   border-radius: 0;
   background: -webkit-gradient(linear, left bottom, left top, color-stop(1.19%, rgba(0, 0, 0, 0.75)), color-stop(48.02%, rgba(0, 0, 0, 0.68)), color-stop(68.61%, rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.01)));
@@ -478,7 +479,60 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+@media only screen and (min-width: 600px) {
+  header {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+  #homeMenu {
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    justify-items: center;
+    background: none;
+    width: 100%;
+  }
+  #homeMenu .categorys {
+    height: 10vw;
+  }
+  #homeMenu .categorys img {
+    width: 5vw;
+  }
+  #homeMenu h1 a {
+    background: none;
+    color: black;
+    height: 10vw;
+    line-height: 10vw;
+    width: auto;
+    position: static;
+    left: 0;
+  }
+  #homeMenu .menu-section {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 80%;
+    -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    -webkit-column-gap: 5vw;
+            column-gap: 5vw;
+    row-gap: 5vw;
+  }
+  #homeMenu .menu-section::after {
+    content: none;
+  }
+  #homeMenu .menu-section .foodCard {
+    height: 200px;
+  }
+  #homeMenu .menu-section .foodCard:nth-child(2n) {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
 footer {
+  margin-top: 10vh;
   background-color: #efefef;
   position: -webkit-sticky;
   position: sticky;

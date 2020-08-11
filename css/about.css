@@ -213,12 +213,12 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
             align-items: center;
     justify-items: center;
     height: 6vw;
-    z-index: 10;
+    z-index: 20;
     position: fixed;
     -ms-grid-columns: 3fr 10fr 5fr;
         grid-template-columns: 3fr 10fr 5fr;
   }
-  header > img {
+  header a > img {
     height: 4vw;
     width: auto;
     position: static;
@@ -331,6 +331,7 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
 }
 
 footer {
+  margin-top: 10vh;
   background-color: #efefef;
   position: -webkit-sticky;
   position: sticky;

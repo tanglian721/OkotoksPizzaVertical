@@ -88,7 +88,7 @@ a {
                 transform: translateY(-50%);
             }
             &:hover div {
-                top: -5%;
+                top: 0;
                 transition: all 0.5s ease-in-out;
             }
             img {
@@ -107,6 +107,7 @@ a {
                 left: 0;
                 height: 120%;
                 overflow: scroll;
+                overflow-y: hidden;
                 position: absolute;
                 border-radius: 0;
                 background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 1.19%, rgba(0, 0, 0, 0.68) 48.02%, rgba(0, 0, 0, 0.56) 68.61%, rgba(0, 0, 0, 0.01) 100%);
@@ -153,6 +154,49 @@ a {
             width: 50vw;
             height: 25vw;
             background-color: rgba(0, 0, 0, 0.7);
+        }
+    }
+}
+
+@media only screen and (min-width:600px) {
+    header {
+        position: sticky;
+    }
+    #homeMenu {
+        @include gridCenter;
+        background: none;
+        width: 100%;
+        .categorys {
+            height: 10vw;
+            img {
+                width: 5vw;
+            }
+        }
+        h1 a {
+            background: none;
+            color: $desktopFontColor;
+            height: 10vw;
+            line-height: 10vw;
+            width: auto;
+            position: static;
+            left: 0;
+        }
+        .menu-section {
+            box-sizing: border-box;
+            width: 80%;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            column-gap: 5vw;
+            row-gap: 5vw;
+            &::after {
+                content: none;
+            }
+            .foodCard {
+                height: 200px;
+                &:nth-child(2n) {
+                    transform: none;
+                    ;
+                }
+            }
         }
     }
 }
