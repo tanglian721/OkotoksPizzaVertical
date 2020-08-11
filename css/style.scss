@@ -26,7 +26,7 @@
         box-sizing: border-box;
         @include gridCenter;
         position: relative;
-        top: -15vw;
+        // top: -15vw;
         width: 100%;
         height: 70vh;
         .PhotoFrame {
@@ -43,14 +43,13 @@
             .frame {
                 position: relative;
                 width: 100%;
-                height: 90%;
-                top: 9%;
+                height: 95%;
+                top: 3%;
                 transform: skewY(-8deg);
-                transform-origin: 13%;
                 overflow: hidden;
                 &-mid {
                     z-index: 5;
-                    height: 85%;
+                    height: 100;
                     @include pageShadow(5px);
                     .photos {
                         width: 100%;
@@ -94,15 +93,15 @@
                             height: 100%;
                         }
                         .photo1 {
-                            background-image: linear-gradient(317.45deg, rgba(255, 160, 13, 0.22) -78.63%, rgba(255, 255, 255, 0.2) 106.21%), url(../images/pizzaHomepage1.jpg);
+                            background-image: linear-gradient(317.45deg, rgba(255, 160, 13, 0.6) -78.63%, rgba(255, 255, 255, 0.2) 106.21%), url(../images/pizzaHomepage1.jpg);
                             animation: photo1 15s ease-in-out infinite;
                         }
                         .photo2 {
-                            background-image: linear-gradient(317.45deg, rgba(255, 160, 13, 0.22) -78.63%, #FFFFFF 106.21%), url(../images/pizzaHomepage2.jpg);
+                            background-image: linear-gradient(317.45deg, rgba(255, 160, 13, 0.6) -78.63%, #FFFFFF 106.21%), url(../images/pizzaHomepage2.jpg);
                             animation: photo2 15s ease-in-out infinite;
                         }
                         .photo3 {
-                            background-image: linear-gradient(317.45deg, rgba(255, 160, 13, 0.22) -78.63%, #FFFFFF 106.21%), url(../images/pizzaHomepage3.jpg);
+                            background-image: linear-gradient(317.45deg, rgba(255, 160, 13, 0.6) -78.63%, #FFFFFF 106.21%), url(../images/pizzaHomepage3.jpg);
                             animation: photo3 15s ease-in-out infinite;
                         }
                     }
@@ -295,6 +294,7 @@
             margin: 0;
             width: 100%;
             height: 60vw;
+            margin-bottom: 12vw;
             .PhotoFrame {
                 width: 100%;
                 height: 100%;
@@ -305,7 +305,7 @@
                     height: 100%;
                 }
                 .frame {
-                    top: 25%;
+                    top: 5%;
                     &-back {
                         top: 0;
                     }
@@ -361,13 +361,16 @@
                         padding: 15px;
                         h2 {
                             font-size: 0.8rem;
+                            line-height: 1rem;
                         }
                         h3 {
-                            font-size: 0.8rem;
-                            margin-top: 2vw;
+                            font-size: 0.7rem;
+                            line-height: 1rem;
                         }
                         p {
-                            font-size: 0.8rem;
+                            font-size: 0.6rem;
+                            padding: 0;
+                            line-height: 1rem;
                         }
                     }
                 }
