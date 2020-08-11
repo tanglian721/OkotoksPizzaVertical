@@ -2,12 +2,12 @@
     @import './mixin';
     header {
         z-index: 20;
-        position: fixed;
+        position: sticky;
         width: 100%;
         top: 0;
         left: 0;
         background-color: rgba(0, 0, 0, 0.6);
-        >img {
+        a>img {
             z-index: 20;
             height: 4vh;
             position: absolute;
@@ -75,6 +75,7 @@
             display: grid;
         }
         .nav-menu {
+            z-index: 21;
             position: absolute;
             background-color: rgba(0, 0, 0, 0.6);
             @include gridCenter;

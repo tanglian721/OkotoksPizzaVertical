@@ -11,17 +11,18 @@ footer {
         @include gridCenter;
         img {
             width: 25%;
-            padding: 5vh 0;
+            padding: 3vh 0;
         }
         div {
             text-align: center;
+            width: 100%;
             p,
             a {
+                display: inline;
                 text-decoration: none;
                 @include otherFont;
                 color: black;
-                font-size: 13px;
-                line-height: 15px;
+                font-size: 0.6rem;
             }
         }
     }
@@ -31,7 +32,7 @@ footer {
         text-decoration: none;
         @include otherFont;
         color: black;
-        font-size: 13px;
+        font-size: 0.6rem;
         line-height: 22px;
     }
 }
