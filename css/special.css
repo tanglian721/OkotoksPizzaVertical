@@ -360,7 +360,7 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
           align-items: center;
   justify-items: center;
   row-gap: 5vh;
-  padding: 10vh 0;
+  padding: 15vh 0;
   background-color: #242424;
 }
 
@@ -381,12 +381,12 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
           align-items: center;
   justify-items: center;
   width: 100%;
-  row-gap: 8vh;
+  row-gap: 15vw;
 }
 
 #homeMenu .menu-section .foodCard {
-  z-index: 1;
-  width: 80vw;
+  z-index: -1;
+  width: 60vw;
   height: 60vw;
   display: -ms-grid;
   display: grid;
@@ -398,7 +398,7 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
 }
 
 #homeMenu .menu-section .foodCard img {
-  z-index: 5;
+  z-index: -1;
   width: 60vw;
   height: 60vw;
   border-radius: 50%;
@@ -410,15 +410,15 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
 }
 
 #homeMenu .menu-section .foodCard div {
-  z-index: 6;
+  z-index: -1;
   display: -ms-grid;
   display: grid;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   justify-items: center;
-  position: relative;
-  top: -100%;
+  position: absolute;
+  top: 0;
   overflow: hidden;
   width: 60vw;
   height: 60vw;
@@ -426,6 +426,7 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
 }
 
 #homeMenu .menu-section .foodCard div h2 {
+  z-index: -1;
   position: absolute;
   bottom: 20vw;
   border-radius: 0 10px 10px 0;
@@ -433,11 +434,11 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
   font-family: 'Rokkitt', serif;
   font-size: 1rem;
   text-transform: uppercase;
-  line-height: 1.5rem;
+  line-height: 1.2rem;
+  margin: 0;
   padding-left: 3vw;
   -ms-grid-column-align: left;
       justify-self: left;
-  margin: 0;
 }
 
 #homeMenu .menu-section .foodCard div h3 {
@@ -446,19 +447,20 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
   border-radius: 10px 0 0 10px;
   background-color: rgba(255, 255, 255, 0.9);
   font-family: 'Rokkitt', serif;
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-transform: uppercase;
-  line-height: 1.5rem;
+  line-height: 1.2rem;
+  margin: 0;
   padding-right: 6vw;
   -ms-grid-column-align: right;
       justify-self: right;
-  margin: 0;
   color: red;
 }
 
 #homeMenu .menu-section .foodCard div p {
   font-family: 'Rokkitt', serif;
   font-size: 1rem;
+  margin: 0;
   opacity: 0;
 }
 
@@ -467,12 +469,13 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
   height: -moz-fit-content;
   height: fit-content;
   overflow: visible;
+  margin-bottom: 35vw;
 }
 
 #homeMenu .menu-section .foodCard:hover img {
+  z-index: 5;
   height: 40vw;
   left: 0;
-  border: none;
   border-radius: 0;
   -webkit-transition: all 0.6s ease-in;
   transition: all 0.6s ease-in;
@@ -489,14 +492,16 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
           box-shadow: 1px 1px 2px 1px rgba(255, 255, 255, 0.8);
   border-radius: 0;
   padding: 3%;
-  background-color: rgba(255, 255, 255, 0.9);
-  height: auto;
-  top: 0;
+  background-color: rgba(255, 255, 255, 0.6);
+  height: 50vw;
+  top: 100%;
+  overflow: visible;
 }
 
 #homeMenu .menu-section .foodCard:hover div h2,
 #homeMenu .menu-section .foodCard:hover div h3,
 #homeMenu .menu-section .foodCard:hover div p {
+  z-index: 10;
   position: static;
   background: none;
   color: black;
@@ -509,10 +514,6 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
 
 #homeMenu .menu-section .foodCard:hover div h3 {
   top: 15%;
-}
-
-#homeMenu .menu-section .foodCard:hover div p {
-  padding: 2rem 0;
 }
 
 @media only screen and (min-width: 600px) {
@@ -568,7 +569,7 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     -webkit-column-gap: 4vw;
             column-gap: 4vw;
-    row-gap: 10vw;
+    row-gap: 20vw;
   }
   #homeMenu .menu-section .foodCard {
     width: 250px;
@@ -589,6 +590,9 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
   #homeMenu .menu-section .foodCard div h3 {
     bottom: 40px;
     padding: 0 25px 0 10px;
+  }
+  #homeMenu .menu-section .foodCard:hover {
+    margin-bottom: 0;
   }
   #homeMenu .menu-section .foodCard:hover img {
     width: 250px;

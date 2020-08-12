@@ -64,7 +64,7 @@
         z-index: -1;
         @include gridCenter;
         row-gap: 5vh;
-        padding: 10vh 0;
+        padding: 15vh 0;
         background-color: $primaryColor;
         h1>a {
             @include articleFont;
@@ -76,15 +76,15 @@
             z-index: 1;
             @include gridCenter;
             width: 100%;
-            row-gap: 8vh;
+            row-gap: 15vw;
             .foodCard {
-                z-index: 1;
-                width: 80vw;
+                z-index: -1;
+                width: 60vw;
                 height: 60vw;
                 @include gridCenter;
                 position: relative;
                 img {
-                    z-index: 5;
+                    z-index: -1;
                     width: 60vw;
                     height: 60vw;
                     border-radius: 50%;
@@ -93,15 +93,16 @@
                     position: relative;
                 }
                 div {
-                    z-index: 6;
+                    z-index: -1;
                     @include gridCenter;
-                    position: relative;
-                    top: -100%;
+                    position: absolute;
+                    top: 0;
                     overflow: hidden;
                     width: 60vw;
                     height: 60vw;
                     border-radius: 50%;
                     h2 {
+                        z-index: -1;
                         position: absolute;
                         bottom: 20vw;
                         border-radius: 0 10px 10px 0;
@@ -109,10 +110,10 @@
                         @include articleFont;
                         font-size: 1rem;
                         text-transform: uppercase;
-                        line-height: 1.5rem;
+                        line-height: 1.2rem;
+                        margin: 0;
                         padding-left: 3vw;
                         justify-self: left;
-                        margin: 0;
                     }
                     h3 {
                         position: absolute;
@@ -120,17 +121,18 @@
                         border-radius: 10px 0 0 10px;
                         background-color: rgba(255, 255, 255, 0.9);
                         @include articleFont;
-                        font-size: 1.2rem;
+                        font-size: 1rem;
                         text-transform: uppercase;
-                        line-height: 1.5rem;
+                        line-height: 1.2rem;
+                        margin: 0;
                         padding-right: 6vw;
                         justify-self: right;
-                        margin: 0;
                         color: $priceColor;
                     }
                     p {
                         @include articleFont;
                         font-size: 1rem;
+                        margin: 0;
                         opacity: 0;
                     }
                 }
@@ -138,11 +140,12 @@
                     height: fit-content;
                     overflow: visible;
                     // transition: all 0.6s ease-in;
+                    margin-bottom: 35vw;
                 }
                 &:hover img {
+                    z-index: 5;
                     height: 40vw;
                     left: 0;
-                    border: none;
                     border-radius: 0;
                     transition: all 0.6s ease-in;
                     z-index: 5;
@@ -154,12 +157,14 @@
                     box-shadow: 1px 1px 2px 1px rgba(255, 255, 255, 0.8);
                     border-radius: 0;
                     padding: 3%;
-                    background-color: rgba(255, 255, 255, 0.9);
-                    height: auto;
-                    top: 0;
+                    background-color: rgba(255, 255, 255, 0.6);
+                    height: 50vw;
+                    top: 100%;
+                    overflow: visible;
                     h2,
                     h3,
                     p {
+                        z-index: 10;
                         position: static;
                         background: none;
                         color: $desktopFontColor;
@@ -171,10 +176,6 @@
                     h3 {
                         top: 15%;
                     }
-                    p {
-                        padding: 2rem 0;
-                    }
-                    ;
                 }
             }
         }
@@ -228,7 +229,7 @@
                 width: 80%;
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
                 column-gap: 4vw;
-                row-gap: 10vw;
+                row-gap: 20vw;
                 .foodCard {
                     width: 250px;
                     height: 250px;
@@ -247,6 +248,9 @@
                             bottom: 40px;
                             padding: 0 25px 0 10px;
                         }
+                    }
+                    &:hover {
+                        margin-bottom: 0;
                     }
                     &:hover img {
                         width: 250px;
