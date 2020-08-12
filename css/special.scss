@@ -1,0 +1,187 @@
+@import './variable';
+@import './mixin';
+body {
+    @include bodyDefault;
+    min-height: 100vh;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.splitter-blank {
+    height: 5vh;
+}
+
+.tablet-body {
+    display: none;
+}
+
+@import './header';
+.salesPart {
+    margin-top: 10vh;
+    width: 100%;
+    height: 60vh;
+    @include gridCenter;
+    overflow: hidden;
+    .salesPhoto {
+        width: 80%;
+        height: 100%;
+        overflow: hidden;
+        img {
+            width: 100%;
+        }
+        p {
+            font-size: 1.6rem;
+            color: $primaryColor;
+            font-weight: bolder;
+            text-shadow: 2px 5px 5px rgb(219, 219, 219);
+            font-family: 'Pacifico', cursive;
+            align-self: center;
+            transform: translate(4vw, -15vh) rotatez(-15deg);
+        }
+        a {
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: $cardBgColor;
+            background-color: $primaryColor;
+            padding: 5px 15px;
+            border-radius: 15px;
+            @include pageShadow(1px);
+            left: 50%;
+            transform: translate(-50%, -6vh)
+        }
+    }
+}
+
+#homeMenu {
+    z-index: -1;
+    @include gridCenter;
+    row-gap: 5vh;
+    padding: 10vh 0;
+    background-color: $primaryColor;
+    h1>a {
+        @include articleFont;
+        text-transform: uppercase;
+        color: $cardBgColor;
+        justify-self: left;
+    }
+    .menu-section {
+        z-index: 1;
+        @include gridCenter;
+        width: 100%;
+        row-gap: 8vh;
+        .foodCard {
+            z-index: 1;
+            width: 80vw;
+            height: 60vw;
+            @include gridCenter;
+            position: relative;
+            img {
+                z-index: 5;
+                width: 60vw;
+                height: 60vw;
+                border-radius: 50%;
+                object-fit: cover;
+                box-shadow: 1px 1px 2px 1px rgba(255, 255, 255, 0.8);
+                position: relative;
+            }
+            div {
+                z-index: 6;
+                @include gridCenter;
+                position: relative;
+                top: -100%;
+                overflow: hidden;
+                width: 60vw;
+                height: 60vw;
+                border-radius: 50%;
+                h2 {
+                    position: absolute;
+                    bottom: 20vw;
+                    border-radius: 0 10px 10px 0;
+                    background-color: rgba(255, 255, 255, 0.9);
+                    @include articleFont;
+                    font-size: 1rem;
+                    text-transform: uppercase;
+                    line-height: 1.5rem;
+                    padding-left: 3vw;
+                    justify-self: left;
+                    margin: 0;
+                }
+                h3 {
+                    position: absolute;
+                    bottom: 10vw;
+                    border-radius: 10px 0 0 10px;
+                    background-color: rgba(255, 255, 255, 0.9);
+                    @include articleFont;
+                    font-size: 1.2rem;
+                    text-transform: uppercase;
+                    line-height: 1.5rem;
+                    padding-right: 6vw;
+                    justify-self: right;
+                    margin: 0;
+                    color: $priceColor;
+                }
+                p {
+                    @include articleFont;
+                    font-size: 4vw;
+                    opacity: 0;
+                }
+            }
+            &:hover {
+                height: fit-content;
+                overflow: visible;
+                transition: all 0.6s ease-in;
+            }
+            &:hover img {
+                height: 40vw;
+                left: 0;
+                border: none;
+                border-radius: 0;
+                transition: all 0.6s ease-in;
+                z-index: 5;
+            }
+            &:hover div {
+                z-index: 10;
+                transition: all 0.6s ease-in;
+                box-sizing: border-box;
+                box-shadow: 1px 1px 2px 1px rgba(255, 255, 255, 0.8);
+                border-radius: 0;
+                padding: 3%;
+                background-color: rgba(255, 255, 255, 0.9);
+                height: auto;
+                top: 0;
+                h2,
+                h3,
+                p {
+                    position: static;
+                    background: none;
+                    color: $desktopFontColor;
+                    opacity: 1;
+                }
+                h2 {
+                    top: 5%;
+                }
+                h3 {
+                    top: 15%;
+                }
+                p {
+                    padding: 2rem 0;
+                }
+                ;
+            }
+        }
+    }
+}
+
+@import './footer';
+footer {
+    margin-top: 0;
+}
