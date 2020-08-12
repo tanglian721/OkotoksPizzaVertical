@@ -324,9 +324,8 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
 }
 
 .salesPart .salesPhoto p {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   color: #242424;
-  font-weight: bolder;
   text-shadow: 2px 5px 5px #dbdbdb;
   font-family: 'Pacifico', cursive;
   -ms-flex-item-align: center;
@@ -459,7 +458,7 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
 
 #homeMenu .menu-section .foodCard div p {
   font-family: 'Rokkitt', serif;
-  font-size: 4vw;
+  font-size: 1rem;
   opacity: 0;
 }
 
@@ -468,8 +467,6 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
   height: -moz-fit-content;
   height: fit-content;
   overflow: visible;
-  -webkit-transition: all 0.6s ease-in;
-  transition: all 0.6s ease-in;
 }
 
 #homeMenu .menu-section .foodCard:hover img {
@@ -516,6 +513,94 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
 
 #homeMenu .menu-section .foodCard:hover div p {
   padding: 2rem 0;
+}
+
+@media only screen and (min-width: 600px) {
+  html {
+    font-size: 18px;
+  }
+  .salesPart {
+    width: 100%;
+    height: 40vw;
+    overflow: hidden;
+  }
+  .salesPart .salesPhoto {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  .salesPart .salesPhoto img {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    width: auto;
+    height: 80%;
+  }
+  .salesPart .salesPhoto p,
+  .salesPart .salesPhoto a {
+    -webkit-transform: none;
+            transform: none;
+    left: 0;
+  }
+  .salesPart .salesPhoto p {
+    position: absolute;
+    color: black;
+    text-shadow: 2px 2px 5px #242424;
+    font-size: 2.5rem;
+    -webkit-transform: rotateZ(-10deg);
+            transform: rotateZ(-10deg);
+    left: 10%;
+    top: 30%;
+  }
+  .salesPart .salesPhoto a {
+    position: absolute;
+    left: 18%;
+    top: 60%;
+    font-size: 1.5rem;
+  }
+  #homeMenu {
+    width: 100%;
+    overflow: hidden;
+  }
+  #homeMenu .menu-section {
+    width: 80%;
+    -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    -webkit-column-gap: 4vw;
+            column-gap: 4vw;
+    row-gap: 10vw;
+  }
+  #homeMenu .menu-section .foodCard {
+    width: 250px;
+    height: 250px;
+  }
+  #homeMenu .menu-section .foodCard Img {
+    width: 250px;
+    height: 250px;
+  }
+  #homeMenu .menu-section .foodCard div {
+    width: 250px;
+    height: 250px;
+  }
+  #homeMenu .menu-section .foodCard div h2 {
+    bottom: 75px;
+    padding: 0 10px 0 10px;
+  }
+  #homeMenu .menu-section .foodCard div h3 {
+    bottom: 40px;
+    padding: 0 25px 0 10px;
+  }
+  #homeMenu .menu-section .foodCard:hover img {
+    width: 250px;
+    height: 200px;
+  }
+  #homeMenu .menu-section .foodCard:hover div {
+    width: 250px;
+    height: auto;
+  }
+  #homeMenu .menu-section .foodCard:hover div p {
+    padding: 10px 0;
+  }
 }
 
 footer {
