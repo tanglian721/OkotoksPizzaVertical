@@ -1,13 +1,14 @@
 @mixin headerFont {
-    font-family: 'Kanit', sans-serif;
+    font-family: 'Heebo', sans-serif;
 }
 
 @mixin articleFont {
-    font-family: 'Rokkitt', serif;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
 }
 
 @mixin otherFont {
-    font-family: 'Amiri', serif;
+    font-family: 'Quicksand', sans-serif;
 }
 
 @mixin gridCenter {

@@ -1,5 +1,5 @@
 footer {
-    margin-top: 10vh;
+    margin-top: 2vh;
     .splitter-line {
         height: 1px;
         width: 100%;
@@ -10,7 +10,7 @@ footer {
     top: 90vh;
     #footer-top {
         @include gridCenter;
-        img {
+        >img {
             width: 25%;
             padding: 3vh 0;
         }
@@ -24,6 +24,9 @@ footer {
                 @include otherFont;
                 color: black;
                 font-size: 0.6rem;
+            }
+            img {
+                width: 0.8rem;
             }
         }
     }
@@ -41,7 +44,7 @@ footer {
 @media only screen and (min-width:600px) {
     footer {
         #footer-top {
-            img {
+            >img {
                 width: 8%;
                 padding: 2vw;
             }
@@ -50,6 +53,9 @@ footer {
                 p,
                 a {
                     display: inline;
+                }
+                img {
+                    width: 0.8rem;
                 }
             }
         }

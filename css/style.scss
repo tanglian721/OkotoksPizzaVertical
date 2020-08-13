@@ -3,18 +3,12 @@
     @import './animation';
     body {
         @include bodyDefault;
-        // background: linear-gradient(317.45deg, rgba(255, 160, 13, 0.52) -78.63%, #FFFFFF 106.21%);
         min-height: 100vh;
-        position: relative;
     }
     
     * {
         margin: 0;
         padding: 0;
-    }
-    
-    .splitter-blank {
-        height: 5vh;
     }
     
     .tablet-body {
@@ -24,12 +18,12 @@
     @import './header';
     .homepagePhoto {
         box-sizing: border-box;
-        @include gridCenter;
-        position: relative;
-        // top: -15vw;
         width: 100%;
         height: 70vh;
-        margin-bottom: 15vh;
+        position: relative;
+        top: -10vh;
+        margin-bottom: 8vh;
+        @include gridCenter;
         .PhotoFrame {
             width: 100%;
             height: 100%;
@@ -42,15 +36,15 @@
                 top: 0;
             }
             .frame {
-                position: relative;
                 width: 100%;
                 height: 95%;
+                position: relative;
                 top: 3%;
                 transform: skewY(-8deg);
                 overflow: hidden;
                 &-mid {
-                    z-index: 5;
                     height: 100;
+                    z-index: 5;
                     @include pageShadow(5px);
                     .photos {
                         width: 100%;
@@ -76,11 +70,11 @@
                 }
                 &-back {
                     z-index: 3;
-                    transform: none;
-                    position: absolute;
-                    top: 0;
                     width: 100%;
                     height: 50%;
+                    position: absolute;
+                    top: 0;
+                    transform: none;
                     filter: blur(3px);
                     &-after {
                         transform: translateY(100%);
@@ -113,21 +107,20 @@
     /*mobile-homeMenu-start*/
     
     .intro {
-        // background-color: #242424;
         box-sizing: border-box;
         width: 100%;
         margin-top: -2vh;
         padding: 0 15vw;
         margin-bottom: 10vh;
         h1 {
-            // color: white;
+            @include headerFont;
             font-size: 3rem;
             line-height: 5rem;
             margin-bottom: 6vh;
             text-transform: uppercase;
         }
         p {
-            // color: white;
+            @include articleFont;
             font-size: 1rem;
             line-height: 2rem;
             letter-spacing: 1px;
@@ -141,98 +134,88 @@
         width: 100%;
         background: radial-gradient(124.68% 124.31% at 50% 50%, rgba(238, 238, 238, 0.27) 0%, rgba(0, 0, 0, 0.44) 48.44%);
         h1 {
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
             width: 50vw;
             height: 25vw;
-            font-size: 2rem;
-            line-height: 25vw;
-            padding-left: 10vw;
             position: relative;
             left: -25vw;
-            @include articleFont;
+            text-align: center;
+            @include headerFont;
             text-transform: uppercase;
+            font-size: 2rem;
+            color: white;
+            line-height: 25vw;
+            background-color: rgba(0, 0, 0, 0.7);
         }
         .menu-section {
             width: 100%;
-            position: relative;
             height: 100%;
+            position: relative;
             @include gridCenter;
             grid-template-columns: 1fr 1fr;
             .foodCard {
-                position: relative;
-                display: block;
                 width: 100%;
                 height: 50vw;
+                position: relative;
                 overflow: hidden;
-                &-right {
+                &:nth-child(2n) {
                     transform: translateY(-50%);
                 }
                 &:hover div {
-                    top: -5%;
+                    top: 0;
                     transition: all 0.5s ease-in-out;
                 }
                 img {
-                    position: static;
                     width: 100%;
                     height: 100%;
-                    border-radius: 0;
-                    left: 0;
-                    border: 0;
                     object-fit: cover;
                 }
                 div {
                     box-sizing: border-box;
                     width: 100%;
+                    height: 100%;
+                    position: absolute;
                     top: 80%;
                     left: 0;
-                    height: 120%;
-                    overflow: scroll;
-                    position: absolute;
-                    border-radius: 0;
-                    background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 1.19%, rgba(0, 0, 0, 0.68) 48.02%, rgba(0, 0, 0, 0.56) 68.61%, rgba(0, 0, 0, 0.01) 100%);
                     padding: 5px 5%;
+                    background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 1.19%, rgba(0, 0, 0, 0.68) 48.02%, rgba(0, 0, 0, 0.56) 68.61%, rgba(0, 0, 0, 0.01) 100%);
                     h2 {
                         width: 100%;
-                        position: static;
-                        font-size: 1rem;
-                        line-height: 2rem;
+                        height: 20%;
+                        padding: 5px 0;
+                        @include articleFont;
+                        font-size: 1.2rem;
                         text-transform: uppercase;
-                        color: $cardBgColor;
-                        padding: 0;
                         text-align: center;
+                        color: $cardBgColor;
                     }
                     h3 {
                         width: 100%;
-                        position: static;
+                        @include articleFont;
                         font-size: 0.8rem;
-                        line-height: 2rem;
                         text-transform: uppercase;
-                        padding-top: 1vh;
                         text-align: right;
                         color: $cardBgColor;
                     }
                     p {
-                        position: static;
                         color: $cardBgColor;
-                        font-size: 0.6rem;
-                        padding-top: 1.5vh;
+                        font-size: 0.8rem;
+                        padding-top: 5px;
                     }
                 }
             }
             &::after {
                 content: 'recommends';
-                @include articleFont;
+                width: 50vw;
+                height: 25vw;
+                position: absolute;
+                top: 75%;
+                right: 0;
+                @include headerFont;
                 text-transform: uppercase;
                 text-align: center;
                 color: $cardBgColor;
                 font-size: 1.5rem;
-                position: absolute;
                 line-height: 25vw;
-                top: 75%;
-                right: 0;
-                width: 50vw;
-                height: 25vw;
                 background-color: rgba(0, 0, 0, 0.7);
             }
         }
@@ -240,18 +223,18 @@
     /*mobile-contact-start*/
     
     #contact {
+        z-index: -1;
         box-sizing: border-box;
-        z-index: 1;
         width: 100%;
         #contact-text {
             box-sizing: border-box;
             width: 100%;
             padding: 0 10vw 10vw 10vw;
-            z-index: -1;
             background: $cardBgColor;
             h2,
             p,
             a {
+                @include otherFont;
                 text-decoration: none;
                 color: $desktopFontColor;
                 display: block;
@@ -348,7 +331,7 @@
                     background-color: darkkhaki;
                     grid-template-columns: 1fr;
                     overflow: hidden;
-                    &-right {
+                    &:nth-child(2n) {
                         transform: none;
                     }
                     img {

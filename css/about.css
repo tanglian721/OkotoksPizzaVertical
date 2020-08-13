@@ -73,7 +73,7 @@ header #tel {
   left: 35vw;
   font-size: 1rem;
   text-decoration: none;
-  font-family: 'Kanit', sans-serif;
+  font-family: 'Heebo', sans-serif;
   color: #ffffff;
 }
 
@@ -84,7 +84,7 @@ header #tel:active {
 }
 
 header div a {
-  font-family: 'Kanit', sans-serif;
+  font-family: 'Heebo', sans-serif;
   padding: 1vh 0;
   color: #242424;
   font-size: 0.8rem;
@@ -125,7 +125,7 @@ header .nav-menu {
 }
 
 header .nav-menu a {
-  font-family: 'Kanit', sans-serif;
+  font-family: 'Heebo', sans-serif;
   color: #ffffff;
   text-transform: uppercase;
   width: 100%;
@@ -331,7 +331,7 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
 }
 
 footer {
-  margin-top: 10vh;
+  margin-top: 2vh;
   background-color: #efefef;
   position: -webkit-sticky;
   position: sticky;
@@ -353,7 +353,7 @@ footer #footer-top {
   justify-items: center;
 }
 
-footer #footer-top img {
+footer #footer-top > img {
   width: 25%;
   padding: 3vh 0;
 }
@@ -367,23 +367,27 @@ footer #footer-top div p,
 footer #footer-top div a {
   display: inline;
   text-decoration: none;
-  font-family: 'Amiri', serif;
+  font-family: 'Quicksand', sans-serif;
   color: black;
   font-size: 0.6rem;
+}
+
+footer #footer-top div img {
+  width: 0.8rem;
 }
 
 footer #footer-bottom {
   text-align: center;
   z-index: 99;
   text-decoration: none;
-  font-family: 'Amiri', serif;
+  font-family: 'Quicksand', sans-serif;
   color: black;
   font-size: 0.6rem;
   line-height: 22px;
 }
 
 @media only screen and (min-width: 600px) {
-  footer #footer-top img {
+  footer #footer-top > img {
     width: 8%;
     padding: 2vw;
   }
@@ -393,6 +397,9 @@ footer #footer-bottom {
   footer #footer-top div p,
   footer #footer-top div a {
     display: inline;
+  }
+  footer #footer-top div img {
+    width: 0.8rem;
   }
 }
 
