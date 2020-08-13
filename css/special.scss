@@ -24,7 +24,7 @@
     
     @import './header';
     .salesPart {
-        margin-top: 10vh;
+        margin-top: 6vw;
         width: 100%;
         height: 60vh;
         @include gridCenter;
@@ -89,7 +89,7 @@
                     height: 60vw;
                     border-radius: 50%;
                     object-fit: cover;
-                    box-shadow: 1px 1px 2px 1px rgba(255, 255, 255, 0.8);
+                    box-shadow: 1px 1px 2px 1px rgba(255, 255, 255, 0.1);
                     position: relative;
                 }
                 div {
@@ -104,34 +104,33 @@
                     h2 {
                         z-index: -1;
                         position: absolute;
-                        bottom: 20vw;
+                        bottom: 26vw;
+                        padding: 0 1rem 0 1rem;
+                        justify-self: left;
+                        margin: 0;
                         border-radius: 0 10px 10px 0;
-                        background-color: rgba(255, 255, 255, 0.9);
+                        background-color: rgba(255, 255, 255, 0.7);
                         @include articleFont;
                         font-size: 1rem;
                         text-transform: uppercase;
                         line-height: 1.2rem;
-                        margin: 0;
-                        padding-left: 3vw;
-                        justify-self: left;
                     }
                     h3 {
                         position: absolute;
                         bottom: 10vw;
                         border-radius: 10px 0 0 10px;
-                        background-color: rgba(255, 255, 255, 0.9);
+                        background-color: rgba(255, 255, 255, 0.7);
                         @include articleFont;
                         font-size: 1rem;
                         text-transform: uppercase;
-                        line-height: 1.2rem;
                         margin: 0;
-                        padding-right: 6vw;
+                        padding: 0 1.2rem 0 0.7rem;
                         justify-self: right;
                         color: $priceColor;
                     }
                     p {
                         @include articleFont;
-                        font-size: 1rem;
+                        font-size: 0.8rem;
                         margin: 0;
                         opacity: 0;
                     }
@@ -139,7 +138,6 @@
                 &:hover {
                     height: fit-content;
                     overflow: visible;
-                    // transition: all 0.6s ease-in;
                     margin-bottom: 35vw;
                 }
                 &:hover img {
@@ -151,23 +149,22 @@
                     z-index: 5;
                 }
                 &:hover div {
-                    z-index: 10;
                     transition: all 0.6s ease-in;
-                    box-sizing: border-box;
-                    box-shadow: 1px 1px 2px 1px rgba(255, 255, 255, 0.8);
-                    border-radius: 0;
-                    padding: 3%;
-                    background-color: rgba(255, 255, 255, 0.6);
-                    height: 50vw;
-                    top: 100%;
                     overflow: visible;
+                    box-sizing: border-box;
+                    z-index: 10;
+                    height: fit-content;
+                    top: 100%;
+                    padding: 3%;
+                    border-radius: 0;
+                    background-color: rgba(255, 255, 255, 1);
+                    box-shadow: 1px 1px 2px 1px rgba(255, 255, 255, 0.8);
                     h2,
                     h3,
                     p {
                         z-index: 10;
                         position: static;
                         background: none;
-                        color: $desktopFontColor;
                         opacity: 1;
                     }
                     h2 {
@@ -241,7 +238,7 @@
                         width: 250px;
                         height: 250px;
                         h2 {
-                            bottom: 75px;
+                            bottom: 120px;
                             padding: 0 10px 0 10px;
                         }
                         h3 {
@@ -271,4 +268,38 @@
     @import './footer';
     footer {
         margin-top: 0;
+    }
+    
+    @media only screen and (min-width:1024px) {
+        html {
+            font-size: 20px;
+        }
+        #homeMenu>.menu-section>.foodCard>div {
+            h2 {
+                font-size: 1rem;
+            }
+            h3 {
+                font-size: 0.8rem;
+            }
+            p {
+                font-size: 0.8rem;
+            }
+        }
+    }
+    
+    @media only screen and (min-width:1367px) {
+        html {
+            font-size: 26px;
+        }
+        #homeMenu>.menu-section>.foodCard>div {
+            h2 {
+                font-size: 0.8rem;
+            }
+            h3 {
+                font-size: 0.6rem;
+            }
+            p {
+                font-size: 0.6rem;
+            }
+        }
     }
