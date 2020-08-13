@@ -283,6 +283,7 @@ header .nav-menu .nav-menu-dropdown .nav-menu-dropdown-container {
 }
 
 .aboutUs div h2 {
+  font-family: 'Heebo', sans-serif;
   font-size: 3rem;
   line-height: 5rem;
   margin: 6vh 0;
@@ -291,6 +292,8 @@ header .nav-menu .nav-menu-dropdown .nav-menu-dropdown-container {
 }
 
 .aboutUs div p {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
   font-size: 1rem;
   line-height: 2rem;
   letter-spacing: 1px;
@@ -401,14 +404,20 @@ footer #footer-bottom {
             align-items: center;
   }
   .aboutUs .about-grid h2 {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     margin: 0;
-    padding: 0;
+    padding: 0 0 0 5vw;
     width: 40vw;
   }
   .aboutUs .about-grid p {
+    font-size: 0.8rem;
     margin: 5vw 0;
     padding: 0;
     width: 40%;
+  }
+  .aboutUs .about-grid p::first-letter {
+    font-size: 2rem;
   }
   .aboutUs .about-grid img,
   .aboutUs .about-grid iframe {
@@ -418,9 +427,15 @@ footer #footer-bottom {
   }
 }
 
+@media only screen and (min-width: 1024px) {
+  html {
+    font-size: 20px;
+  }
+}
+
 @media only screen and (min-width: 1367px) {
   html {
-    font-size: 22px;
+    font-size: 26px;
   }
 }
 /*# sourceMappingURL=about.css.map */

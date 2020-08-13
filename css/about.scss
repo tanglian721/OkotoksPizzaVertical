@@ -28,6 +28,7 @@
      }
      div {
          h2 {
+             @include headerFont;
              font-size: 3rem;
              line-height: 5rem;
              margin: 6vh 0;
@@ -35,6 +36,7 @@
              text-transform: uppercase;
          }
          p {
+             @include articleFont;
              font-size: 1rem;
              line-height: 2rem;
              letter-spacing: 1px;
@@ -73,11 +75,16 @@
              justify-content: space-evenly;
              align-items: center;
              h2 {
+                 box-sizing: border-box;
                  margin: 0;
-                 padding: 0;
+                 padding: 0 0 0 5vw;
                  width: 40vw;
              }
              p {
+                 &::first-letter {
+                     font-size: 2rem;
+                 }
+                 font-size: 0.8rem;
                  margin: 5vw 0;
                  padding: 0;
                  width: 40%;
@@ -92,8 +99,14 @@
      }
  }
  
+ @media only screen and (min-width:1024px) {
+     html {
+         font-size: 20px;
+     }
+ }
+ 
  @media only screen and (min-width:1367px) {
      html {
-         font-size: 22px;
+         font-size: 26px;
      }
  }
