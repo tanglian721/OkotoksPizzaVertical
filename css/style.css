@@ -880,7 +880,7 @@ header .nav-menu .nav-menu-dropdown .nav-menu-dropdown-container {
     justify-items: center;
     -ms-grid-columns: 1fr 1.2fr;
         grid-template-columns: 1fr 1.2fr;
-    margin-top: -2vh;
+    margin-top: -10vh;
     margin-bottom: 8vh;
     padding: 0;
   }
