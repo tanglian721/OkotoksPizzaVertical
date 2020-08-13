@@ -22,7 +22,7 @@
         height: 70vh;
         position: relative;
         top: -10vh;
-        margin-bottom: 8vh;
+        margin-bottom: 5vh;
         @include gridCenter;
         .PhotoFrame {
             width: 100%;
@@ -109,7 +109,6 @@
     .intro {
         box-sizing: border-box;
         width: 100%;
-        margin-top: -2vh;
         padding: 0 15vw;
         margin-bottom: 10vh;
         h1 {
@@ -187,6 +186,7 @@
                         text-transform: uppercase;
                         text-align: center;
                         color: $cardBgColor;
+                        @include textShadow(2px)
                     }
                     h3 {
                         width: 100%;
@@ -195,11 +195,13 @@
                         text-transform: uppercase;
                         text-align: right;
                         color: $cardBgColor;
+                        @include textShadow(2px)
                     }
                     p {
                         color: $cardBgColor;
                         font-size: 0.8rem;
                         padding-top: 5px;
+                        @include textShadow(2px)
                     }
                 }
             }
@@ -263,6 +265,8 @@
             }
         }
     }
+    /*mobile-contact-end*/
+    /* tablet layout start*/
     
     @media only screen and (min-width:600px) {
         .tablet-body {
@@ -299,7 +303,8 @@
         .intro {
             @include gridCenter;
             grid-template-columns: 1fr 1.2fr;
-            margin-bottom: 0;
+            margin-top: -2vh;
+            margin-bottom: 8vh;
             padding: 0;
             h1 {
                 margin-bottom: 0;
@@ -328,39 +333,26 @@
                     width: 100%;
                     height: 100%;
                     display: block;
-                    background-color: darkkhaki;
                     grid-template-columns: 1fr;
                     overflow: hidden;
                     &:nth-child(2n) {
                         transform: none;
                     }
-                    img {
-                        position: static;
-                        width: 100%;
-                        left: 0;
-                        border: 0;
-                    }
                     div {
-                        top: 70%;
-                        padding: 15px;
                         h2 {
-                            font-size: 0.8rem;
-                            line-height: 1rem;
+                            font-size: 0.7rem;
+                            padding: 0;
                         }
                         h3 {
-                            font-size: 0.7rem;
-                            line-height: 1rem;
+                            font-size: 0.6rem;
                         }
                         p {
                             font-size: 0.6rem;
-                            padding: 0;
-                            line-height: 1rem;
-                            letter-spacing: 1px;
                         }
                     }
                 }
             }
-            P {
+            >P {
                 text-transform: uppercase;
                 color: $cardBgColor;
                 font-size: 3rem;
@@ -393,23 +385,38 @@
                 width: 100%;
                 h2 {
                     margin-left: 0;
-                    // font-size: 1.5rem;
                 }
                 p {
                     justify-self: center;
                     a,
                     span {
                         line-height: 1.3rem;
-                        // font-size: 1rem;
                     }
                 }
             }
         }
     }
     
+    @media only screen and (min-width:1024px) {
+        html {
+            font-size: 20px;
+        }
+    }
+    
     @media only screen and (min-width:1367px) {
         html {
-            font-size: 22px;
+            font-size: 26px;
+        }
+        #homeMenu>.menu-section>.foodCard>div {
+            h2 {
+                font-size: 1rem;
+            }
+            h3 {
+                font-size: 0.7rem;
+            }
+            p {
+                font-size: 0.7rem;
+            }
         }
     }
     

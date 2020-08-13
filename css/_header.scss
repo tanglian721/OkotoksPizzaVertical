@@ -2,8 +2,8 @@
     @import './mixin';
     header {
         z-index: 20;
-        position: sticky;
         width: 100%;
+        position: sticky;
         top: 0;
         left: 0;
         background-color: rgba(0, 0, 0, 0.6);
@@ -15,38 +15,37 @@
             left: 10vw;
         }
         >label {
-            position: absolute;
+            box-sizing: border-box;
+            width: 1em;
+            height: 15vw;
+            // position: absolute;
+            position: relative;
             left: 85vw;
             display: inline-block;
-            height: 15vw;
-            width: 1em;
             font-size: 15px;
-            box-sizing: border-box;
-            text-indent: -9999px;
-            vertical-align: middle;
-            position: relative;
+            // text-indent: -9999px;
+            // vertical-align: middle;
             &::before {
                 content: '';
                 box-sizing: inherit;
+                width: 100%;
                 position: absolute;
                 left: 0%;
                 top: 50%;
-                -ms-transform: translate(-50%, -50%);
-                transform: translate(-50%, -50%);
-                box-shadow: 0 -.35em, 0 .35em;
+                // transform: translate(-50%, -50%);
                 border-top: 2px solid;
-                width: 100%;
                 color: $cardBgColor;
+                box-shadow: 0 -.35em, 0 .35em;
             }
         }
         #tel {
             z-index: 999;
             position: absolute;
-            top: 4vw;
             left: 35vw;
-            font-size: 1rem;
-            text-decoration: none;
             @include headerFont;
+            text-decoration: none;
+            font-size: 1rem;
+            line-height: 15vw;
             color: $cardBgColor;
             &:active {
                 font-size: 0.9rem;
@@ -54,73 +53,63 @@
             }
         }
         div a {
-            @include headerFont;
-            padding: 1vh 0;
-            color: $primaryColor;
-            font-size: 0.8rem;
-            display: block;
-            text-decoration: none;
-            text-transform: uppercase;
             width: 100%;
-            line-height: 2vh;
-            img {
-                height: 5vh;
-            }
+            display: block;
+            padding: 1vh 0;
+            @include headerFont;
+            text-decoration: none;
+            font-size: 0.8rem;
+            color: $primaryColor;
+            text-transform: uppercase;
             &:hover {
                 background-color: $primaryColor;
                 color: $cardBgColor;
             }
         }
-        #nav-dropdown-check:checked~.nav-menu {
-            display: grid;
-        }
         .nav-menu {
             z-index: 21;
+            width: 100%;
             position: absolute;
-            background-color: rgba(0, 0, 0, 0.6);
             @include gridCenter;
             text-align: center;
-            width: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
             display: none;
             a {
-                @include headerFont;
-                color: $cardBgColor;
-                text-transform: uppercase;
                 width: 100%;
+                @include headerFont;
+                text-transform: uppercase;
                 line-height: 10vw;
+                color: $cardBgColor;
                 &:hover {
                     background-color: $primaryColor;
                     color: $cardBgColor;
                 }
             }
             .nav-menu-dropdown {
-                @include gridCenter;
                 width: 100%;
                 position: relative;
+                @include gridCenter;
                 label {
-                    position: absolute;
-                    display: inline-block;
+                    // position: absolute;
+                    box-sizing: border-box;
+                    width: 1em;
+                    position: relative;
                     top: -7.5vw;
                     left: 30vw;
-                    width: 1em;
-                    font-size: 15px;
-                    box-sizing: border-box;
-                    text-indent: -9999px;
-                    vertical-align: middle;
-                    position: relative;
+                    display: inline-block;
+                    font-size: 0.8rem;
+                    // text-indent: -9999px;
+                    // vertical-align: middle;
                     &::before {
                         content: '';
                         box-sizing: inherit;
                         position: absolute;
                         left: 50%;
                         top: 50%;
-                        -ms-transform: translate(-50%, -50%);
-                        transform: translate(-50%, -50%);
                         height: .65em;
                         width: .65em;
                         border-style: solid;
                         border-width: 2px 0 0 2px;
-                        -ms-transform: translate(-50%, -75%) rotate(225deg);
                         transform: translate(-50%, -75%) rotate(225deg);
                         color: $cardBgColor;
                     }
@@ -134,13 +123,18 @@
                     @include gridCenter;
                     width: 100%;
                     display: none;
-                    background-color: rgba($color: gray, $alpha: 0.1);
-                }
-                #nav-menu-dropdown-check:checked~.nav-menu-dropdown-container {
-                    display: grid;
+                    background-color: rgba($color: gray, $alpha: 0.5);
                 }
             }
         }
+    }
+    
+    #nav-dropdown-check:checked~.nav-menu {
+        display: grid;
+    }
+    
+    #nav-menu-dropdown-check:checked~.nav-menu-dropdown-container {
+        display: grid;
     }
     
     @media only screen and (min-width:600px) {
@@ -148,19 +142,25 @@
             display: none;
         }
         header {
-            @include gridCenter;
-            height: 6vw;
             z-index: 20;
+            height: 6vw;
+            @include gridCenter;
             position: fixed;
             grid-template-columns: 3fr 10fr 5fr;
-            a>img {
-                height: 4vw;
-                width: auto;
-                position: static;
+            >a {
+                height: 6vw;
+                @include gridCenter;
+                img {
+                    height: 4vw;
+                    width: auto;
+                    position: static;
+                }
             }
             #tel {
+                height: 6vw;
                 position: static;
                 font-size: 0.8rem;
+                line-height: 6vw;
                 text-shadow: 1px 1px 0 white;
                 color: $desktopFontColor;
                 &:hover {
@@ -205,26 +205,6 @@
                     &:hover .nav-menu-dropdown-container {
                         display: block;
                     }
-                }
-            }
-        }
-    }
-    
-    @media only screen and (min-width:1367px) {
-        header {
-            >img {
-                width: 5vw;
-            }
-            #tel {
-                left: 80%;
-                top: 5%;
-                font-size: 1rem;
-            }
-            .nav-menu {
-                >a,
-                div>a,
-                .home {
-                    font-size: 1rem;
                 }
             }
         }

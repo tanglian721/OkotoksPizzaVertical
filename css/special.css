@@ -23,9 +23,9 @@ a {
 
 header {
   z-index: 20;
+  width: 100%;
   position: -webkit-sticky;
   position: sticky;
-  width: 100%;
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.6);
@@ -40,43 +40,38 @@ header a > img {
 }
 
 header > label {
-  position: absolute;
-  left: 85vw;
-  display: inline-block;
-  height: 15vw;
-  width: 1em;
-  font-size: 15px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  text-indent: -9999px;
-  vertical-align: middle;
+  width: 1em;
+  height: 15vw;
   position: relative;
+  left: 85vw;
+  display: inline-block;
+  font-size: 15px;
 }
 
 header > label::before {
   content: '';
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
+  width: 100%;
   position: absolute;
   left: 0%;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  border-top: 2px solid;
+  color: #ffffff;
   -webkit-box-shadow: 0 -.35em, 0 .35em;
           box-shadow: 0 -.35em, 0 .35em;
-  border-top: 2px solid;
-  width: 100%;
-  color: #ffffff;
 }
 
 header #tel {
   z-index: 999;
   position: absolute;
-  top: 4vw;
   left: 35vw;
-  font-size: 1rem;
-  text-decoration: none;
   font-family: 'Heebo', sans-serif;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 15vw;
   color: #ffffff;
 }
 
@@ -87,19 +82,14 @@ header #tel:active {
 }
 
 header div a {
-  font-family: 'Heebo', sans-serif;
-  padding: 1vh 0;
-  color: #242424;
-  font-size: 0.8rem;
-  display: block;
-  text-decoration: none;
-  text-transform: uppercase;
   width: 100%;
-  line-height: 2vh;
-}
-
-header div a img {
-  height: 5vh;
+  display: block;
+  padding: 1vh 0;
+  font-family: 'Heebo', sans-serif;
+  text-decoration: none;
+  font-size: 0.8rem;
+  color: #242424;
+  text-transform: uppercase;
 }
 
 header div a:hover {
@@ -107,15 +97,10 @@ header div a:hover {
   color: #ffffff;
 }
 
-header #nav-dropdown-check:checked ~ .nav-menu {
-  display: -ms-grid;
-  display: grid;
-}
-
 header .nav-menu {
   z-index: 21;
+  width: 100%;
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.6);
   display: -ms-grid;
   display: grid;
   -webkit-box-align: center;
@@ -123,16 +108,16 @@ header .nav-menu {
           align-items: center;
   justify-items: center;
   text-align: center;
-  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
   display: none;
 }
 
 header .nav-menu a {
-  font-family: 'Heebo', sans-serif;
-  color: #ffffff;
-  text-transform: uppercase;
   width: 100%;
+  font-family: 'Heebo', sans-serif;
+  text-transform: uppercase;
   line-height: 10vw;
+  color: #ffffff;
 }
 
 header .nav-menu a:hover {
@@ -141,28 +126,25 @@ header .nav-menu a:hover {
 }
 
 header .nav-menu .nav-menu-dropdown {
+  width: 100%;
+  position: relative;
   display: -ms-grid;
   display: grid;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   justify-items: center;
-  width: 100%;
-  position: relative;
 }
 
 header .nav-menu .nav-menu-dropdown label {
-  position: absolute;
-  display: inline-block;
-  top: -7.5vw;
-  left: 30vw;
-  width: 1em;
-  font-size: 15px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  text-indent: -9999px;
-  vertical-align: middle;
+  width: 1em;
   position: relative;
+  top: -7.5vw;
+  left: 30vw;
+  display: inline-block;
+  font-size: 0.8rem;
 }
 
 header .nav-menu .nav-menu-dropdown label::before {
@@ -172,8 +154,6 @@ header .nav-menu .nav-menu-dropdown label::before {
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
   height: .65em;
   width: .65em;
   border-style: solid;
@@ -196,10 +176,15 @@ header .nav-menu .nav-menu-dropdown .nav-menu-dropdown-container {
   justify-items: center;
   width: 100%;
   display: none;
-  background-color: rgba(128, 128, 128, 0.1);
+  background-color: rgba(128, 128, 128, 0.5);
 }
 
-header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu-dropdown-container {
+#nav-dropdown-check:checked ~ .nav-menu {
+  display: -ms-grid;
+  display: grid;
+}
+
+#nav-menu-dropdown-check:checked ~ .nav-menu-dropdown-container {
   display: -ms-grid;
   display: grid;
 }
@@ -209,26 +194,37 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
     display: none;
   }
   header {
+    z-index: 20;
+    height: 6vw;
     display: -ms-grid;
     display: grid;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
     justify-items: center;
-    height: 6vw;
-    z-index: 20;
     position: fixed;
     -ms-grid-columns: 3fr 10fr 5fr;
         grid-template-columns: 3fr 10fr 5fr;
   }
-  header a > img {
+  header > a {
+    height: 6vw;
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    justify-items: center;
+  }
+  header > a img {
     height: 4vw;
     width: auto;
     position: static;
   }
   header #tel {
+    height: 6vw;
     position: static;
     font-size: 0.8rem;
+    line-height: 6vw;
     text-shadow: 1px 1px 0 white;
     color: black;
   }
@@ -281,22 +277,6 @@ header .nav-menu .nav-menu-dropdown #nav-menu-dropdown-check:checked ~ .nav-menu
   }
   header .nav-menu .nav-menu-dropdown:hover .nav-menu-dropdown-container {
     display: block;
-  }
-}
-
-@media only screen and (min-width: 1367px) {
-  header > img {
-    width: 5vw;
-  }
-  header #tel {
-    left: 80%;
-    top: 5%;
-    font-size: 1rem;
-  }
-  header .nav-menu > a,
-  header .nav-menu div > a,
-  header .nav-menu .home {
-    font-size: 1rem;
   }
 }
 
@@ -654,7 +634,7 @@ footer #footer-top div a {
 }
 
 footer #footer-top div img {
-  width: 0.8rem;
+  width: 0.6rem;
 }
 
 footer #footer-bottom {
@@ -671,16 +651,6 @@ footer #footer-bottom {
   footer #footer-top > img {
     width: 8%;
     padding: 2vw;
-  }
-  footer #footer-top div {
-    width: 100%;
-  }
-  footer #footer-top div p,
-  footer #footer-top div a {
-    display: inline;
-  }
-  footer #footer-top div img {
-    width: 0.8rem;
   }
 }
 
