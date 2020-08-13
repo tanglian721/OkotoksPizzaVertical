@@ -53,7 +53,7 @@ a {
     @include gridCenter;
     width: 100%;
     height: fit-content;
-    background: radial-gradient(124.68% 124.31% at 50% 50%, rgba(238, 238, 238, 0.27) 0%, rgba(0, 0, 0, 0.44) 48.44%);
+    // background: radial-gradient(124.68% 124.31% at 50% 50%, rgba(238, 238, 238, 0.27) 0%, rgba(0, 0, 0, 0.44) 48.44%);
     h1 a {
         z-index: 1;
         display: block;
@@ -77,12 +77,12 @@ a {
         height: 100%;
         @include gridCenter;
         grid-template-columns: 1fr 1fr;
+        column-gap: 2px;
+        row-gap: 2px;
         .foodCard {
-            box-sizing: border-box;
-            position: relative;
-            display: block;
             width: 100%;
             height: 50vw;
+            position: relative;
             overflow: hidden;
             &:nth-child(2n) {
                 transform: translateY(-50%);
@@ -92,51 +92,48 @@ a {
                 transition: all 0.5s ease-in-out;
             }
             img {
-                position: static;
                 width: 100%;
                 height: 100%;
-                border-radius: 0;
-                left: 0;
-                border: 0;
                 object-fit: cover;
             }
             div {
                 box-sizing: border-box;
                 width: 100%;
+                height: 100%;
+                position: absolute;
                 top: 80%;
                 left: 0;
-                height: 120%;
-                overflow: scroll;
-                overflow-y: hidden;
-                position: absolute;
-                border-radius: 0;
-                background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 1.19%, rgba(0, 0, 0, 0.68) 48.02%, rgba(0, 0, 0, 0.56) 68.61%, rgba(0, 0, 0, 0.01) 100%);
                 padding: 5px 5%;
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 1.19%, rgba(0, 0, 0, 0.68) 48.02%, rgba(0, 0, 0, 0.56) 68.61%, rgba(0, 0, 0, 0.01) 100%);
                 h2 {
                     width: 100%;
-                    position: static;
-                    font-size: 1rem;
-                    line-height: 2rem;
+                    height: 20%;
+                    padding: 5px 0;
+                    @include articleFont;
+                    font-size: 1.2rem;
                     text-transform: uppercase;
-                    color: $cardBgColor;
-                    padding: 0;
                     text-align: center;
+                    color: $cardBgColor;
+                    @include textShadow(2px)
+                }
+                #slide {
+                    font-size: 0.8rem;
                 }
                 h3 {
                     width: 100%;
-                    position: static;
+                    padding: 5px;
+                    @include articleFont;
                     font-size: 0.8rem;
-                    line-height: 2rem;
                     text-transform: uppercase;
-                    padding-top: 1vh;
                     text-align: right;
                     color: $cardBgColor;
+                    @include textShadow(2px)
                 }
                 p {
-                    position: static;
                     color: $cardBgColor;
-                    font-size: 0.6rem;
-                    padding-top: 1.5vh;
+                    font-size: 0.8rem;
+                    padding-top: 5px;
+                    @include textShadow(2px)
                 }
             }
         }
@@ -161,6 +158,9 @@ a {
 @media only screen and (min-width:600px) {
     header {
         position: sticky;
+    }
+    .mobile-body {
+        display: none;
     }
     #homeMenu {
         @include gridCenter;
@@ -198,6 +198,29 @@ a {
                 }
             }
         }
+    }
+}
+
+@media only screen and (min-width:1024px) {
+    html {
+        font-size: 20px;
+    }
+    #homeMenu>.menu-section>.foodCard>div {
+        h2 {
+            font-size: 0.8rem;
+        }
+        h3 {
+            font-size: 0.6rem;
+        }
+        p {
+            font-size: 0.6rem;
+        }
+    }
+}
+
+@media only screen and (min-width:1367px) {
+    html {
+        font-size: 26px;
     }
 }
 
