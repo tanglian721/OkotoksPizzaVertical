@@ -1,4 +1,5 @@
 footer {
+    width: 100%;
     margin-top: 2vh;
     .splitter-line {
         height: 1px;
@@ -27,7 +28,7 @@ footer {
             }
         }
         .share img {
-            width: 8px;
+            width: 10px;
         }
     }
     #footer-bottom {
@@ -47,6 +48,9 @@ footer {
             >img {
                 width: 6%;
                 padding: 2vw;
+            }
+            .share img {
+                width: 20px;
             }
         }
     }

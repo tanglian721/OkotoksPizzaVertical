@@ -546,6 +546,7 @@ header .nav-menu .nav-menu-dropdown .nav-menu-dropdown-container {
 
 /*desktop layout end*/
 footer {
+  width: 100%;
   margin-top: 2vh;
   background-color: #efefef;
   position: -webkit-sticky;
@@ -588,7 +589,7 @@ footer #footer-top div a {
 }
 
 footer #footer-top .share img {
-  width: 8px;
+  width: 10px;
 }
 
 footer #footer-bottom {
@@ -605,6 +606,9 @@ footer #footer-bottom {
   footer #footer-top > img {
     width: 6%;
     padding: 2vw;
+  }
+  footer #footer-top .share img {
+    width: 20px;
   }
 }
 /*# sourceMappingURL=menu.css.map */
