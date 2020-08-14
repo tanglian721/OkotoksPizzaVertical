@@ -14,8 +14,12 @@
     .tablet-body {
         display: none;
     }
+    /*mobile header start*/
     
     @import './header';
+    /*mobile header end*/
+    /*mobile slider start*/
+    
     .homepagePhoto {
         box-sizing: border-box;
         width: 100%;
@@ -104,7 +108,8 @@
             }
         }
     }
-    /*mobile-homeMenu-start*/
+    /*mobile slider end*/
+    /*mobile-intro-start*/
     
     .intro {
         box-sizing: border-box;
@@ -125,6 +130,7 @@
             letter-spacing: 1px;
         }
     }
+    /*mobile-intro-end*/
     /*mobile-homeMenu-start*/
     
     #homeMenu {
@@ -222,6 +228,7 @@
             }
         }
     }
+    /*mobile-homeMenu-end*/
     /*mobile-contact-start*/
     
     #contact {
@@ -375,6 +382,7 @@
                 iframe {
                     width: 25vw;
                     height: 25vw;
+                    object-fit: cover;
                     border-radius: 50%;
                 }
             }
@@ -402,6 +410,8 @@
             font-size: 20px;
         }
     }
+    /* tablet layout end*/
+    /*desktop layout start*/
     
     @media only screen and (min-width:1367px) {
         html {
@@ -419,5 +429,6 @@
             }
         }
     }
+    /*desktop layout end*/
     
     @import './footer';

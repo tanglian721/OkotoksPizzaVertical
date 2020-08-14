@@ -21,6 +21,7 @@ a {
   display: none;
 }
 
+/*mobile header start*/
 header {
   z-index: 20;
   width: 100%;
@@ -280,7 +281,9 @@ header .nav-menu .nav-menu-dropdown .nav-menu-dropdown-container {
   }
 }
 
-.salesPart {
+/*mobile header end*/
+/*mobile promotion start*/
+.promotion {
   margin-top: 6vw;
   width: 100%;
   height: 60vh;
@@ -293,17 +296,17 @@ header .nav-menu .nav-menu-dropdown .nav-menu-dropdown-container {
   overflow: hidden;
 }
 
-.salesPart .salesPhoto {
+.promotion .salesPhoto {
   width: 80%;
   height: 100%;
   overflow: hidden;
 }
 
-.salesPart .salesPhoto img {
+.promotion .salesPhoto img {
   width: 100%;
 }
 
-.salesPart .salesPhoto p {
+.promotion .salesPhoto p {
   font-size: 1.8rem;
   color: #242424;
   text-shadow: 2px 5px 5px #dbdbdb;
@@ -315,13 +318,13 @@ header .nav-menu .nav-menu-dropdown .nav-menu-dropdown-container {
           transform: translate(4vw, -15vh) rotatez(-15deg);
 }
 
-.salesPart .salesPhoto a {
+.promotion .salesPhoto a {
   position: relative;
   display: inline-block;
   text-decoration: none;
   font-size: 1.2rem;
   color: #ffffff;
-  background-color: #242424;
+  background-color: rgba(36, 36, 36, 0.7);
   padding: 5px 15px;
   border-radius: 15px;
   -webkit-box-shadow: 1px 1px 1px 0 #383838;
@@ -331,6 +334,8 @@ header .nav-menu .nav-menu-dropdown .nav-menu-dropdown-container {
           transform: translate(-50%, -6vh);
 }
 
+/*mobile promotion end*/
+/*mobile sales start*/
 #homeMenu {
   z-index: -1;
   display: -ms-grid;
@@ -341,7 +346,7 @@ header .nav-menu .nav-menu-dropdown .nav-menu-dropdown-container {
   justify-items: center;
   row-gap: 5vh;
   padding: 15vh 0;
-  background-color: #242424;
+  background-color: rgba(36, 36, 36, 0.7);
 }
 
 #homeMenu h1 > a {
@@ -385,8 +390,6 @@ header .nav-menu .nav-menu-dropdown .nav-menu-dropdown-container {
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-box-shadow: 1px 1px 2px 1px rgba(255, 255, 255, 0.1);
-          box-shadow: 1px 1px 2px 1px rgba(255, 255, 255, 0.1);
   position: relative;
 }
 
@@ -479,8 +482,6 @@ header .nav-menu .nav-menu-dropdown .nav-menu-dropdown-container {
   padding: 3%;
   border-radius: 0;
   background-color: white;
-  -webkit-box-shadow: 1px 1px 2px 1px rgba(255, 255, 255, 0.8);
-          box-shadow: 1px 1px 2px 1px rgba(255, 255, 255, 0.8);
 }
 
 #homeMenu .menu-section .foodCard:hover div h2,
@@ -500,34 +501,36 @@ header .nav-menu .nav-menu-dropdown .nav-menu-dropdown-container {
   top: 15%;
 }
 
+/*mobile sales end*/
+/*tablet layout start*/
 @media only screen and (min-width: 600px) {
   html {
     font-size: 18px;
   }
-  .salesPart {
+  .promotion {
     width: 100%;
     height: 40vw;
     overflow: hidden;
   }
-  .salesPart .salesPhoto {
+  .promotion .salesPhoto {
     width: 100%;
     height: 100%;
     position: relative;
   }
-  .salesPart .salesPhoto img {
+  .promotion .salesPhoto img {
     position: absolute;
     left: 50%;
     top: 10%;
     width: auto;
     height: 80%;
   }
-  .salesPart .salesPhoto p,
-  .salesPart .salesPhoto a {
+  .promotion .salesPhoto p,
+  .promotion .salesPhoto a {
     -webkit-transform: none;
             transform: none;
     left: 0;
   }
-  .salesPart .salesPhoto p {
+  .promotion .salesPhoto p {
     position: absolute;
     color: black;
     text-shadow: 2px 2px 5px #242424;
@@ -537,7 +540,7 @@ header .nav-menu .nav-menu-dropdown .nav-menu-dropdown-container {
     left: 10%;
     top: 30%;
   }
-  .salesPart .salesPhoto a {
+  .promotion .salesPhoto a {
     position: absolute;
     left: 18%;
     top: 60%;
@@ -553,7 +556,7 @@ header .nav-menu .nav-menu-dropdown .nav-menu-dropdown-container {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     -webkit-column-gap: 4vw;
             column-gap: 4vw;
-    row-gap: 20vw;
+    row-gap: 180px;
   }
   #homeMenu .menu-section .foodCard {
     width: 250px;
@@ -591,6 +594,39 @@ header .nav-menu .nav-menu-dropdown .nav-menu-dropdown-container {
   }
 }
 
+@media only screen and (min-width: 1024px) {
+  html {
+    font-size: 20px;
+  }
+  #homeMenu > .menu-section > .foodCard > div h2 {
+    font-size: 1rem;
+  }
+  #homeMenu > .menu-section > .foodCard > div h3 {
+    font-size: 0.8rem;
+  }
+  #homeMenu > .menu-section > .foodCard > div p {
+    font-size: 0.8rem;
+  }
+}
+
+/*tablet layout end*/
+/*desktop layout start*/
+@media only screen and (min-width: 1367px) {
+  html {
+    font-size: 26px;
+  }
+  #homeMenu > .menu-section > .foodCard > div h2 {
+    font-size: 0.8rem;
+  }
+  #homeMenu > .menu-section > .foodCard > div h3 {
+    font-size: 0.6rem;
+  }
+  #homeMenu > .menu-section > .foodCard > div p {
+    font-size: 0.6rem;
+  }
+}
+
+/*desktop layout end*/
 footer {
   margin-top: 2vh;
   background-color: #efefef;
@@ -649,42 +685,12 @@ footer #footer-bottom {
 
 @media only screen and (min-width: 600px) {
   footer #footer-top > img {
-    width: 8%;
+    width: 6%;
     padding: 2vw;
   }
 }
 
 footer {
   margin-top: 0;
-}
-
-@media only screen and (min-width: 1024px) {
-  html {
-    font-size: 20px;
-  }
-  #homeMenu > .menu-section > .foodCard > div h2 {
-    font-size: 1rem;
-  }
-  #homeMenu > .menu-section > .foodCard > div h3 {
-    font-size: 0.8rem;
-  }
-  #homeMenu > .menu-section > .foodCard > div p {
-    font-size: 0.8rem;
-  }
-}
-
-@media only screen and (min-width: 1367px) {
-  html {
-    font-size: 26px;
-  }
-  #homeMenu > .menu-section > .foodCard > div h2 {
-    font-size: 0.8rem;
-  }
-  #homeMenu > .menu-section > .foodCard > div h3 {
-    font-size: 0.6rem;
-  }
-  #homeMenu > .menu-section > .foodCard > div p {
-    font-size: 0.6rem;
-  }
 }
 /*# sourceMappingURL=special.css.map */

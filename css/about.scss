@@ -2,7 +2,6 @@
  @import './mixin';
  body {
      @include bodyDefault;
-     // background: linear-gradient(317.45deg, rgba(255, 160, 13, 0.52) -78.63%, #FFFFFF 106.21%);
      min-height: 100vh;
      position: relative;
  }
@@ -19,8 +18,12 @@
  .tablet-body {
      display: none;
  }
+ /*mobile header start*/
  
  @import './header';
+ /*mobile header end*/
+ /*mobile about start*/
+ 
  .aboutUs {
      img {
          width: 100%;
@@ -54,8 +57,9 @@
          }
      }
  }
+ /*mobile about end*/
+ /* tablet layout start*/
  
- @import './footer';
  @media only screen and (min-width:600px) {
      .tablet-body {
          display: block;
@@ -104,9 +108,14 @@
          font-size: 20px;
      }
  }
+ /* tablet layout end*/
+ /*desktop layout start*/
  
  @media only screen and (min-width:1367px) {
      html {
          font-size: 26px;
      }
  }
+ /*desktop layout end*/
+ 
+ @import './footer';

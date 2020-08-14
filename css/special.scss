@@ -21,9 +21,13 @@
     .tablet-body {
         display: none;
     }
+    /*mobile header start*/
     
     @import './header';
-    .salesPart {
+    /*mobile header end*/
+    /*mobile promotion start*/
+    
+    .promotion {
         margin-top: 6vw;
         width: 100%;
         height: 60vh;
@@ -50,7 +54,7 @@
                 text-decoration: none;
                 font-size: 1.2rem;
                 color: $cardBgColor;
-                background-color: $primaryColor;
+                background-color: rgba($primaryColor, $alpha: 0.7);
                 padding: 5px 15px;
                 border-radius: 15px;
                 @include pageShadow(1px);
@@ -59,13 +63,15 @@
             }
         }
     }
+    /*mobile promotion end*/
+    /*mobile sales start*/
     
     #homeMenu {
         z-index: -1;
         @include gridCenter;
         row-gap: 5vh;
         padding: 15vh 0;
-        background-color: $primaryColor;
+        background-color: rgba($primaryColor, $alpha: 0.7);
         h1>a {
             @include articleFont;
             text-transform: uppercase;
@@ -89,7 +95,6 @@
                     height: 60vw;
                     border-radius: 50%;
                     object-fit: cover;
-                    box-shadow: 1px 1px 2px 1px rgba(255, 255, 255, 0.1);
                     position: relative;
                 }
                 div {
@@ -158,7 +163,6 @@
                     padding: 3%;
                     border-radius: 0;
                     background-color: rgba(255, 255, 255, 1);
-                    box-shadow: 1px 1px 2px 1px rgba(255, 255, 255, 0.8);
                     h2,
                     h3,
                     p {
@@ -177,12 +181,14 @@
             }
         }
     }
+    /*mobile sales end*/
+    /*tablet layout start*/
     
     @media only screen and (min-width:600px) {
         html {
             font-size: 18px;
         }
-        .salesPart {
+        .promotion {
             width: 100%;
             height: 40vw;
             overflow: hidden;
@@ -226,7 +232,7 @@
                 width: 80%;
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
                 column-gap: 4vw;
-                row-gap: 20vw;
+                row-gap: 180px;
                 .foodCard {
                     width: 250px;
                     height: 250px;
@@ -265,11 +271,6 @@
         }
     }
     
-    @import './footer';
-    footer {
-        margin-top: 0;
-    }
-    
     @media only screen and (min-width:1024px) {
         html {
             font-size: 20px;
@@ -286,6 +287,8 @@
             }
         }
     }
+    /*tablet layout end*/
+    /*desktop layout start*/
     
     @media only screen and (min-width:1367px) {
         html {
@@ -302,4 +305,10 @@
                 font-size: 0.6rem;
             }
         }
+    }
+    /*desktop layout end*/
+    
+    @import './footer';
+    footer {
+        margin-top: 0;
     }

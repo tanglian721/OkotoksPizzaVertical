@@ -22,7 +22,16 @@ a {
     display: none;
 }
 
+
+/*mobile header start*/
+
 @import './header';
+
+/*mobile header end*/
+
+
+/*mobile menu start*/
+
 #homeMenu {
     .categorys {
         z-index: 10;
@@ -155,6 +164,12 @@ a {
     }
 }
 
+
+/*mobile menu end*/
+
+
+/*tablet layout start*/
+
 @media only screen and (min-width:600px) {
     header {
         position: sticky;
@@ -163,9 +178,10 @@ a {
         display: none;
     }
     #homeMenu {
-        @include gridCenter;
-        background: none;
         width: 100%;
+        @include gridCenter;
+        margin-bottom: 5vw;
+        background: none;
         .categorys {
             height: 10vw;
             img {
@@ -218,10 +234,19 @@ a {
     }
 }
 
+
+/*tablet layout end*/
+
+
+/*desktop layout start*/
+
 @media only screen and (min-width:1367px) {
     html {
         font-size: 26px;
     }
 }
+
+
+/*desktop layout end*/
 
 @import './footer';

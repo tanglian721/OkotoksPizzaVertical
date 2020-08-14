@@ -251,6 +251,7 @@ body {
   display: none;
 }
 
+/*mobile header start*/
 header {
   z-index: 20;
   width: 100%;
@@ -510,6 +511,8 @@ header .nav-menu .nav-menu-dropdown .nav-menu-dropdown-container {
   }
 }
 
+/*mobile header end*/
+/*mobile slider start*/
 .homepagePhoto {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -634,7 +637,8 @@ header .nav-menu .nav-menu-dropdown .nav-menu-dropdown-container {
           animation: photo3 15s ease-in-out infinite;
 }
 
-/*mobile-homeMenu-start*/
+/*mobile slider end*/
+/*mobile-intro-start*/
 .intro {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -659,6 +663,7 @@ header .nav-menu .nav-menu-dropdown .nav-menu-dropdown-container {
   letter-spacing: 1px;
 }
 
+/*mobile-intro-end*/
 /*mobile-homeMenu-start*/
 #homeMenu {
   z-index: -1;
@@ -785,6 +790,7 @@ header .nav-menu .nav-menu-dropdown .nav-menu-dropdown-container {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+/*mobile-homeMenu-end*/
 /*mobile-contact-start*/
 #contact {
   z-index: -1;
@@ -971,6 +977,8 @@ header .nav-menu .nav-menu-dropdown .nav-menu-dropdown-container {
   #contact #map iframe {
     width: 25vw;
     height: 25vw;
+    -o-object-fit: cover;
+       object-fit: cover;
     border-radius: 50%;
   }
   #contact #contact-text {
@@ -999,6 +1007,8 @@ header .nav-menu .nav-menu-dropdown .nav-menu-dropdown-container {
   }
 }
 
+/* tablet layout end*/
+/*desktop layout start*/
 @media only screen and (min-width: 1367px) {
   html {
     font-size: 26px;
@@ -1014,6 +1024,7 @@ header .nav-menu .nav-menu-dropdown .nav-menu-dropdown-container {
   }
 }
 
+/*desktop layout end*/
 footer {
   margin-top: 2vh;
   background-color: #efefef;
@@ -1072,7 +1083,7 @@ footer #footer-bottom {
 
 @media only screen and (min-width: 600px) {
   footer #footer-top > img {
-    width: 8%;
+    width: 6%;
     padding: 2vw;
   }
 }
