@@ -607,7 +607,7 @@ footer #footer-bottom {
     width: 6%;
     padding: 2vw;
   }
-  footer #footer-top .share img {
+  footer #footer-top > div > a > .shareIcon {
     width: 20px;
   }
 }
