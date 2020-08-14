@@ -295,7 +295,6 @@ header .nav-menu .nav-menu-dropdown .nav-menu-dropdown-container {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  background: radial-gradient(124.68% 124.31% at 50% 50%, rgba(238, 238, 238, 0.27) 0%, rgba(0, 0, 0, 0.44) 48.44%);
 }
 
 #homeMenu .categorys {
@@ -404,7 +403,7 @@ header .nav-menu .nav-menu-dropdown .nav-menu-dropdown-container {
   width: 100%;
   height: 100%;
   position: absolute;
-  top: 80%;
+  top: 70%;
   left: 0;
   padding: 5px 5%;
   background: -webkit-gradient(linear, left bottom, left top, color-stop(1.19%, rgba(0, 0, 0, 0.75)), color-stop(48.02%, rgba(0, 0, 0, 0.68)), color-stop(68.61%, rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.01)));
@@ -413,7 +412,7 @@ header .nav-menu .nav-menu-dropdown .nav-menu-dropdown-container {
 
 #homeMenu .menu-section .foodCard div h2 {
   width: 100%;
-  height: 20%;
+  height: 30%;
   padding: 5px 0;
   font-family: 'Quicksand', sans-serif;
   font-weight: bold;
