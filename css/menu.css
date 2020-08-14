@@ -295,6 +295,7 @@ header .nav-menu .nav-menu-dropdown .nav-menu-dropdown-container {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  background: radial-gradient(124.68% 124.31% at 50% 50%, rgba(238, 238, 238, 0.27) 0%, rgba(0, 0, 0, 0.44) 48.44%);
 }
 
 #homeMenu .categorys {
@@ -341,12 +342,12 @@ header .nav-menu .nav-menu-dropdown .nav-menu-dropdown-container {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background-color: rgba(0, 0, 0, 0.7);
-  width: 50vw;
+  width: 49.5vw;
   height: 25vw;
   line-height: 25vw;
   position: relative;
   text-align: center;
-  left: -25vw;
+  left: -25.2vw;
   font-family: 'Quicksand', sans-serif;
   font-weight: bold;
   color: white;
@@ -367,9 +368,9 @@ header .nav-menu .nav-menu-dropdown .nav-menu-dropdown-container {
   justify-items: center;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-  -webkit-column-gap: 2px;
-          column-gap: 2px;
-  row-gap: 2px;
+  -webkit-column-gap: 1vw;
+          column-gap: 1vw;
+  row-gap: 1vw;
 }
 
 #homeMenu .menu-section .foodCard {
@@ -458,7 +459,7 @@ header .nav-menu .nav-menu-dropdown .nav-menu-dropdown-container {
   line-height: 25vw;
   bottom: 0;
   right: 0;
-  width: 50vw;
+  width: 49.5vw;
   height: 25vw;
   background-color: rgba(0, 0, 0, 0.7);
 }

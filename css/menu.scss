@@ -62,18 +62,18 @@ a {
     @include gridCenter;
     width: 100%;
     height: fit-content;
-    // background: radial-gradient(124.68% 124.31% at 50% 50%, rgba(238, 238, 238, 0.27) 0%, rgba(0, 0, 0, 0.44) 48.44%);
+    background: radial-gradient(124.68% 124.31% at 50% 50%, rgba(238, 238, 238, 0.27) 0%, rgba(0, 0, 0, 0.44) 48.44%);
     h1 a {
         z-index: 1;
         display: block;
         box-sizing: border-box;
         background-color: rgba(0, 0, 0, 0.7);
-        width: 50vw;
+        width: 49.5vw;
         height: 25vw;
         line-height: 25vw;
         position: relative;
         text-align: center;
-        left: -25vw;
+        left: -25.2vw;
         @include articleFont;
         color: white;
         font-size: 2rem;
@@ -86,8 +86,8 @@ a {
         height: 100%;
         @include gridCenter;
         grid-template-columns: 1fr 1fr;
-        column-gap: 2px;
-        row-gap: 2px;
+        column-gap: 1vw;
+        row-gap: 1vw;
         .foodCard {
             width: 100%;
             height: 50vw;
@@ -157,7 +157,7 @@ a {
             line-height: 25vw;
             bottom: 0;
             right: 0;
-            width: 50vw;
+            width: 49.5vw;
             height: 25vw;
             background-color: rgba(0, 0, 0, 0.7);
         }
